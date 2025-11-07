@@ -1,5 +1,14 @@
-# 💡 Proyecto de prácticas DAW
-Este repositorio ha sido creado por Lucía y Adrián como espacio de trabajo para reforzar nuestras asignaturas de Programación y Entornos de Desarrollo dentro del ciclo 1º de Desarrollo de Aplicaciones Web (DAW).
-Nuestro objetivo es aprender, practicar y mejorar cada día, compartiendo código, ideas y soluciones que nos ayuden a crecer como desarrolladores. Creemos que la mejor forma de avanzar es construir, equivocarse, corregir y seguir adelante con pasión y constancia. Este repositorio es parte de ese camino.
+#🚀✨ Repositorio de Prácticas DAW ✨🚀
+Bienvenid@ a este espacio de aprendizaje creado con cariño por Lucía y Adrián. Aquí reunimos nuestras prácticas de Programación y Entornos de Desarrollo, parte del ciclo formativo de 1º de Desarrollo de Aplicaciones Web (DAW).
 
+#🎯 ¿Cuál es nuestro objetivo?
+Aprender, practicar y mejorar cada día. Este repositorio es nuestro laboratorio digital, donde cada línea de código representa un paso hacia el dominio de nuestras habilidades como desarrolladores.
+
+#💬 Nuestra filosofía
 "El conocimiento se construye con práctica, y cada commit es un paso más hacia el dominio."
+
+#🛠️ ¿Qué encontrarás aquí?
+-Ejercicios prácticos de programación 💻
+-Proyectos de clase y pruebas de concepto 🧪
+-Archivos organizados por temas y asignaturas 📂
+-Mucha motivación y ganas de seguir aprendiendo 💪
