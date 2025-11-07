@@ -9,11 +9,6 @@ Aquí reunimos nuestras prácticas de **Programación** y **Entornos de Desarrol
 
 Aprender, practicar y mejorar cada día.  
 Este repositorio es nuestro laboratorio digital, donde cada línea de código representa un paso hacia el dominio de nuestras habilidades como desarrolladores.
----
-
-
-## 💬 Nuestra filosofía
-
 > *"El conocimiento se construye con práctica, y cada commit es un paso más hacia el dominio."*
 ---
 
