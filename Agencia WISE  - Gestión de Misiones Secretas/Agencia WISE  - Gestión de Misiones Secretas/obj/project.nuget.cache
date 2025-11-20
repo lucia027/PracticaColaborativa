@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3jfhX+grjWM=",
+  "dgSpecHash": "FkVg+Y5qOkk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog\\4.3.1-dev-02395\\serilog.4.3.1-dev-02395.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\spectre.console\\0.54.1-alpha.0.6\\spectre.console.0.54.1-alpha.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

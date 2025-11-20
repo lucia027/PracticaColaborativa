@@ -1,11 +1,134 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "Serilog/4.3.1-dev-02395": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/Serilog.targets": {}
+        }
+      },
+      "Serilog.Sinks.Console/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "4.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Serilog.Sinks.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Serilog.Sinks.Console.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Spectre.Console/0.54.1-alpha.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Serilog/4.3.1-dev-02395": {
+      "sha512": "mPreTBBKb1zW53sLkk45eLPY5ROe9se2W3KNRCBI7v8nkSFbOR1mhLSSLW2OHL2xl0WGqrYel1dLHzTFXwC/iQ==",
+      "type": "package",
+      "path": "serilog/4.3.1-dev-02395",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Serilog.targets",
+        "icon.png",
+        "lib/net10.0/Serilog.dll",
+        "lib/net10.0/Serilog.xml",
+        "lib/net462/Serilog.dll",
+        "lib/net462/Serilog.xml",
+        "lib/net471/Serilog.dll",
+        "lib/net471/Serilog.xml",
+        "lib/net6.0/Serilog.dll",
+        "lib/net6.0/Serilog.xml",
+        "lib/net8.0/Serilog.dll",
+        "lib/net8.0/Serilog.xml",
+        "lib/net9.0/Serilog.dll",
+        "lib/net9.0/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.xml",
+        "serilog.4.3.1-dev-02395.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Console/6.1.1": {
+      "sha512": "8jbqgjUyZlfCuSTaJk6lOca465OndqOz3KZP6Cryt/IqZYybyBu7GP0fE/AXBzrrQB3EBmQntBFAvMVz1COvAA==",
+      "type": "package",
+      "path": "serilog.sinks.console/6.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net462/Serilog.Sinks.Console.dll",
+        "lib/net462/Serilog.Sinks.Console.xml",
+        "lib/net471/Serilog.Sinks.Console.dll",
+        "lib/net471/Serilog.Sinks.Console.xml",
+        "lib/net6.0/Serilog.Sinks.Console.dll",
+        "lib/net6.0/Serilog.Sinks.Console.xml",
+        "lib/net8.0/Serilog.Sinks.Console.dll",
+        "lib/net8.0/Serilog.Sinks.Console.xml",
+        "lib/netstandard2.0/Serilog.Sinks.Console.dll",
+        "lib/netstandard2.0/Serilog.Sinks.Console.xml",
+        "serilog.sinks.console.6.1.1.nupkg.sha512",
+        "serilog.sinks.console.nuspec"
+      ]
+    },
+    "Spectre.Console/0.54.1-alpha.0.6": {
+      "sha512": "yQqQupm/zgYCrOqDwH/jzCxopIFoLpJ/mEL9wSkfi0e5CNYgVtDxUPzosG4jf/qyd42mXdN85DiuQClO362gLQ==",
+      "type": "package",
+      "path": "spectre.console/0.54.1-alpha.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/Spectre.Console.dll",
+        "lib/net10.0/Spectre.Console.xml",
+        "lib/net8.0/Spectre.Console.dll",
+        "lib/net8.0/Spectre.Console.xml",
+        "lib/net9.0/Spectre.Console.dll",
+        "lib/net9.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
+        "logo.png",
+        "spectre.console.0.54.1-alpha.0.6.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "Serilog >= 4.3.1-dev-02395",
+      "Serilog.Sinks.Console >= 6.1.1",
+      "Spectre.Console >= 0.54.1-alpha.0.6"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Lu\\.nuget\\packages\\": {}
@@ -13,11 +136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lu\\Desktop\\Git-Repository\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas.csproj",
+      "projectUniqueName": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas.csproj",
       "projectName": "Agencia WISE  - Gestión de Misiones Secretas",
-      "projectPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas.csproj",
+      "projectPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas.csproj",
       "packagesPath": "C:\\Users\\Lu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\obj\\",
+      "outputPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\Agencia WISE  - Gestión de Misiones Secretas\\Agencia WISE  - Gestión de Misiones Secretas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lu\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -35,6 +158,7 @@
         }
       },
       "warningProperties": {
+        "allWarningsAsErrors": true,
         "warnAsError": [
           "NU1605"
         ]
@@ -49,6 +173,20 @@
     "frameworks": {
       "net10.0": {
         "targetAlias": "net10.0",
+        "dependencies": {
+          "Serilog": {
+            "target": "Package",
+            "version": "[4.3.1-dev-02395, )"
+          },
+          "Serilog.Sinks.Console": {
+            "target": "Package",
+            "version": "[6.1.1, )"
+          },
+          "Spectre.Console": {
+            "target": "Package",
+            "version": "[0.54.1-alpha.0.6, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
