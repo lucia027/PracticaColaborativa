@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cdnm3T7x3ks=",
+  "dgSpecHash": "JV5bl+QVAEs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\Incendio\\Incendio\\Incendio.csproj",
+  "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\Incendio\\Incendio\\Incendio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lu\\.nuget\\packages\\serilog\\4.3.1-dev-02395\\serilog.4.3.1-dev-02395.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512",
