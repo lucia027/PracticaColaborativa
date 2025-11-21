@@ -33,7 +33,7 @@ void Main() {
 
 //Funciones auxiliares
 void Menu() {
-    
+    Log.Debug("Iniciando el menu");
     WriteLine("------------------------");
     WriteLine("          Menu          ");
     WriteLine("------------------------");
@@ -46,45 +46,38 @@ void Menu() {
     WriteLine("6- Listar misiones por nivel de riego(ASC/DES)");
     WriteLine();
 
-    int opcion;
-    bool isFormato = false;
-    
+    string opcion;
     do {
         Write("Elige una opción del menu valida.");
-        opcion = int.Parse(ReadLine() ?? "0");
+        WriteLine();
+        opcion = ReadLine() ?? "0";
 
         switch (opcion) {
-            case 1:
+            case "1":
                 WriteLine("Saliendo del programa..👋🏻");
                 break;
-            case 2:
+            case "2":
                 CrearMision();
                 break;
-            case 3:
+            case "3":
                 ActualizarMision();
                 break;
-            case 4:
+            case "4":
                 EliminarMision();
                 break;
-            case 5:
+            case "5":
                 ListarMisiones();
                 break;
-            case 6:
+            case "6":
                 ListaMisionesRiesgo();
                 break; 
             default: 
                 WriteLine("Opcion no valida.");
-                opcion = 0;
+                Log.Debug("Opción del menú no valida.");
+                opcion = "0";
                 break;
         }
-        
-        var regex = @"^[1-6]$";
-        
-        if (Regex.IsMatch(opcion.ToString(), regex)) {
-            isFormato = true;
-        }
-
-    } while (opcion == 0 || isFormato = false);
+    } while (opcion == "0");
 }
 
 void CrearMision() {
