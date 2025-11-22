@@ -37,11 +37,11 @@ void Main() {
 Mision[] CrearDatosExistentes() {
     Log.Debug("Creación de la base de datos de misiones existentes");
     
-    var mision1 = new Mision {Id = 01, Nombre = "Strix", NivelRiesgo = 5, AgenteAsignado = Agentes.Loid};
-    var mision2 = new Mision {Id = 02, Nombre = "Infiltración en la fiesta de Donovan Desmond", NivelRiesgo = 5, AgenteAsignado = Agentes.Loid};
-    var mision3 = new Mision {Id = 03, Nombre = "Rescate de perro Bond y de Loid Forger durante el atentado", NivelRiesgo = 3, AgenteAsignado = Agentes.Anya};
-    var mision4 = new Mision {Id = 04, Nombre = "Neutralización de banda criminal Garden", NivelRiesgo = 4, AgenteAsignado = Agentes.Yor};
-    var mision5 = new Mision {Id = 05, Nombre = "Operación Stella – Conseguir estrellas en el Colegio Eden", NivelRiesgo = 1, AgenteAsignado = Agentes.Anya};
+    var mision1 = new Mision {Id = 1, Nombre = "Strix", NivelRiesgo = 5, AgenteAsignado = Agentes.Loid};
+    var mision2 = new Mision {Id = 2, Nombre = "Infiltración en la fiesta de Donovan Desmond", NivelRiesgo = 5, AgenteAsignado = Agentes.Loid};
+    var mision3 = new Mision {Id = 3, Nombre = "Rescate de perro Bond y de Loid Forger durante el atentado", NivelRiesgo = 3, AgenteAsignado = Agentes.Anya};
+    var mision4 = new Mision {Id = 4, Nombre = "Neutralización de banda criminal Garden", NivelRiesgo = 4, AgenteAsignado = Agentes.Yor};
+    var mision5 = new Mision {Id = 5, Nombre = "Operación Stella – Conseguir estrellas en el Colegio Eden", NivelRiesgo = 1, AgenteAsignado = Agentes.Anya};
 
     Mision[] misiones = {mision1, mision2, mision3, mision4, mision5};
     return misiones;
@@ -95,20 +95,93 @@ void Menu(Mision[] misiones) {
     } while (opcion == "0");
 }
 
-int ValidarId(string  id) {
+int ValidarId(string id, Mision[] misiones) {
+    Log.Debug("Validando el Id de la misión");
     
+    bool isValido = false;
+    int idEntero = int.Parse(id);
+
+    while (!isValido || idEntero == 0) {
+        for (int i = 0; i < misiones.Length; i++) {
+            if (misiones[i].Id == idEntero) {
+                isValido = true;
+            }
+        }
+        
+        WriteLine("Id no valido, ponga uno con el formato correcto");
+        idEntero = int.Parse(ReadLine() ?? "0");
+    }
+
+    return idEntero;
 }
 
 string ValidarNombre(string input, string nombreAntiguo) {
+    Log.Debug("Validando el nombre de la misión");
+
+    string res = input;
     
+    if (input == "") {
+        res = nombreAntiguo;
+    }
+
+    return res;
 }
 
-int ValidarNivelRiesgo(string input, int nivelRiesgo) {
+int ValidarNivelRiesgo(string input, int nivelRiesgoAntiguo) {
+    Log.Debug("Validando el nivel de riesgo de la misión");
+
+    int res = 0;
+    bool isValido = false;
     
+    while (!isValido || res == 0) {
+        if (res > 0 && res <= 5) {
+            isValido = true;
+        }
+        
+        if (input == "") {
+            isValido = true;
+            res = nivelRiesgoAntiguo;
+        } else {
+            try {
+                res = int.Parse(input);
+            } catch (Exception e) {
+                Log.Error("Fallo al hacer el casting del input");
+                WriteLine($"Error: {e.Message}");
+            } finally {
+                WriteLine("Formato inválido introdúcelo de nuevo: ");
+                res = int.Parse(ReadLine() ?? "0");
+            }
+        }
+    }
+    return res;
 }
 
-Agentes ValidarAgente(string input, Agentes agente) {
-    
+Agentes ValidarAgente(string input, Agentes agenteAntiguo) {
+    Log.Debug("Validando el agente asignado la misión");
+
+    Agentes[] agentes = [Agentes.Loid, Agentes.Anya, Agentes.Yor];
+    Agentes res = Agentes.SinAgente;
+    bool isValido = false;
+
+    while (!isValido) {
+        for (int i = 0; i < agentes.Length; i++) {
+            if (input == agentes[i].ToString()) {
+                res = agentes[i];
+                isValido = true;
+            }
+        }
+        
+        if (input == "") {
+            res = agenteAntiguo;
+            isValido = true;
+        }
+
+        if (res == Agentes.SinAgente) {
+            WriteLine("Agente introducido no valido, introdúcelo de nuevo");
+            input = ReadLine() ?? "";
+        }
+    }
+    return res;
 }
 
 void CrearMision(Mision[]  misiones) {
@@ -116,15 +189,15 @@ void CrearMision(Mision[]  misiones) {
 }
 
 void ActualizarMision(Mision[]  misiones) {
-    Log.Debug("Actualizando el contenido de la mision");
+    Log.Debug("Actualizando el contenido de la misión");
     
     WriteLine("--------------------------");
     WriteLine("         Misiones:        ");
     ListarMisiones(misiones);    
     
-    WriteLine("Introduce el Id de la mision que actualizar: (Utiliza el formato correcto)");
+    WriteLine("Introduce el Id de la misión que actualizar: (Utiliza el formato correcto)");
     var inputId = ReadLine() ??  "0";
-    int id =  ValidarId(inputId);
+    int id =  ValidarId(inputId, misiones);
 
     for (int i = 0; i < misiones.Length; i++) {
         if (misiones[i].Id == id) {
