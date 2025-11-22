@@ -130,16 +130,19 @@ void ActualizarMision(Mision[]  misiones) {
         if (misiones[i].Id == id) {
             WriteLine($"Id: {misiones[i].Id}");
             
+            Log.Debug($"Cambiando nombre: {misiones[i].Nombre}");
             WriteLine($"Nombre antiguo: {misiones[i].Nombre} (para no cambiarlo pulse intro)");
             var inputNombre = ReadLine() ??  ""; 
             string nombreNuevo = ValidarNombre(inputNombre, misiones[i].Nombre);
             misiones[i].Nombre = nombreNuevo;
             
+            Log.Debug($"Cambiando nivel de riesgo: {misiones[i].NivelRiesgo}");
             WriteLine($"Nivel de riesgo antiguo: {misiones[i].NivelRiesgo} (para no cambiarlo pulse intro)");
             var inputNivelRiesgo = ReadLine() ??  "";
             int nivelRiesgoNuevo = ValidarNivelRiesgo(inputNivelRiesgo, misiones[i].NivelRiesgo);
             misiones[i].NivelRiesgo = nivelRiesgoNuevo;
             
+            Log.Debug($"Cambiando asignado: {misiones[i].AgenteAsignado}");
             WriteLine($"Agente asignado antiguo: {misiones[i].AgenteAsignado} (para no cambiarlo pulse intro)");
             var inputAgente = ReadLine() ??  "";
             Agentes agenteNuevo = ValidarAgente(inputAgente, misiones[i].AgenteAsignado);
