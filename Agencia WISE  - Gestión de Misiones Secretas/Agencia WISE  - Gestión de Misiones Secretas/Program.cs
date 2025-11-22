@@ -108,7 +108,16 @@ void EliminarMision(Mision[]  misiones) {
 }
 
 void ListarMisiones(Mision[]  misiones) {
+    Log.Debug("Listando misiones..");
     
+    WriteLine("--------------------------");
+    WriteLine("Id, Nombre, Riesgo, Agente");
+    WriteLine("--------------------------");
+
+    for (int i = 0; i < misiones.Length; i++) {
+        var mision = misiones[i];
+        WriteLine($"ID: {mision.Id}, Nombre: {mision.Nombre}, Riesgo{mision.NivelRiesgo},  Agente: {mision.AgenteAsignado}");
+    };
 }
 
 void ListaMisionesRiesgo(Mision[]  misiones) {
