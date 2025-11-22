@@ -29,12 +29,12 @@ ReadKey();
 //Función principal
 void Main() {
     WriteLine("🕵️ !Bienvenido a la Agencia Wise¡ 🕵️");
-    CrearDatosExistentes();
-    Menu();
+    Mision[] misiones = CrearDatosExistentes();
+    Menu(misiones);
 }
 
 //Funciones auxiliares
-void CrearDatosExistentes() {
+Mision[] CrearDatosExistentes() {
     Log.Debug("Creación de la base de datos de misiones existentes");
     
     var mision1 = new Mision {Id = 01, Nombre = "Strix", NivelRiesgo = 5, AgenteAsignado = Agentes.Loid};
@@ -42,11 +42,12 @@ void CrearDatosExistentes() {
     var mision3 = new Mision {Id = 03, Nombre = "Rescate de perro Bond y de Loid Forger durante el atentado", NivelRiesgo = 3, AgenteAsignado = Agentes.Anya};
     var mision4 = new Mision {Id = 04, Nombre = "Neutralización de banda criminal Garden", NivelRiesgo = 4, AgenteAsignado = Agentes.Yor};
     var mision5 = new Mision {Id = 05, Nombre = "Operación Stella – Conseguir estrellas en el Colegio Eden", NivelRiesgo = 1, AgenteAsignado = Agentes.Anya};
-    
-    
+
+    Mision[] misiones = {mision1, mision2, mision3, mision4, mision5};
+    return misiones;
 }
 
-void Menu() {   
+void Menu(Mision[] misiones) {   
     Log.Debug("Iniciando el menu");
     WriteLine("------------------------");
     WriteLine("          Menu          ");
@@ -71,19 +72,19 @@ void Menu() {
                 WriteLine("Saliendo del programa..👋🏻");
                 break;
             case "2":
-                CrearMision();
+                CrearMision(misiones);
                 break;
             case "3":
-                ActualizarMision();
+                ActualizarMision(misiones);
                 break;
             case "4":
-                EliminarMision();
+                EliminarMision(misiones);
                 break;
             case "5":
-                ListarMisiones();
+                ListarMisiones(misiones);
                 break;
             case "6":
-                ListaMisionesRiesgo();
+                ListaMisionesRiesgo(misiones);
                 break; 
             default: 
                 WriteLine("Opcion no valida.");
@@ -94,18 +95,21 @@ void Menu() {
     } while (opcion == "0");
 }
 
-void CrearMision() {
+void CrearMision(Mision[]  misiones) {
     
 }
 
-void ActualizarMision() {
+void ActualizarMision(Mision[]  misiones) {
     
 }
-void EliminarMision() {
+
+void EliminarMision(Mision[]  misiones) {
     
 }
-void ListarMisiones() {
+
+void ListarMisiones(Mision[]  misiones) {
     
 }
-void ListaMisionesRiesgo() {
+
+void ListaMisionesRiesgo(Mision[]  misiones) {
 }
