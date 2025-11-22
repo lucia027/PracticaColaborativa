@@ -84,7 +84,7 @@ void Menu(Mision[] misiones) {
                 ListarMisiones(misiones);
                 break;
             case "6":
-                ListaMisionesRiesgo(misiones);
+                ListarMisionesRiesgo(misiones);
                 break; 
             default: 
                 WriteLine("Opcion no valida.");
@@ -95,12 +95,57 @@ void Menu(Mision[] misiones) {
     } while (opcion == "0");
 }
 
+int ValidarId(string  id) {
+    
+}
+
+string ValidarNombre(string input, string nombreAntiguo) {
+    
+}
+
+int ValidarNivelRiesgo(string input, int nivelRiesgo) {
+    
+}
+
+Agentes ValidarAgente(string input, Agentes agente) {
+    
+}
+
 void CrearMision(Mision[]  misiones) {
     
 }
 
 void ActualizarMision(Mision[]  misiones) {
+    Log.Debug("Actualizando el contenido de la mision");
     
+    WriteLine("--------------------------");
+    WriteLine("         Misiones:        ");
+    ListarMisiones(misiones);    
+    
+    WriteLine("Introduce el Id de la mision que actualizar: (Utiliza el formato correcto)");
+    var inputId = ReadLine() ??  "0";
+    int id =  ValidarId(inputId);
+
+    for (int i = 0; i < misiones.Length; i++) {
+        if (misiones[i].Id == id) {
+            WriteLine($"Id: {misiones[i].Id}");
+            
+            WriteLine($"Nombre antiguo: {misiones[i].Nombre} (para no cambiarlo pulse intro)");
+            var inputNombre = ReadLine() ??  ""; 
+            string nombreNuevo = ValidarNombre(inputNombre, misiones[i].Nombre);
+            misiones[i].Nombre = nombreNuevo;
+            
+            WriteLine($"Nivel de riesgo antiguo: {misiones[i].NivelRiesgo} (para no cambiarlo pulse intro)");
+            var inputNivelRiesgo = ReadLine() ??  "";
+            int nivelRiesgoNuevo = ValidarNivelRiesgo(inputNivelRiesgo, misiones[i].NivelRiesgo);
+            misiones[i].NivelRiesgo = nivelRiesgoNuevo;
+            
+            WriteLine($"Agente asignado antiguo: {misiones[i].AgenteAsignado} (para no cambiarlo pulse intro)");
+            var inputAgente = ReadLine() ??  "";
+            Agentes agenteNuevo = ValidarAgente(inputAgente, misiones[i].AgenteAsignado);
+            misiones[i].AgenteAsignado = agenteNuevo;
+        }
+    }
 }
 
 void EliminarMision(Mision[]  misiones) {
@@ -120,5 +165,6 @@ void ListarMisiones(Mision[]  misiones) {
     };
 }
 
-void ListaMisionesRiesgo(Mision[]  misiones) {
+void ListarMisionesRiesgo(Mision[]  misiones) {
+    
 }
