@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Agencia WISE  - Gestión de Misiones Secretas")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Funko-Pop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca723114dd8c226d9acf2fe373b5c0d60c5c0556")]
-[assembly: System.Reflection.AssemblyProductAttribute("Agencia WISE  - Gestión de Misiones Secretas")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Agencia WISE  - Gestión de Misiones Secretas")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("Funko-Pop")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Funko-Pop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
