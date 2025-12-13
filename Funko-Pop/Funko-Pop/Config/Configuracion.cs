@@ -10,4 +10,5 @@ public static class Configuracion {
     public static readonly int PorcentajeAumento = 80;
     public static readonly int PorcentajeReducir = 40;
     public static readonly CultureInfo Locale = CultureInfo.GetCultureInfo("es-ES");
+    public static readonly int DatosDefecto = 5;
 }
