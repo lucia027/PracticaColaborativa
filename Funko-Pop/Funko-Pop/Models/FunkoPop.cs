@@ -1,6 +1,6 @@
 ﻿namespace Funko_Pop.Models;
 
-public class FunkoPop {
+public record FunkoPop {
     public int Id { get; set; } = 0;
     public required string Nombre { get; set; }
     public required decimal Precio { get; set; }
