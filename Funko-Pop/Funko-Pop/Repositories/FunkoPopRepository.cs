@@ -4,16 +4,18 @@ using Funko_Pop.Models;
 using Serilog;
 
 namespace Funko_Pop.Repositories;
+
 /// <summary>
 ///  Clase que gestiona el almacenamiento de los FunkoPops.
 /// </summary>
 public class FunkoPopRepository {
-    
+
     private readonly ILogger _log = Log.ForContext<FunkoPopRepository>();
+    private static FunkoPopRepository? _instance;
     private int _contadorId = Configuracion.DatosDefecto;
     private int _totalFunkoPops = Configuracion.DatosDefecto;
     private FunkoPop?[] _funkos = FunkoPopFactory.DatosBase();
-    
+
     private int NewId() {
         Log.Debug("Generando nuevo id..");
         return _contadorId++;
@@ -24,14 +26,19 @@ public class FunkoPopRepository {
     /// </summary>
     private void IniciarDatosBase() {
         var datosBase = FunkoPopFactory.DatosBase();
-        foreach (var funko in datosBase) {
+        foreach (var funko in datosBase)
+        {
             Save(funko!);
         }
     }
 
+    public static FunkoPopRepository GetInstance() {
+        return _instance ??= new FunkoPopRepository();
+    }
+
     private void Aumentar() {
     }
-    
+
     private void Disminuir() {
     }
 
@@ -42,13 +49,16 @@ public class FunkoPopRepository {
     private FunkoPop[] AlmacenamientoCompacto() {
         var vectorCompacto = new FunkoPop[_totalFunkoPops];
         var indexVector = 0;
-        
-        foreach (var funko in _funkos) {
-            if (funko != null) {
+
+        foreach (var funko in _funkos)
+        {
+            if (funko != null)
+            {
                 vectorCompacto[indexVector] = funko!;
                 indexVector++;
             }
         }
+
         return vectorCompacto;
     }
 
@@ -60,12 +70,15 @@ public class FunkoPopRepository {
     public FunkoPop Save(FunkoPop funko) {
         var newFunko = funko with { Id = NewId() };
         Aumentar();
-        for (int i = 0; i < _funkos.Length; i++) {
-            if (_funkos[i] != null) {
+        for (int i = 0; i < _funkos.Length; i++)
+        {
+            if (_funkos[i] != null)
+            {
                 _funkos[i] = newFunko;
                 _totalFunkoPops++;
             }
         }
+
         return newFunko;
     }
 
@@ -75,12 +88,15 @@ public class FunkoPopRepository {
     /// <param name="funko">Objeto a actualizar.</param>
     /// <returns>Devuelve el objeto en caso de encontrarlo y nulo en caso contrario.</returns>
     public FunkoPop? Update(FunkoPop funko) {
-        for (int i = 0; i < _funkos.Length; i++) {
-            if (funko.Id == _funkos[i]?.Id) {
+        for (int i = 0; i < _funkos.Length; i++)
+        {
+            if (funko.Id == _funkos[i]?.Id)
+            {
                 _funkos[i] = funko;
                 return funko;
             }
         }
+
         return null;
     }
 
@@ -90,14 +106,17 @@ public class FunkoPopRepository {
     /// <param name="id"> Id del FunkoPop a eliminar.</param>
     /// <returns>Devuelve la celda del objeto a nula. O nulo directamente.</returns>
     public FunkoPop? Delete(int id) {
-        for(int i = 0; i < _funkos.Length; i++) {
-            if (_funkos[i]?.Id == id) {
+        for (int i = 0; i < _funkos.Length; i++)
+        {
+            if (_funkos[i]?.Id == id)
+            {
                 _funkos[i] = null;
                 Disminuir();
                 _totalFunkoPops--;
                 return _funkos[i];
             }
         }
+
         return null;
     }
 
@@ -107,11 +126,14 @@ public class FunkoPopRepository {
     /// <param name="id"> Id del objeto a buscar.</param>
     /// <returns>Devuelve el objeto en caso de ser encontrado y nulo en caso contrario.</returns>
     public FunkoPop? GetById(int id) {
-        foreach (var funko in _funkos) {
-            if (funko?.Id == id) {
+        foreach (var funko in _funkos)
+        {
+            if (funko?.Id == id)
+            {
                 return funko;
             }
         }
+
         return null;
     }
 
