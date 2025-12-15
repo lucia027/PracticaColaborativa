@@ -11,6 +11,7 @@ public class FunkoPopRepository {
     
     private readonly ILogger _log = Log.ForContext<FunkoPopRepository>();
     private int _contadorId = Configuracion.DatosDefecto;
+    private int _totalFunkoPops = Configuracion.DatosDefecto;
     private FunkoPop?[] _funkos = FunkoPopFactory.DatosBase();
     
     private int NewId() {
@@ -34,21 +35,35 @@ public class FunkoPopRepository {
     private void Disminuir() {
     }
 
+    /// <summary>
+    ///  Limpia el vector de FunkoPops de posibles nulos.
+    /// </summary>
+    /// <returns> Array de FunkoPops</returns>
     private FunkoPop[] AlmacenamientoCompacto() {
-        return _funkos!;  // Para que no de error por el return antes de desarrollarla.
+        var vectorCompacto = new FunkoPop[_totalFunkoPops];
+        var indexVector = 0;
+        
+        foreach (var funko in _funkos) {
+            if (funko != null) {
+                vectorCompacto[indexVector] = funko!;
+                indexVector++;
+            }
+        }
+        return vectorCompacto;
     }
 
     /// <summary>
     ///  Almacena un nuevo FunkoPop.
     /// </summary>
-    /// <param name="funko">Obejto para almacenar</param>
+    /// <param name="funko">Objeto para almacenar</param>
     /// <returns>Devuelve el objeto</returns>
-    private FunkoPop Save(FunkoPop funko) {
+    public FunkoPop Save(FunkoPop funko) {
         var newFunko = funko with { Id = NewId() };
         Aumentar();
         for (int i = 0; i < _funkos.Length; i++) {
             if (_funkos[i] != null) {
                 _funkos[i] = newFunko;
+                _totalFunkoPops++;
             }
         }
         return newFunko;
@@ -58,8 +73,8 @@ public class FunkoPopRepository {
     /// Actualiza un objeto FunkoPop ya existente.
     /// </summary>
     /// <param name="funko">Objeto a actualizar.</param>
-    /// <returns>Devuelve el objeto en caso de encontralo y nulo en caso contrario.</returns>
-    private FunkoPop? Update(FunkoPop funko) {
+    /// <returns>Devuelve el objeto en caso de encontrarlo y nulo en caso contrario.</returns>
+    public FunkoPop? Update(FunkoPop funko) {
         for (int i = 0; i < _funkos.Length; i++) {
             if (funko.Id == _funkos[i]?.Id) {
                 _funkos[i] = funko;
@@ -74,11 +89,12 @@ public class FunkoPopRepository {
     /// </summary>
     /// <param name="id"> Id del FunkoPop a eliminar.</param>
     /// <returns>Devuelve la celda del objeto a nula. O nulo directamente.</returns>
-    private FunkoPop? Delete(int id) {
+    public FunkoPop? Delete(int id) {
         for(int i = 0; i < _funkos.Length; i++) {
             if (_funkos[i]?.Id == id) {
                 _funkos[i] = null;
                 Disminuir();
+                _totalFunkoPops--;
                 return _funkos[i];
             }
         }
@@ -90,12 +106,20 @@ public class FunkoPopRepository {
     /// </summary>
     /// <param name="id"> Id del objeto a buscar.</param>
     /// <returns>Devuelve el objeto en caso de ser encontrado y nulo en caso contrario.</returns>
-    private FunkoPop? GetById(int id) {
+    public FunkoPop? GetById(int id) {
         foreach (var funko in _funkos) {
             if (funko?.Id == id) {
                 return funko;
             }
         }
         return null;
+    }
+
+    /// <summary>
+    ///  Devuelve el almacenamiento de todos los FunkoPops.
+    /// </summary>
+    /// <returns>Array de FunkoPops</returns>
+    public FunkoPop[] GetAll() {
+        return AlmacenamientoCompacto();
     }
 }
