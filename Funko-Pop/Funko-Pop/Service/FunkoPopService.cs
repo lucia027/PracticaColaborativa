@@ -6,13 +6,17 @@ namespace Funko_Pop.Service;
 
 public class FunkoPopService(FunkoPopRepository repository, FunkoPopValidator validator) {
 
+    public void DatosBaseFunkoPop() {
+        repository.IniciarDatosBase();
+    }
+
     /// <summary>
     ///  Ordena el vector de FunkoPops en base al precio tanto acendente como descendete.
     /// </summary>
     /// <param name="tipoOrden">Tipo de orden(ascendete o descendente).</param>
     /// <param name="funkos">Vector donde almacenamor los FunkoPops</param>
     /// <returns>Vector ordenado.</returns>
-    public FunkoPop[] OrdenarFunkoPop(string tipoOrden, FunkoPop[] funkos) {
+    private FunkoPop[] OrdenarFunkoPop(string tipoOrden, FunkoPop[] funkos) {
         if (tipoOrden == "ASC") {
             for (int i = 0; i < funkos.Length; i++) {
                 for (int j = 0; j < funkos.Length; j++) {
@@ -51,7 +55,7 @@ public class FunkoPopService(FunkoPopRepository repository, FunkoPopValidator va
     /// </summary>
     /// <param name="id"> Id del objeto a buscar.</param>
     /// <returns>Objeto con el id especificado.</returns>
-    public FunkoPop? GetById(int id) {
+    public FunkoPop GetById(int id) {
         return repository.GetById(id) ?? throw new KeyNotFoundException($"El FunkoPop con id={id} no se puede econtrar.");
     }
 
@@ -60,7 +64,7 @@ public class FunkoPopService(FunkoPopRepository repository, FunkoPopValidator va
     /// </summary>
     /// <param name="id">id del objeto a eliminar.</param>
     /// <returns>Devuelve el objeto eliminado.</returns>
-    public FunkoPop? DeleteFunkoPop(int id) {
+    public FunkoPop DeleteFunkoPop(int id) {
         return repository.Delete(id) ?? throw new KeyNotFoundException($"El FunkoPop con id={id} no se puede econtrar.");
     }
 

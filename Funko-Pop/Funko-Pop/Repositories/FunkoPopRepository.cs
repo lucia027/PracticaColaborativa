@@ -24,10 +24,9 @@ public class FunkoPopRepository {
     /// <summary>
     ///  Guarda los datos base en el almacenamiento.
     /// </summary>
-    private void IniciarDatosBase() {
+    public void IniciarDatosBase() {
         var datosBase = FunkoPopFactory.DatosBase();
-        foreach (var funko in datosBase)
-        {
+        foreach (var funko in datosBase) {
             Save(funko!);
         }
     }
