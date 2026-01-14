@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Funko-Pop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbc9e29b7d4d9341e6bf2e89e08fd45d135b9628")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d07fc4aace066916318750c1fca7b780747615d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Funko-Pop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Funko-Pop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
