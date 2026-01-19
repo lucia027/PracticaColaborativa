@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Implementacion Diagrama EquipoFutbol")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+410c0b3e839c7c3138d27fa269e2820f73dcb1dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0432d2a9e99b43cfb5e3606681994076ab9e57b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Implementacion Diagrama EquipoFutbol")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Implementacion Diagrama EquipoFutbol")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
