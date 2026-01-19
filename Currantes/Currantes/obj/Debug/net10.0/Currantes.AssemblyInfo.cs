@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Currantes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0432d2a9e99b43cfb5e3606681994076ab9e57b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4f79bf80a25a491595c41ca816cc6cc1421edca")]
 [assembly: System.Reflection.AssemblyProductAttribute("Currantes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Currantes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
