@@ -1,50 +1,50 @@
-# 🧑‍💼 Sistema de Gestión de Trabajadores
+# 🧑‍💼 Ejercicio 8: Currantes y Cálculo de Salario
 
-Este proyecto consiste en diseñar un sistema orientado a objetos para representar distintos tipos de trabajadores dentro de una empresa. El objetivo es practicar herencia, reutilización de código y organización de clases.
-
----
-
-## 🏗️ Descripción del Enunciado
-
-En nuestra empresa existen **tres tipos de trabajadores**:
-
-- **Fijos**
-- **PorHoras**
-- **AComision**
-
-Dado que todos comparten ciertos atributos, se propone crear una **clase base** llamada `Trabajador`, que incluya los atributos comunes:
-
-- `nombre`
-- `apellidos`
-
-A partir de esta clase general, se deben crear las clases derivadas correspondientes a cada tipo de trabajador, cada una con sus atributos específicos:
+Este ejercicio amplía el sistema de trabajadores incorporando un método obligatorio para todos los tipos de currantes, así como un nuevo tipo de empleado. El objetivo es profundizar en el diseño orientado a objetos, la abstracción y la organización de clases.
 
 ---
 
-## 🧩 Clases Derivadas y Atributos
+## 🧩 Requisito Principal: `calculaSalario()`
 
-### 🔸 Fijos
-Atributos:
-- `nombre`
-- `apellidos`
-- `sueldo`
+Todos los currantes del sistema deberán implementar un método obligatorio:
 
-### 🔸 PorHoras
-Atributos:
-- `nombre`
-- `apellidos`
-- `horas`
-- `sueldoHora`
+- **`calculaSalario()`**  
+  Método que cada tipo de currante deberá definir según sus propias reglas.
 
-### 🔸 AComision
-Atributos:
-- `nombre`
-- `apellidos`
-- `ventas`
-- `porcentaje`
+---
+
+## 🆕 Nuevo Tipo de Currante: `Becario`
+
+Se añade un nuevo tipo de currante con un comportamiento específico:
+
+- El **Becario** debe implementar el método `calculaSalario()`.
+- Su salario será siempre **100**.
+
+---
+
+## 🧠 Análisis de Diseño
+
+El ejercicio debe contemplarse bajo dos posibles enfoques:
+
+### 🔹 1. Suponiendo que la clase base **sí** debe poder instanciarse
+En este caso, la clase base representaría un currante genérico y debería incluir una implementación válida o por defecto de `calculaSalario()`.
+
+### 🔹 2. Suponiendo que la clase base **no** debe poder instanciarse
+Aquí la clase base actuaría como una abstracción pura, obligando a todas las clases derivadas a implementar su propia versión de `calculaSalario()`.
+
+---
+
+## 🔗 Atributos Comunes
+
+Independientemente del diseño elegido, existe un atributo común entre algunos tipos de currantes:
+
+- Los currantes **PorHoras** y **Becarios** comparten un valor común:  
+  **`TIEMPO`**
+
+Este atributo deberá formar parte del diseño final.
 
 ---
 
 ## 🎯 Objetivo
 
-Crear todas las clases necesarias aplicando correctamente herencia y diferenciando los atributos comunes de los específicos.
+Diseñar la jerarquía de clases, definir el método obligatorio `calculaSalario()` y estructurar correctamente los atributos comunes y específicos, considerando ambos enfoques de diseño para la clase base.
