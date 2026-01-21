@@ -1,5 +1,18 @@
 ﻿namespace ListasPilasColas.Models;
 
-public interface ILista {
-    
+public interface ILista<T> {
+    void AgregarInicio(T valor);
+    void AgregarEnMedio(T valor);
+    void AgregarFinal(T valor);
+    void EliminarInicio();
+    void EliminarEnMedio(int indice);
+    void EliminarFinal();
+    T ObtenerPrimero();
+    T ObtenerEnMedio(int indice);
+    T ObtenerUltimo();
+    bool Existe(T valor);
+    int Contar();
+    bool EstaVacia();
+    void Limpiar();
+    void Mostrar();
 }
