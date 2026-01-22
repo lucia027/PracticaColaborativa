@@ -6,7 +6,6 @@ public class Lista<T> : ILista<T> {
     
     public void AgregarInicio(T valor) {
         var nodoNuevo = new Nodo<T>(valor);
-
         if (_cabeza == null) {
             _cabeza = nodoNuevo;
         } else {
@@ -17,65 +16,158 @@ public class Lista<T> : ILista<T> {
         _contador++;
     }
 
-    public void AgregarEnMedio(T valor) {
-        _contador++;
+    public void AgregarEnMedio(T valor, int indice) {
+        var nodoNuevo = new Nodo<T>(valor);
+        
+        if (_cabeza == null) {
+            AgregarInicio(valor);
+        }
 
-        throw new NotImplementedException();
+        if (indice < 0 || indice > _contador) {
+            throw new ArgumentOutOfRangeException(nameof(indice), "Indice fuera de rango");
+        }
+        else {
+            var actual = _cabeza;
+            for (int i = 0; i < indice; i++) {
+                actual = actual?.Siguiente;
+            }
+
+            nodoNuevo.Siguiente = actual?.Siguiente;
+            actual?.Siguiente = nodoNuevo;
+        }
+
+        _contador++;
     }
 
     public void AgregarFinal(T valor) {
+        var nodoNuevo = new Nodo<T>(valor);
+        if (_cabeza == null) {
+            _cabeza = nodoNuevo;
+        } else {
+            var actual = _cabeza;
+            while (actual.Siguiente != null) {
+                actual = actual.Siguiente;
+            }
+            actual.Siguiente = nodoNuevo;
+        }
         _contador++;
-
-        throw new NotImplementedException();
     }
 
     public void EliminarInicio() {
-        _contador--;
+        if (_cabeza == null) {
+            throw new InvalidOperationException("No se puede eliminar la cabeza si es nula.");
+        }
+        
+        // Forma de hacerlo 1
+        // var nodoNuevo = _cabeza.Siguiente;
+        // _cabeza = nodoNuevo;
 
-        throw new NotImplementedException();
+        _cabeza = _cabeza?.Siguiente;
+        _contador--;
     }
 
     public void EliminarEnMedio(int indice) {
-        _contador--;
+        if (_cabeza == null) {
+            throw new InvalidOperationException("No se puede eliminar si la cabeza es nula.");
+        }
 
-        throw new NotImplementedException();
+        if (indice < 0 || indice > _contador) {
+            throw new ArgumentOutOfRangeException(nameof(indice), "EL indice se sale del rango");
+        } else {
+            var actual = _cabeza; 
+            for (int i = 0; i < _contador; i++) {
+                actual = actual?.Siguiente;
+            }
+
+            actual?.Siguiente = actual?.Siguiente?.Siguiente;
+        }
+        _contador--;
     }
 
     public void EliminarFinal() {
-        _contador--;
+        if (_cabeza == null) {
+            throw new InvalidOperationException("No se puede eliminar si la cabeza es nula.");
+        } else {
+            var actual = _cabeza;
+            while (actual.Siguiente != null) {
+                actual = actual.Siguiente;
+            }
 
-        throw new NotImplementedException();
+            actual = null;
+        }
+        _contador--;
     }
 
     public T ObtenerPrimero() {
-        throw new NotImplementedException();
+        if (_cabeza == null) {
+            throw new InvalidOperationException("LA opercaion no se puede realizar si la cabeza es nula");
+        }
+        return _cabeza.Valor;
     }
 
     public T ObtenerEnMedio(int indice) {
-        throw new NotImplementedException();
+        if (_cabeza == null) {
+            throw new InvalidOperationException("LA opercaion no se puede realizar si la cabeza es nula");
+        }
+        if (indice < 0 || indice > _contador) {
+            throw new ArgumentOutOfRangeException(nameof(indice), "EL indice se sale del rango");
+        } else {
+            var actual = _cabeza; 
+            for (int i = 0; i < indice; i++) {
+                actual = actual?.Siguiente;
+            }
+            return actual!.Valor;
+        }
     }
 
     public T ObtenerUltimo() {
-        throw new NotImplementedException();
+        if (_cabeza == null) {
+            throw new InvalidOperationException("LA opercaion no se puede realizar si la cabeza es nula");
+        } else {
+            var actual = _cabeza;
+            while (actual.Siguiente != null) {
+                actual = actual.Siguiente;
+            }
+            return actual!.Valor;
+        }
     }
 
     public bool Existe(T valor) {
-        throw new NotImplementedException();
+        var actual = _cabeza;
+
+        while (actual != null) {
+            if (actual.Valor!.Equals(valor))
+                return true;
+            actual = actual.Siguiente;
+        }
+        return false;    
     }
 
     public int Contar() {
-        throw new NotImplementedException();
+        return _contador;
     }
 
     public bool EstaVacia() {
-        throw new NotImplementedException();
+        if (_cabeza == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void Limpiar() {
-        throw new NotImplementedException();
+        _cabeza = null;
     }
 
     public void Mostrar() {
-        throw new NotImplementedException();
+        if (_cabeza == null) {
+            Console.WriteLine("No hay elementos para mostrar.");
+        } else {
+            var actual = _cabeza;
+            for (int i = 0; i < _contador; i++) {
+                Console.WriteLine($"{actual!.Valor}");
+                actual = actual?.Siguiente;
+            }
+        }
     }
 }
