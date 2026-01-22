@@ -2,7 +2,7 @@
 
 public interface ILista<T> {
     void AgregarInicio(T valor);
-    void AgregarEnMedio(T valor);
+    void AgregarEnMedio(T valor, int indice);
     void AgregarFinal(T valor);
     void EliminarInicio();
     void EliminarEnMedio(int indice);
