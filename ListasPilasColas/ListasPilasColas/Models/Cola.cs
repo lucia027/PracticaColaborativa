@@ -1,5 +1,5 @@
 ﻿namespace ListasPilasColas.Models;
 
-public class Cola {
+public class Cola : ICola {
     
 }

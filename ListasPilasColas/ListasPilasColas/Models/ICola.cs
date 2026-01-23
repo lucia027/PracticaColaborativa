@@ -1,5 +1,5 @@
 ﻿namespace ListasPilasColas.Models;
 
-public class ICola {
+public interface ICola {
     
 }

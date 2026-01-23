@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ListasPilasColas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c83a8d35713ea04d58284e6d2ee82370966371a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fef3f40273115ad1940898c9fd05594c63f1ab41")]
 [assembly: System.Reflection.AssemblyProductAttribute("ListasPilasColas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ListasPilasColas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
