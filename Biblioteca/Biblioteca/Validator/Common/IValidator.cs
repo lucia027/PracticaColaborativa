@@ -1,5 +1,5 @@
 ﻿namespace Biblioteca.Validator;
 
-public interface IValidator {
-    bool validate();
+public interface IValidator<T> {
+    T Validate(T item);
 }
