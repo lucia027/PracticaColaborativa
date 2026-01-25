@@ -1,4 +1,4 @@
-﻿namespace ListasPilasColas.Models;
+﻿namespace Biblioteca.List;
 
 public class Lista<T> : ILista<T> {
     private Nodo<T>? _cabeza;
@@ -168,6 +168,17 @@ public class Lista<T> : ILista<T> {
                 Console.WriteLine($"{actual!.Valor}");
                 actual = actual?.Siguiente;
             }
+        }
+    }
+    
+    public IEnumerator<T> GetEnumerator() {
+        // Recorremos la lista devolviendo los valores
+        var actual = _cabeza;
+        while (actual != null) {
+            // Yield devuelve un valor y pausa la ejecución, para que el ciclo foreach pueda continuar
+            yield return actual.Valor;
+            // Avanzamos al siguiente nodo
+            actual = actual.Siguiente;
         }
     }
 }

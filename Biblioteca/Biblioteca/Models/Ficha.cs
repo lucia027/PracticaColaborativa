@@ -3,7 +3,7 @@
 public abstract class Ficha {
     protected static int Contador;
     
-    public required int Id { get; init; }
+    public int Id { get; init; }
     public string Nombre { get; init; }
     public int NumeroUsos { get; set; }
 

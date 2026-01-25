@@ -1,4 +1,4 @@
-﻿namespace ListasPilasColas.Models;
+﻿namespace Biblioteca.List;
 
 public interface ILista<T> {
     void AgregarInicio(T valor);
@@ -15,4 +15,5 @@ public interface ILista<T> {
     bool EstaVacia();
     void Limpiar();
     void Mostrar();
+    IEnumerator<T> GetEnumerator();
 }

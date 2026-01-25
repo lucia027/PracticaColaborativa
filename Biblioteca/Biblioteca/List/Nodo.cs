@@ -1,4 +1,4 @@
-﻿namespace ListasPilasColas.Models;
+﻿namespace Biblioteca.List;
 
 public class Nodo<T> (T valor) {
     public T Valor { get; set; }

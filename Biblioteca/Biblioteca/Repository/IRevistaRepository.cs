@@ -3,4 +3,4 @@ using Biblioteca.Repository.Common;
 
 namespace Biblioteca.Repository;
 
-public interface ILibroRepository : ICrudRepository<Libro, int> { }
+public interface IRevistaRepository : ICrudRepository<Revista, int> { }

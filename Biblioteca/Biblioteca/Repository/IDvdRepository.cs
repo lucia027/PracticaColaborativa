@@ -1,5 +1,6 @@
-﻿namespace Biblioteca.Repository;
+﻿using Biblioteca.Models;
+using Biblioteca.Repository.Common;
 
-public class IDvdRepository {
-    
-}
+namespace Biblioteca.Repository;
+
+public interface IDvdRepository : ICrudRepository<Dvd, int> { }

@@ -2,4 +2,4 @@
 
 namespace Biblioteca.Validator;
 
-public interface IRevistaValidator : IValidator<Revista> { }
+public interface ILibroValidator : IValidator<Libro> { }
