@@ -12,7 +12,7 @@ public class RevistaValidator : IRevistaValidator {
             throw new ArgumentException("El número de usos no puede ser negativo.");
         }
 
-        if (revista.Categoria != CategoriaRevista.Cotilleo || revista.Categoria != CategoriaRevista.Deportes) {
+        if (revista.Categoria != CategoriaRevista.Cotilleo && revista.Categoria != CategoriaRevista.Deportes) {
             throw new ArgumentException("La categoria de la revista solo pude ser de Cotilleo o de Deportes.");
         }
 

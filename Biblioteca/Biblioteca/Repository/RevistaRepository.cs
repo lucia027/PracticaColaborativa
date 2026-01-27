@@ -4,6 +4,7 @@ using Biblioteca.Models;
 namespace Biblioteca.Repository;
 
 public class RevistaRepository : IRevistaRepository {
+    private static RevistaRepository? _instance;
     private readonly ILista<Revista> _lista = new Lista<Revista>();
     
     public Revista? Create(Revista revista) {
@@ -59,5 +60,9 @@ public class RevistaRepository : IRevistaRepository {
         }
 
         return -1;
+    }
+    
+    public static RevistaRepository GetInstance() {
+        return _instance ??= new RevistaRepository();
     }
 }

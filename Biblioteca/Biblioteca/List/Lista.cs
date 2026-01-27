@@ -102,7 +102,7 @@ public class Lista<T> : ILista<T> {
         if (_cabeza == null) {
             throw new InvalidOperationException("LA opercaion no se puede realizar si la cabeza es nula");
         }
-        return _cabeza.Valor;
+        return _cabeza.Valor!;
     }
 
     public T ObtenerEnMedio(int indice) {
@@ -116,7 +116,7 @@ public class Lista<T> : ILista<T> {
             for (int i = 0; i < indice; i++) {
                 actual = actual?.Siguiente;
             }
-            return actual!.Valor;
+            return actual!.Valor!;
         }
     }
 
@@ -128,7 +128,7 @@ public class Lista<T> : ILista<T> {
             while (actual.Siguiente != null) {
                 actual = actual.Siguiente;
             }
-            return actual!.Valor;
+            return actual!.Valor!;
         }
     }
 
@@ -176,7 +176,7 @@ public class Lista<T> : ILista<T> {
         var actual = _cabeza;
         while (actual != null) {
             // Yield devuelve un valor y pausa la ejecución, para que el ciclo foreach pueda continuar
-            yield return actual.Valor;
+            yield return actual.Valor!;
             // Avanzamos al siguiente nodo
             actual = actual.Siguiente;
         }

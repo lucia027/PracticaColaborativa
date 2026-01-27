@@ -1,0 +1,15 @@
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\bin\Debug\net10.0\Biblioteca.exe
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\bin\Debug\net10.0\Biblioteca.deps.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\bin\Debug\net10.0\Biblioteca.runtimeconfig.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\bin\Debug\net10.0\Biblioteca.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\bin\Debug\net10.0\Biblioteca.pdb
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.AssemblyInfoInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.AssemblyInfo.cs
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.sourcelink.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\refint\Biblioteca.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.pdb
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\Biblioteca.genruntimeconfig.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Biblioteca\Biblioteca\obj\Debug\net10.0\ref\Biblioteca.dll

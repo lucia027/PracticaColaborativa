@@ -4,6 +4,7 @@ using Biblioteca.Models;
 namespace Biblioteca.Repository;
 
 public class LibroRepository : ILibroRepository {
+    private static LibroRepository? _instance;
     private readonly ILista<Libro> _lista = new Lista<Libro>();
     
     public Libro? Create(Libro libro) {
@@ -60,5 +61,9 @@ public class LibroRepository : ILibroRepository {
         }
 
         return -1;
+    }
+    
+    public static LibroRepository GetInstance() {
+        return _instance ??= new LibroRepository();
     }
 }

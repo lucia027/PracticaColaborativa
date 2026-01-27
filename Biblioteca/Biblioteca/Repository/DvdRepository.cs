@@ -4,6 +4,7 @@ using Biblioteca.Models;
 namespace Biblioteca.Repository;
 
 public class DvdRepository : IDvdRepository {
+    private static DvdRepository? _instance;
     private readonly ILista<Dvd> _lista = new Lista<Dvd>();
     
     public Dvd? Create(Dvd dvd) {
@@ -59,5 +60,9 @@ public class DvdRepository : IDvdRepository {
         }
 
         return -1;
+    }
+
+    public static DvdRepository GetInstance() {
+        return _instance ??= new DvdRepository();
     }
 }
