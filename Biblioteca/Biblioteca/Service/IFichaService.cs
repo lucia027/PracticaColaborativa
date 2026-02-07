@@ -23,5 +23,4 @@ public interface IFichaService {
     Libro DeleteLibro(int id);
     Libro GetByIdLibro(int id);
     ILista<Libro> GetAllLibro();
-
 }

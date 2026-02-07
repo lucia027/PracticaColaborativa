@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Practica Examen POO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50397563e4b881227c0c8a08113b558e8d31453c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fa5038e257d7b003fcd02ecf1058386c6363378")]
 [assembly: System.Reflection.AssemblyProductAttribute("Practica Examen POO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Practica Examen POO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

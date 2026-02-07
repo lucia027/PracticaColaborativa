@@ -5,15 +5,6 @@ La empresa de logística **Dawazon** necesita renovar su sistema de gestión de 
 
 ---
 
-## ⚠️ Restricciones Técnicas (MUY IMPORTANTE)
-Para que el ejercicio sea válido, debes cumplir estas reglas de oro:
-1.  **NO** utilizar colecciones genéricas (`List<T>`, `Dictionary`, etc.). Debes usar **Arrays estáticos (`[]`)**.
-2.  **NO** utilizar LINQ ni Expresiones Lambda.
-3.  **NO** utilizar Ficheros ni Bases de Datos.
-4.  El código debe controlar los espacios vacíos (`null`) dentro del array manualmente.
-
----
-
 ## 🛠️ Requerimientos del Sistema
 
 ### 1. Modelado de Datos (Clases y Relaciones)

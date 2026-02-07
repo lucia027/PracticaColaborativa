@@ -107,7 +107,7 @@ public class Lista<T> : ILista<T> {
 
     public T ObtenerEnMedio(int indice) {
         if (_cabeza == null) {
-            throw new InvalidOperationException("LA opercaion no se puede realizar si la cabeza es nula");
+            throw new InvalidOperationException("La operación no se puede realizar si la cabeza es nula");
         }
         if (indice < 0 || indice > _contador) {
             throw new ArgumentOutOfRangeException(nameof(indice), "EL indice se sale del rango");
