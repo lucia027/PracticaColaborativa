@@ -1,0 +1,15 @@
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\bin\Debug\net10.0\Practica Examen POO.exe
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\bin\Debug\net10.0\Practica Examen POO.deps.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\bin\Debug\net10.0\Practica Examen POO.runtimeconfig.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\bin\Debug\net10.0\Practica Examen POO.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\bin\Debug\net10.0\Practica Examen POO.pdb
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.AssemblyInfoInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.AssemblyInfo.cs
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.csproj.CoreCompileInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.sourcelink.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\refint\Practica Examen POO.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.pdb
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\Practica Examen POO.genruntimeconfig.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Practica Examen POO\Practica Examen POO\obj\Debug\net10.0\ref\Practica Examen POO.dll

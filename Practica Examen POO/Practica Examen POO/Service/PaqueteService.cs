@@ -63,18 +63,20 @@ public class PaqueteService(
 
     void GenerarInforme(Paquete?[] lista) {
         foreach (var paquete in lista) {
-            Console.WriteLine(paquete.ToString());
+            if (paquete != null) {
+                Console.WriteLine(paquete.ToString());
+            }
         }
     }
 
     Paquete? RevisarValidacion(Paquete paquete) {
         try {
-            if (paquete is PaqueteNormal) {
-                var paqueteNuevoN = paqueteNormalValidator.Validate(paquete as PaqueteNormal);
+            if (paquete is PaqueteNormal normal) {
+                var paqueteNuevoN = paqueteNormalValidator.Validate(normal);
                 return paqueteNuevoN;
             }
-            if (paquete is PaqueteUrgente) {
-                var paqueteNuevoU = paqueteUrgenteValidator.Validate(paquete as PaqueteUrgente);
+            if (paquete is PaqueteUrgente urgente) {
+                var paqueteNuevoU = paqueteUrgenteValidator.Validate(urgente);
                 return paqueteNuevoU;
             }
         } catch (Exception e) {
