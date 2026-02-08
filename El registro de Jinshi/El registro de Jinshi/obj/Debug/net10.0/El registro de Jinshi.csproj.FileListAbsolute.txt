@@ -1,0 +1,5 @@
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\El registro de Jinshi\El registro de Jinshi\obj\Debug\net10.0\El registro de Jinshi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\El registro de Jinshi\El registro de Jinshi\obj\Debug\net10.0\El registro de Jinshi.AssemblyInfoInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\El registro de Jinshi\El registro de Jinshi\obj\Debug\net10.0\El registro de Jinshi.AssemblyInfo.cs
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\El registro de Jinshi\El registro de Jinshi\obj\Debug\net10.0\El registro de Jinshi.csproj.CoreCompileInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\El registro de Jinshi\El registro de Jinshi\obj\Debug\net10.0\El registro de Jinshi.sourcelink.json

@@ -1,10 +1,10 @@
 ﻿namespace El_registro_de_Jinshi.Models;
 
 public abstract class Personaje {
-    protected int Id { get; init; }
-    protected string Nombre { get; init; } = string.Empty;
-    protected int Edad { get; set; }
-    protected string Rol { get; set; } = string.Empty;
+    public int Id { get; init; }
+    public string Nombre { get; init; }
+    public int Edad { get; set; }
+    public string Rol { get; set; }
 
     public Personaje(string nombre, int edad, string rol) {
         Id = GetId.GetNewId();
