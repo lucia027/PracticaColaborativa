@@ -14,7 +14,7 @@ Implementar un sistema que permita:
 * **Arquitectura en Capas:**
     * `Modelos`
     * `Validador`
-    * `Repositorio` (basado en listas en memoria)
+    * `Repositorio` (basado en arrays en memoria)
     * `Servicio`
 
 ---

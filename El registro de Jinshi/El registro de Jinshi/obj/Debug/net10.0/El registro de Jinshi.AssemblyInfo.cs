@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Practica Examen POO")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("El registro de Jinshi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a855f81ae7eabbb5914b5664c1398b540bf906a")]
-[assembly: System.Reflection.AssemblyProductAttribute("Practica Examen POO")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Practica Examen POO")]
+[assembly: System.Reflection.AssemblyProductAttribute("El registro de Jinshi")]
+[assembly: System.Reflection.AssemblyTitleAttribute("El registro de Jinshi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
