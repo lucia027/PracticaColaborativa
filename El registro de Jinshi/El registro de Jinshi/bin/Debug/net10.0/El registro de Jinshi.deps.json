@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "El registro de Jinshi/1.0.0": {
+        "runtime": {
+          "El registro de Jinshi.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "El registro de Jinshi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

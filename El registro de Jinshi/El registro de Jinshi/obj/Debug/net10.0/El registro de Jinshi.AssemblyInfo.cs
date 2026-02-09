@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("El registro de Jinshi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28db8b2cb616f14812d5a1c41df4a13302d02876")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70f472880e4b47c21858b2a943604c70c770a5bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("El registro de Jinshi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("El registro de Jinshi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
