@@ -17,21 +17,34 @@ var alumnos = new List<Alumno> {
 
 
 // Listado de todos los alumnos de "DAW".
-
+var alumnosDaw = alumnos
+    .Where(a => a.Curso == "DAW")
+    .Select(a => a.Nombre)
+    .ToList();
 
 // Alumnos con nota superior o igual a 8.5.
-
+var alumnosNotaSuperior = alumnos
+    .Where(a => a.Nota >= 8.5)
+    .Select(a => a.Nombre)
+    .ToList();
 
 // Nota media de los alumnos de "DAW".
-
+var alumnosMediaNota = alumnos
+    .Average(a => a.Nota);
 
 // Alumnos cuyo nombre empieza por 'A'.
-
+var alumnosNombreA = alumnos
+    .Where(a => a.Nombre.Contains("a", StringComparison.CurrentCultureIgnoreCase))
+    .Select(a => a.Nombre)
+    .ToList();
 
 // Agrupación de alumnos por Curso (Grupo).
-
+var alumnosAgrupadosCurso = alumnos
+    .GroupBy(a => a.Curso)
+    .ToDictionary(a => a.Key);
 
 // Alumno/s con la nota máxima (sin usar variables intermedias).
-
+var alumnosNotaMaxima = alumnos
+    .
 
 // Listado ordenado por nota de manera descendente.
