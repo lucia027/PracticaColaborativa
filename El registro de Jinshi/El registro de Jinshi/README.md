@@ -65,7 +65,6 @@ El servicio coordina la lógica de negocio. Funciones mínimas requeridas:
 * Listar personajes por tipo (aplicando polimorfismo).
 * Ejecutar `realizarTarea()` de forma masiva o individual.
 * Buscar personajes por criterios específicos (rango, nivel o especialidad).
-* Listar tareas asignadas a un personaje concreto.
 
 ---
 

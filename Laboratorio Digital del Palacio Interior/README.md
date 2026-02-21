@@ -1,7 +1,7 @@
 
 --------------------------------------------------------------------------------
-## 👋🏻 1. Introducción 
-El Palacio Imperial se enfrenta a un caos administrativo en su botica. Jinshi, el gestor jefe, ha detectado múltiples errores en la identificación de sustancias y una falta crítica de orden en la atención de emergencias médicas. Se requiere el desarrollo de un sistema de software robusto para la boticaria **Maomao** que permita:
+## 🌸 1. Introducción 
+El Palacio Imperial se enfrenta a un caos administrativo en su botica. Jinshi, el gestor jefe, ha detectado múltiples errores en la identificación de sustancias y una falta crítica de orden en la atención de emergencias médicas. Se requiere el desarrollo de un sistema de software robusto para la boticaria que permita:
 
 - **Gestionar el inventario** de frascos y preparados.
 - **Automatizar auditorías** para detectar duplicados y discrepancias.
@@ -46,7 +46,7 @@ Implemente la clase `HerbolarioImperial<T>`, donde `T : Sustancia`.
 - **Inyección de Dependencias:** La lista inicial debe ser inyectada por constructor para facilitar pruebas desacopladas.
 
 --------------------------------------------------------------------------------
-## ⚡ 3. El Oráculo de Maomao (Programación Funcional)
+## 🔎 3. El Oráculo de Maomao (Programación Funcional)
 Implemente en el herbolario métodos usando delegados (`Predicate<T>`, `Func<T,R>`), lambdas y métodos de extensión:
 
 1. **Filtrar (Where):** Recibe una condición y devuelve una subcolección.  
@@ -56,7 +56,7 @@ Implemente en el herbolario métodos usando delegados (`Predicate<T>`, `Func<T,R
 --------------------------------------------------------------------------------
 ## 📦 4. Operaciones de Almacén (Colecciones y Conjuntos)
 
-### 🧹 4.1. Limpieza de Suministros (HashSet)
+### 🫧 4.1. Limpieza de Suministros (HashSet)
 - Vuelque una `List<T>` en un `HashSet<T>` para eliminar duplicados basándose en el ID.  
 - **Obligatorio:** Sobrescribir `Equals` y `GetHashCode` en `Sustancia`.
 
@@ -65,7 +65,7 @@ Implemente en el herbolario métodos usando delegados (`Predicate<T>`, `Func<T,R
 - **Diferencia:** Identificar venenos exclusivos de Maomao.
 
 --------------------------------------------------------------------------------
-## ⏱️ 5. Flujos de Trabajo en el Pabellón de Jade (FIFO, LIFO y Prioridad)
+## 💎 5. Flujos de Trabajo en el Pabellón de Jade (FIFO, LIFO y Prioridad)
 
 1. **La Cata del Banquete (FIFO - Queue):**  
    Los platos llegan en fila; usar `Queue` para procesarlos en orden de llegada.
