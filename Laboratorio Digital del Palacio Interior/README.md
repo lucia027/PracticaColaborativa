@@ -18,7 +18,7 @@ En el sistema existen únicamente **tres tipos de sustancias**, tal como en el m
 - Descripción  
 - Precio aproximado  
 - Disponibilidad (común, rara, muy rara)  
-- Nivel de peligro (bajo, medio, alto)  
+- Nivel de peligro (nulo, bajo, medio, alto)  
 
 ---
 
@@ -41,6 +41,7 @@ Sustancias capaces de causar daño, desde malestar leve hasta intoxicaciones gra
 - Tiempo de aparición de síntomas  
 - Antídoto conocido  
 - Grado de toxicidad  
+- Probabilidad de supervivencia (depende del grado de toxicidad)
 
 ---
 
@@ -64,7 +65,7 @@ Los casos representan situaciones donde se observan síntomas, enfermedades o po
 - Identificador del caso  
 - Síntomas observados  
 - Fecha de inicio  
-- Gravedad (leve, moderada, grave)  
+- Gravedad (nulo, leve, moderada, grave)  
 - Causa sospechada (enfermedad, veneno, desconocida)  
 - Sustancias sospechosas 
 - Tratamientos aplicados  
