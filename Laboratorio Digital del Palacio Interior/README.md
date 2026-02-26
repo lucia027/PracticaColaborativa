@@ -1,7 +1,6 @@
 ## 🌸 1. Introducción 
-El Palacio Imperial se enfrenta a un caos administrativo en su botica. Jinshi, el gestor jefe, ha detectado múltiples errores en la identificación de sustancias y una falta crítica de orden en la atención de emergencias médicas. Se requiere el desarrollo de un sistema de software robusto para la boticaria que permita:
+El Palacio Imperial se enfrenta a un caos administrativo en su botica. Jinshi, el gestor jefe, ha detectado múltiples errores en la identificación de sustancias y una falta crítica de orden en la atención de emergencias médicas. Se requiere el desarrollo de un sistema de software robusto para la boticaria que permita gestionar:
 
-El dominio se centra exclusivamente en:
 
 - **Sustancias** (medicinas, venenos y afrodisíacos)  
 - **Casos médicos y sospechas de envenenamiento**  
