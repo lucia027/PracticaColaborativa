@@ -1,5 +1,5 @@
 ﻿namespace Laboratorio_Digital_del_Palacio_Interior.Validator.Common;
 
-public interface IValidator {
-    
+public interface IValidator<T> {
+    IEnumerable<string> Validar(T entity);
 }
