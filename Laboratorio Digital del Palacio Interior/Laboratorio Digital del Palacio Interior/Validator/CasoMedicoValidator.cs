@@ -20,10 +20,12 @@ public class CasoMedicoValidator : IValidator<CasoMedico> {
             errores.Add("ERROR - La gravedad solo puede ser enfermedad, veneno, desconocida.");
         }
         
-        if(sustancias sospechosas){
+        if(!entity.SustanciasSospechosas.Any()){
+            errores.Add("ERROR - La colección de sustancias sospechosas esta vacia.");
         }
 
-        if(tratamientos aplicados){
+        if(!entity.Tratamientos.Any()){
+            errores.Add("ERROR - La colección de tratamientos esta vacia.");
         }
 
         if (!Enum.IsDefined(typeof(EstadoCasoMedico), entity.Estado)) {
