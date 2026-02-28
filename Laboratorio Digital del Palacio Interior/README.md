@@ -98,6 +98,11 @@ Los casos representan situaciones donde se observan síntomas, enfermedades o po
 
 ---
 
+### 📤 Leer y escribir JSON
+El sistema debe permitir importar y exportar los datos tanto de las sustancias como de los casos medicos en formato JSON, garantizando que toda la información pueda guardarse y recuperarse fácilmente.
+
+---
+
 ### 📊 Informes
 - Sustancias más utilizadas  
 - Casos resueltos  
