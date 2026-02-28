@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 using Laboratorio_Digital_del_Palacio_Interior.Enums;
 using Laboratorio_Digital_del_Palacio_Interior.Models;
 using Laboratorio_Digital_del_Palacio_Interior.Validator.Common;

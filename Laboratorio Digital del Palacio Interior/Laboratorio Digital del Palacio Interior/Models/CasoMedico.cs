@@ -1,4 +1,6 @@
-﻿using Laboratorio_Digital_del_Palacio_Interior.Enums;
+﻿using System;
+using System.Collections.Generic;
+using Laboratorio_Digital_del_Palacio_Interior.Enums;
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Models;
 
