@@ -6,6 +6,7 @@
         <RootNamespace>Laboratorio_Digital_del_Palacio_Interior</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <ApplicationIcon>app-ico.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
