@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Simulacion de una empresa de heroes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7dc628d37894ed253b398aec7ad601c3392d1f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3300c75db48545297fdb516e148e1450d8112c2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Simulacion de una empresa de heroes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Simulacion de una empresa de heroes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
