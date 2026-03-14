@@ -9,8 +9,4 @@
         <ApplicationIcon>app-ico.ico</ApplicationIcon>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Repository\" />
-    </ItemGroup>
-
 </Project>

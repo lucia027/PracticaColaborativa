@@ -2,11 +2,11 @@
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Models;
 
-public abstract class Sustancia(string nombre, string descripcion, decimal precio, Disponibilidad disponibilidad, Peligro nivelPeligro) {
+public abstract record Sustancia {
     public int Id { get; init; } 
-    public string Nombre { get; set; } = nombre;
-    public string Descripcion { get; set; } = descripcion;
-    public decimal Precio { get; set; } = precio;
-    public Disponibilidad Disponibilidad { get; set; } = disponibilidad;
-    public Peligro NivelPeligro { get; set; } = nivelPeligro;
+    public string Nombre { get; init; } = string.Empty;
+    public string Descripcion { get; init; } = string.Empty;
+    public decimal Precio { get; init; }
+    public Disponibilidad Disponibilidad { get; init; }
+    public Peligro NivelPeligro { get; init; }
 }
