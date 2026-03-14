@@ -5,7 +5,14 @@ using Laboratorio_Digital_del_Palacio_Interior.Models;
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Factory;
 
+/// <summary>
+///  Clase encargada de generar los datos base de los casos médicos.
+/// </summary>
 public class CasosMedicosFactory {
+    /// <summary>
+    /// Genera los datos base de los casos médicos.
+    /// </summary>
+    /// <returns>Lista de casos medicos</returns>
     public static List<CasoMedico> Seed() {
         var datosBase = new List<CasoMedico>();
         

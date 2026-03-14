@@ -3,7 +3,14 @@ using Laboratorio_Digital_del_Palacio_Interior.Models;
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Factory;
 
+/// <summary>
+///  Clase encargada de generar los datos base de las sustancias.
+/// </summary>
 public static class SustanciaFactory {
+    /// <summary>
+    /// Genera los datos base de las sustancias.
+    /// </summary>
+    /// <returns>Lista de sustancias.</returns>
     public static List<Sustancia> Seed() {
         var datosBase = new List<Sustancia>();
 

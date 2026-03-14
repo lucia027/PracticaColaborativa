@@ -2,6 +2,9 @@
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Models;
 
+/// <summary>
+/// Representa los afrodisiacos en el sistema.
+/// </summary>
 public sealed record Afrodisiaco: Sustancia {
     public int IntensidadEfecto { get; init; }
     public int Duracion { get; init; }

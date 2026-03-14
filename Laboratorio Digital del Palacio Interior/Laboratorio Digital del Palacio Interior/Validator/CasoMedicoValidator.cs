@@ -7,8 +7,13 @@ using Laboratorio_Digital_del_Palacio_Interior.Validator.Common;
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Validator;
 
+/// <summary>
+/// Validador especializado en comprobar los casos médicos.
+/// </summary>
 public class CasoMedicoValidator : IValidator<CasoMedico> {
-    public IEnumerable<string> Validar(CasoMedico entity ) {
+    
+    /// <inheritdoc cref="IValidator.Validate" />
+    public IEnumerable<string> Validate(CasoMedico entity ) {
         var errores = new List<string>();
 
         if (string.IsNullOrEmpty(entity.Sintomas)) {
