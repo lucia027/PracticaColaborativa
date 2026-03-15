@@ -11,4 +11,8 @@ public sealed record Veneno : Sustancia {
     public Medicina Antidoto { get; init; }
     public int GradoToxicidad { get; init; }
     public int ProbabilidadSupervivencia => (GradoToxicidad >= 8) ? 20 : 60;
+    
+    public override string ToString() {
+        return $"Medicina => Id: {Id}, Nombre: {Nombre}, Descripcion: {Descripcion}, Precio {Precio}, Disponibilidad: {Disponibilidad}, Nivel de peligro: {NivelPeligro}, Via de administración: {ViaDeAdministracion}, Tiempo de aparicion: {TiempoAparicion}, Antidoto: {Antidoto}, Grado de toxicidad: {GradoToxicidad}, Probabilidad de supervivencia: {ProbabilidadSupervivencia}.";
+    }
 }

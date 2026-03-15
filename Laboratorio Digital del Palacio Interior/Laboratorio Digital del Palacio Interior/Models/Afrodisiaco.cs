@@ -10,4 +10,8 @@ public sealed record Afrodisiaco: Sustancia {
     public int Duracion { get; init; }
     public string ContraIndicaciones { get; init; } = string.Empty;
     public string RiegosUso { get; init; } = string.Empty;
+    
+    public override string ToString() {
+        return $"Medicina => Id: {Id}, Nombre: {Nombre}, Descripcion: {Descripcion}, Precio {Precio}, Disponibilidad: {Disponibilidad}, Nivel de peligro: {NivelPeligro}, Intensidad del efecto: {IntensidadEfecto}, Duración: {Duracion}, Contraindicaciones: {ContraIndicaciones}, Riesgos de su uso: {RiegosUso}.";
+    }
 }

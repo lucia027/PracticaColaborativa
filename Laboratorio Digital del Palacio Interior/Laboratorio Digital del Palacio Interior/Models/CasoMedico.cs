@@ -16,4 +16,8 @@ public record CasoMedico {
     public HashSet<Veneno>? SustanciasSospechosas { get; init; }
     public HashSet<Medicina>? Tratamientos { get; init; }
     public EstadoCasoMedico Estado { get; init; }
+
+    public override string ToString() {
+        return $"Caso Medico => Id: {Id}, Sintomas: {Sintomas}, Fecha de inicio: {FechaInicio}, Gravedad: {Gravedad}, Causa de sospecha: {CausaSospecha}, Estado: {Estado}.";
+    }
 }
