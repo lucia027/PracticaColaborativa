@@ -7,7 +7,7 @@ namespace Laboratorio_Digital_del_Palacio_Interior.Models;
 /// <summary>
 /// Representa un caso médico en el sistema.
 /// </summary>
-public class CasoMedico {
+public record CasoMedico {
     public int Id { get; init; }
     public string Sintomas { get; init; } = string.Empty;
     public DateTime FechaInicio { get; init; }
