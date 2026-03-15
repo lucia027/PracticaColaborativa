@@ -8,6 +8,7 @@ namespace Laboratorio_Digital_del_Palacio_Interior.Repository;
 /// Repositorio encargado de gestionar todas las sustancias del sistema.
 /// </summary>
 public class SustanciasRepository : ISustanciasRepository {
+    private static int _contador;
     private readonly Dictionary<int, Sustancia> _almacenamiento = new();
     
     /// <inheritdoc cref="ISustanciasRepository.GetAll" />
@@ -25,7 +26,7 @@ public class SustanciasRepository : ISustanciasRepository {
         if (_almacenamiento.ContainsKey(entity.Id)) {
             return null;
         }
-        var sustancia = entity with { Id = GetId.GetNewId() };
+        var sustancia = entity with { Id = _contador++ };
         _almacenamiento.Add(sustancia.Id, sustancia);
         
         return sustancia;
