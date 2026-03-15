@@ -18,6 +18,7 @@ public class CasosMedicosFactory {
         
         datosBase.Add(new CasoMedico{
             Sintomas = "Palidez extrema, debilidad general, dolores de cabeza y náuseas recurrentes en la concubina del Pabellón de Jade.",
+            FechaInicio = DateTime.Now,
             Gravedad = Gravedad.Grave, 
             CausaSospecha = CausaSospecha.Veneno, 
             SustanciasSospechosas = null,
@@ -27,6 +28,7 @@ public class CasosMedicosFactory {
 
         datosBase.Add(new CasoMedico{
             Sintomas = "Dolor abdominal agudo y mareos repentinos tras consumir la sopa fría servida por los eunucos.",
+            FechaInicio = DateTime.Now,
             Gravedad = Gravedad.Moderada,
             CausaSospecha = CausaSospecha.Enfermedad,
             SustanciasSospechosas = null,
@@ -36,6 +38,7 @@ public class CasosMedicosFactory {
 
         datosBase.Add(new CasoMedico{
             Sintomas = "Convulsiones repentinas, alucinaciones y pérdida de conocimiento.",
+            FechaInicio = DateTime.Now,
             Gravedad = Gravedad.Grave,
             CausaSospecha = CausaSospecha.Veneno,
             SustanciasSospechosas = null,
@@ -45,6 +48,7 @@ public class CasosMedicosFactory {
 
         datosBase.Add(new CasoMedico{
             Sintomas = "Tos seca persistente que empeora al encender los braseros aromáticos en la habitación.",
+            FechaInicio = DateTime.Now,
             Gravedad = Gravedad.Leve,
             CausaSospecha = CausaSospecha.Desconocida,
             SustanciasSospechosas = null,
