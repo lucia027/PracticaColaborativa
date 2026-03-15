@@ -23,6 +23,9 @@ public class SustanciasRepository : ISustanciasRepository {
 
     /// <inheritdoc cref="ISustanciasRepository.Create" />
     public Sustancia? Create(Sustancia entity) {
+        // ¡¡Nota!! El filtrado del if es erroneo, porque la entidad que nos pasan no tiene ID,
+        // porque el repositorio es el encargado de generarlos, entonces con el ContainsKey
+        // estamos buscando en el almacenamiento un ID que aún no existe.
         if (_almacenamiento.ContainsKey(entity.Id)) {
             return null;
         }
