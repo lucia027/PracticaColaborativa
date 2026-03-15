@@ -44,6 +44,9 @@ public class SustanciasRepository : ISustanciasRepository {
 
     /// <inheritdoc cref="ISustanciasRepository.Delete" />
     public Sustancia? Delete(int id) {
-        throw new System.NotImplementedException();
+        if (!_almacenamiento.Remove(id)) {
+            return null;
+        }
+        return _almacenamiento[id];
     }
 }
