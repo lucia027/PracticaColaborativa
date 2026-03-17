@@ -19,13 +19,14 @@ public class CasosMedicosRepository : ICasosMedicosRepository {
 
     /// <inheritdoc cref="ICasosMedicosRepository.Create"/>
     public CasoMedico? Create(CasoMedico entity) {
-        // ¡¡Nota!! El filtrado del if es erroneo, porque la entidad que nos pasan no tiene ID,
-        // porque el repositorio es el encargado de generarlos, entonces con el ContainsKey
-        // estamos buscando en el almacenamiento un ID que aún no existe.
+        // Se le asigna el ID al caso médico que nos pasan antes de añadirlo al diccionario
+        // para poder verificar seguidamente si existe algún caso médico con esa misma clave,
+        // después de verificarlo ya si es correcto se añade al almacen.
+        var casoMedico = entity with { Id = _contador++ , Estado = EstadoCasoMedico.Abierto};
+        
         if (_almacenamiento.ContainsKey(entity.Id)) {
             return null;
         }
-        var casoMedico = entity with { Id = _contador++ , Estado = EstadoCasoMedico.Abierto};
         _almacenamiento.Add(casoMedico.Id, casoMedico);
         
         return casoMedico;

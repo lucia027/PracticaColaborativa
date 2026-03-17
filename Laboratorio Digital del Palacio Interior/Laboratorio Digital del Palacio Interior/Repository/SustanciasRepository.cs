@@ -23,13 +23,14 @@ public class SustanciasRepository : ISustanciasRepository {
 
     /// <inheritdoc cref="ISustanciasRepository.Create" />
     public Sustancia? Create(Sustancia entity) {
-        // ¡¡Nota!! El filtrado del if es erroneo, porque la entidad que nos pasan no tiene ID,
-        // porque el repositorio es el encargado de generarlos, entonces con el ContainsKey
-        // estamos buscando en el almacenamiento un ID que aún no existe.
+        // Se le asigna el ID a la sustancia que nos pasan antes de añadirla al diccionario
+        // para poder verificar seguidamente si existe alguna sustancia con esa misma clave,
+        // después de verificarlo ya si es correcto se añade al almacen.
+        var sustancia = entity with { Id = _contador++ };
+        
         if (_almacenamiento.ContainsKey(entity.Id)) {
             return null;
         }
-        var sustancia = entity with { Id = _contador++ };
         _almacenamiento.Add(sustancia.Id, sustancia);
         
         return sustancia;
