@@ -8,8 +8,17 @@ namespace Laboratorio_Digital_del_Palacio_Interior.Repository;
 /// Repositorio encargado de gestionar todas las sustancias del sistema.
 /// </summary>
 public class SustanciasRepository : ISustanciasRepository {
+        
+    // Para hacerlo como un Singleton.
+    private static readonly Lazy<SustanciasRepository> Lazy = new( () => new SustanciasRepository() );
+    
     private static int _contador;
     private readonly Dictionary<int, Sustancia> _almacenamiento = new();
+    
+    // Constructor de la clase.
+    private SustanciasRepository() { }
+
+    public static SustanciasRepository Instance => Lazy.Value;
     
     /// <inheritdoc cref="ISustanciasRepository.GetAll" />
     public IEnumerable<Sustancia> GetAll() {

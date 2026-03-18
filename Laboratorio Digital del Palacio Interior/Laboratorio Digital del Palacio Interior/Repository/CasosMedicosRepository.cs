@@ -4,8 +4,17 @@ using Laboratorio_Digital_del_Palacio_Interior.Models;
 namespace Laboratorio_Digital_del_Palacio_Interior.Repository;
 
 public class CasosMedicosRepository : ICasosMedicosRepository {
+    
+    // Para hacerlo como un Singleton.
+    private static readonly Lazy<CasosMedicosRepository> Lazy = new( () => new CasosMedicosRepository() );
+    
     private static int _contador;
-    private readonly Dictionary<int, CasoMedico> _almacenamiento = new(); 
+    private readonly Dictionary<int, CasoMedico> _almacenamiento = new();
+
+    // Constructor de la clase.
+    private CasosMedicosRepository() { }
+
+    public static CasosMedicosRepository Instance => Lazy.Value;
     
     /// <inheritdoc cref="ICasosMedicosRepository.GetAll"/>
     public IEnumerable<CasoMedico> GetAll() {
