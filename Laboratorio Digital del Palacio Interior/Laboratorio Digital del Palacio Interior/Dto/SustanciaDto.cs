@@ -13,7 +13,7 @@ public record SustanciaDto(
     string? EfectosSecundarios,
     int? TiempoEfecto,
     string? ViaDeAdministracion,
-    int TiempoAparicion,
+    int? TiempoAparicion,
     string? Antidoto,
     int? GradoToxicidad,
     int? ProbabilidadSupervivencia,
