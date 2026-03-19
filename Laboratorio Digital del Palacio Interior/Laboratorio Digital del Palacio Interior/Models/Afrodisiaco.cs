@@ -2,9 +2,16 @@
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Models;
 
-public sealed class Afrodisiaco(string nombre, string descripcion, decimal precio, Disponibilidad disponibilidad, Peligro nivelPeligro, int intensidadEfecto, int duracion, string contraIndicaciones, string riesgoUso) : Sustancia(nombre, descripcion, precio, disponibilidad, nivelPeligro) {
-    public int IntensidadEfecto { get; set; } = intensidadEfecto;
-    public int Duracion { get; set; } = duracion;
-    public string ContraIndicaciones { get; set; } = contraIndicaciones;
-    public string RiegosUso { get; set; } = riesgoUso;
+/// <summary>
+/// Representa los afrodisiacos en el sistema.
+/// </summary>
+public sealed record Afrodisiaco: Sustancia {
+    public int IntensidadEfecto { get; init; }
+    public int Duracion { get; init; }
+    public string ContraIndicaciones { get; init; } = string.Empty;
+    public string RiegosUso { get; init; } = string.Empty;
+    
+    public override string ToString() {
+        return $"Medicina => Id: {Id}, Nombre: {Nombre}, Descripcion: {Descripcion}, Precio {Precio}, Disponibilidad: {Disponibilidad}, Nivel de peligro: {NivelPeligro}, Intensidad del efecto: {IntensidadEfecto}, Duración: {Duracion}, Contraindicaciones: {ContraIndicaciones}, Riesgos de su uso: {RiegosUso}.";
+    }
 }
