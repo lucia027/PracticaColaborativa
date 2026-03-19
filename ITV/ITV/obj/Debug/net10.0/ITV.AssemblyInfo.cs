@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Biblioteca")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ITV")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3300c75db48545297fdb516e148e1450d8112c2a")]
-[assembly: System.Reflection.AssemblyProductAttribute("Biblioteca")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Biblioteca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c245ceaf52d9cd47ae50f63152692783826b0762")]
+[assembly: System.Reflection.AssemblyProductAttribute("ITV")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ITV")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

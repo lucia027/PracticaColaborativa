@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "zdZxEYoFj/g=",
+  "dgSpecHash": "ndhi3lcAL9o=",
   "success": true,
   "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\Simulacion de una empresa de heroes\\Simulacion de una empresa de heroes\\Simulacion de una empresa de heroes.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog\\4.3.2-dev-02419\\serilog.4.3.2-dev-02419.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512"
+  ],
   "logs": []
 }

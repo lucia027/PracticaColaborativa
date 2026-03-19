@@ -29,11 +29,12 @@ public class CasoMedicoValidator : IValidator<CasoMedico> {
         }
         
         if(!entity.SustanciasSospechosas.Any()){
-            errores.Add("ERROR - La colección de sustancias sospechosas esta vacia.");
+            errores.Add("ERROR - No hay ninguna sustancia sospechosa de la causa.");
         }
 
         if(!entity.Tratamientos.Any()){
-            errores.Add("ERROR - La colección de tratamientos esta vacia.");
+            errores.Add("ERROR - No hay ningun tratamiento.");
+
         }
 
         if (!Enum.IsDefined(typeof(EstadoCasoMedico), entity.Estado)) {
