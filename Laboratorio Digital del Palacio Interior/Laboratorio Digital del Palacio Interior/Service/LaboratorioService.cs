@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using Laboratorio_Digital_del_Palacio_Interior.Config;
 using Laboratorio_Digital_del_Palacio_Interior.Enums;
 using Laboratorio_Digital_del_Palacio_Interior.Models;
 using Laboratorio_Digital_del_Palacio_Interior.Repository;
+using Laboratorio_Digital_del_Palacio_Interior.Storage.Common;
 using Laboratorio_Digital_del_Palacio_Interior.Validator.Common;
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Service;
@@ -16,7 +18,9 @@ public class LaboratorioService(
     IValidator<Sustancia> afrodisiacosValidator,
     IValidator<Sustancia> medicinaValidator,
     IValidator<Sustancia> venenoValidator,
-    IValidator<CasoMedico> casosMedicosValidator
+    IValidator<CasoMedico> casosMedicosValidator,
+    IStorage<Sustancia> sustanciaStorage,
+    IStorage<CasoMedico> casoMedicoStorage
     ) : ILaboratorioService{
     
     /// <inheritdoc cref="ILaboratorioService.GetAllSustancia"/>
@@ -76,13 +80,76 @@ public class LaboratorioService(
     /// <inheritdoc cref="ILaboratorioService.GetInforme"/>
     public Informe GetInforme() {
         var almacen = casosMedicosRepository.GetAll();
-        
-        Sustancia sustanciaMasUtilizada;
+
+        var sustanciaMasUtilizada = new Veneno();
         var casosMedicosResueltos = almacen.Count(c => c.Estado == EstadoCasoMedico.Resuelto);
-        Sustancia sustanciaMasEfectivaTratamiento;
+        var sustanciaMasEfectivaTratamiento = new Medicina();
+
 
         Informe informe = new Informe(sustanciaMasUtilizada, casosMedicosResueltos, sustanciaMasEfectivaTratamiento);
         return informe;
+    }
+
+    public int ImportarSustancias() {
+        try {
+            var sustancias = sustanciaStorage.Cargar(Configuracion.SustanciaFile);
+            sustanciasRepository.DeleteAll();
+            var contador = 0;
+
+            foreach (var sustancia in sustancias) {
+                CreateSustancia(sustancia);
+                contador++;
+            }
+
+            return contador;
+        } catch (Exception e) {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+    public int ExportarDatosSustancias() {
+        try {
+            var sustancias = sustanciasRepository.GetAll();
+            var numSustancias = sustancias.Count();
+            
+            sustanciaStorage.Salvar(sustancias, Configuracion.SustanciaFile);
+            return numSustancias;
+        } catch (Exception e) {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+    
+    public int ImportarCasosMedicos() {
+        try {
+            var casosMedicos = casoMedicoStorage.Cargar(Configuracion.CasosMedicosFile);
+            casosMedicosRepository.DeleteAll();
+            var contador = 0;
+
+            foreach (var casoMedico in casosMedicos) {
+                CreateCasoMedico(casoMedico);
+                contador++;
+            }
+
+            return contador;
+        } catch (Exception e) {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+    public int ExportarDatosCasosMedicos() {
+        try {
+            var casosMedicos = casosMedicosRepository.GetAll();
+            var numCasosMedicos = casosMedicos.Count();
+            
+            casoMedicoStorage.Salvar(casosMedicos, Configuracion.SustanciaFile);
+            return numCasosMedicos;
+        } catch (Exception e) {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     private void ValidateSustancias(Sustancia sustancia) {
