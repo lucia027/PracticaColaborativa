@@ -51,7 +51,7 @@ public static class SustanciaMapper {
                 NivelPeligro = Enum.TryParse(dto.NivelPeligro, out Peligro peligro) ? peligro : Peligro.Nulo,
                 ViaDeAdministracion = Enum.TryParse(dto.ViaDeAdministracion, out ViaDeAdministracion via) ? via : ViaDeAdministracion.Contacto,
                 TiempoAparicion = dto.TiempoAparicion ?? 0,
-                Antidoto = dto.Antidoto.ToModel() as Medicina,
+                Antidoto = dto.Antidoto?.ToModel() as Medicina ?? new Medicina(),
                 GradoToxicidad = dto.GradoToxicidad ?? 0,
             },
 
@@ -125,7 +125,7 @@ public static class SustanciaMapper {
                 null,
                 veneno.ViaDeAdministracion.ToString(),
                 veneno.TiempoAparicion,
-                veneno.Antidoto.ToDto(),
+                veneno.Antidoto?.ToDto(),
                 veneno.GradoToxicidad,
                 veneno.ProbabilidadSupervivencia,
                 null,

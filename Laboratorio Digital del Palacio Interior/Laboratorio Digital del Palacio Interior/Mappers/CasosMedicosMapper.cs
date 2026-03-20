@@ -26,8 +26,8 @@ public static class CasosMedicosMapper {
             FechaInicio = DateTime.Parse(dto.FechaInicio, InvariantCulture),
             Gravedad = Enum.TryParse(dto.Gravedad, out Gravedad gravedad) ? gravedad : Gravedad.Nulo,
             Sintomas = dto.Sintomas,
-            SustanciasSospechosas = dto.SustanciasSospechosas.Select( s => s.ToModel()) as HashSet<Veneno>,
-            Tratamientos = dto.Tratamientos.Select( s => s.ToModel()) as HashSet<Medicina>
+            SustanciasSospechosas = dto.SustanciasSospechosas?.Select( s => s.ToModel()) as HashSet<Veneno>,
+            Tratamientos = dto.Tratamientos?.Select( s => s.ToModel()) as HashSet<Medicina>
         };
     }
 
@@ -43,8 +43,8 @@ public static class CasosMedicosMapper {
             casoMedico.FechaInicio.ToString(IsoFormat, InvariantCulture),
             casoMedico.Gravedad.ToString(),
             casoMedico.CausaSospecha.ToString(),
-            casoMedico.SustanciasSospechosas.Select(v => v.ToDto()).ToHashSet(),
-            casoMedico.Tratamientos.Select(m => m.ToDto()).ToHashSet(),
+            casoMedico.SustanciasSospechosas?.Select(v => v.ToDto()).ToHashSet(),
+            casoMedico.Tratamientos?.Select(m => m.ToDto()).ToHashSet(),
             casoMedico.Estado.ToString()
         );
     }
