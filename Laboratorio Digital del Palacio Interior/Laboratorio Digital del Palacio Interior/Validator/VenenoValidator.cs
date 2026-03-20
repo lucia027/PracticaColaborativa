@@ -9,7 +9,7 @@ namespace Laboratorio_Digital_del_Palacio_Interior.Validator;
 /// <summary>
 /// Validador especializado en comprobar los venenos.
 /// </summary>
-public class VenenoValidador : IValidator<Sustancia> {
+public class VenenoValidator : IValidator<Sustancia> {
     
     /// <inheritdoc cref="IValidator.Validate" />
     public IEnumerable<string> Validate(Sustancia entity) {
