@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Agencia WISE  - Gestión de Misiones Secretas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+125b0b5cb36a4b36d2a8f9bc0b6ead41bf8a066a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1f5baa16399b4eb2de1fe1c1b4d1b5bce78af3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Agencia WISE  - Gestión de Misiones Secretas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Agencia WISE  - Gestión de Misiones Secretas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
