@@ -17,7 +17,7 @@ public class SustanciasRepository : ISustanciasRepository {
     private readonly Dictionary<int, Sustancia> _almacenamiento = new();
     
     // Constructor de la clase.
-    private SustanciasRepository() { }
+    public SustanciasRepository() { }
 
     public static SustanciasRepository Instance => Lazy.Value;
     
@@ -38,9 +38,12 @@ public class SustanciasRepository : ISustanciasRepository {
         // después de verificarlo ya si es correcto se añade al almacen.
         var sustancia = entity with { Id = _contador++ };
         
+        /*
         if (_almacenamiento.ContainsKey(entity.Id)) {
             return null;
         }
+        */
+        
         _almacenamiento.Add(sustancia.Id, sustancia);
         
         return sustancia;

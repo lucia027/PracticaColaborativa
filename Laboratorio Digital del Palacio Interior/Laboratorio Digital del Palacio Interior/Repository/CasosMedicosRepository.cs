@@ -12,7 +12,7 @@ public class CasosMedicosRepository : ICasosMedicosRepository {
     private readonly Dictionary<int, CasoMedico> _almacenamiento = new();
 
     // Constructor de la clase.
-    private CasosMedicosRepository() { }
+    public CasosMedicosRepository() { }
 
     public static CasosMedicosRepository Instance => Lazy.Value;
     
@@ -32,10 +32,12 @@ public class CasosMedicosRepository : ICasosMedicosRepository {
         // para poder verificar seguidamente si existe algún caso médico con esa misma clave,
         // después de verificarlo ya si es correcto se añade al almacen.
         var casoMedico = entity with { Id = _contador++ , Estado = EstadoCasoMedico.Abierto};
-        
+        /*
         if (_almacenamiento.ContainsKey(entity.Id)) {
             return null;
         }
+        */
+        
         _almacenamiento.Add(casoMedico.Id, casoMedico);
         
         return casoMedico;
