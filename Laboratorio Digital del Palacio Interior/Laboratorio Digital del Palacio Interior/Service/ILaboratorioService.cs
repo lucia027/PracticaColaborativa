@@ -83,4 +83,12 @@ public interface ILaboratorioService {
     /// </summary>
     /// <returns>Informe creado.</returns>
     Informe GetInforme();
+
+    int ImportarDatosSustancias();
+    
+    int ExportarDatosSustancias();
+
+    int ImportarDatosCasosMedicos();
+    
+    int ExportarDatosCasosMedicos();
 }
