@@ -28,11 +28,11 @@ public class CasoMedicoValidator : IValidator<CasoMedico> {
             errores.Add("ERROR - La gravedad solo puede ser enfermedad, veneno, desconocida.");
         }
         
-        if(!entity.SustanciasSospechosas.Any()){
+        if(entity.SustanciasSospechosas != null && !entity.SustanciasSospechosas.Any()){
             errores.Add("ERROR - No hay ninguna sustancia sospechosa de la causa.");
         }
 
-        if(!entity.Tratamientos.Any()){
+        if(entity.Tratamientos!= null && !entity.Tratamientos.Any()){
             errores.Add("ERROR - No hay ningun tratamiento.");
 
         }
