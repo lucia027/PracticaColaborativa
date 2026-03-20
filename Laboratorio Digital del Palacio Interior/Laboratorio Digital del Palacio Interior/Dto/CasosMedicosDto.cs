@@ -6,7 +6,7 @@ public record CasosMedicosDto(
     string FechaInicio,
     string Gravedad,
     string CausaSospecha,
-    string? SustanciasSospechosas,
-    string? Tratamientos,
+    HashSet<SustanciaDto>? SustanciasSospechosas,
+    HashSet<SustanciaDto>? Tratamientos,
     string Estado
 ) { }

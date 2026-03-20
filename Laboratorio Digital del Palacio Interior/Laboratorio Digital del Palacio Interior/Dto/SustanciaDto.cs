@@ -14,7 +14,7 @@ public record SustanciaDto(
     int? TiempoEfecto,
     string? ViaDeAdministracion,
     int? TiempoAparicion,
-    string? Antidoto,
+    SustanciaDto? Antidoto,
     int? GradoToxicidad,
     int? ProbabilidadSupervivencia,
     int? IntensidadEfecto,
