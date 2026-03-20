@@ -7,8 +7,31 @@
   "targets": {
     ".NETCoreApp,Version=v10.0": {
       "Laboratorio Digital del Palacio Interior/1.0.0": {
+        "dependencies": {
+          "Serilog": "4.3.2-dev-02419",
+          "Serilog.Sinks.Console": "6.1.1"
+        },
         "runtime": {
           "Laboratorio Digital del Palacio Interior.dll": {}
+        }
+      },
+      "Serilog/4.3.2-dev-02419": {
+        "runtime": {
+          "lib/net10.0/Serilog.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
+          }
+        }
+      },
+      "Serilog.Sinks.Console/6.1.1": {
+        "dependencies": {
+          "Serilog": "4.3.2-dev-02419"
+        },
+        "runtime": {
+          "lib/net8.0/Serilog.Sinks.Console.dll": {
+            "assemblyVersion": "6.1.1.0",
+            "fileVersion": "6.1.1.0"
+          }
         }
       }
     }
@@ -18,6 +41,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Serilog/4.3.2-dev-02419": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W8VlLVjPbjbkr4r88cr8FfkVzvaiguxFK8w2vczUMnSB74pK45g+SRjD5urq/x6gKvGICnv+NVvLP0Q89OdFQw==",
+      "path": "serilog/4.3.2-dev-02419",
+      "hashPath": "serilog.4.3.2-dev-02419.nupkg.sha512"
+    },
+    "Serilog.Sinks.Console/6.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8jbqgjUyZlfCuSTaJk6lOca465OndqOz3KZP6Cryt/IqZYybyBu7GP0fE/AXBzrrQB3EBmQntBFAvMVz1COvAA==",
+      "path": "serilog.sinks.console/6.1.1",
+      "hashPath": "serilog.sinks.console.6.1.1.nupkg.sha512"
     }
   }
 }
