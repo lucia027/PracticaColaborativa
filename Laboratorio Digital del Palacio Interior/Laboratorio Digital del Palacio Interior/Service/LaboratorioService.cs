@@ -81,7 +81,7 @@ public class LaboratorioService(
     public Informe GetInforme() {
         var almacen = casosMedicosRepository.GetAll();
 
-        var sustanciaMasUtilizada = new Veneno();
+        var sustanciaMasUtilizada = new Medicina();
         var casosMedicosResueltos = almacen.Count(c => c.Estado == EstadoCasoMedico.Resuelto);
         var sustanciaMasEfectivaTratamiento = new Medicina();
 
@@ -90,7 +90,7 @@ public class LaboratorioService(
         return informe;
     }
 
-    public int ImportarSustancias() {
+    public int ImportarDatosSustancias() {
         try {
             var sustancias = sustanciaStorage.Cargar(Configuracion.SustanciaFile);
             sustanciasRepository.DeleteAll();
@@ -121,7 +121,7 @@ public class LaboratorioService(
         }
     }
     
-    public int ImportarCasosMedicos() {
+    public int ImportarDatosCasosMedicos() {
         try {
             var casosMedicos = casoMedicoStorage.Cargar(Configuracion.CasosMedicosFile);
             casosMedicosRepository.DeleteAll();
