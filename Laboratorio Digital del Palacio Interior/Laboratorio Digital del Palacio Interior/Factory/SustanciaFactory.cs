@@ -99,7 +99,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Veneno {
-            Id = 1,
             Nombre = "Polvo de Nieve Fría",
             Descripcion = "Un veneno silencioso usado en la corte. Produce escalofríos y debilidad progresiva.",
             Precio = 120,
@@ -114,7 +113,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Veneno {
-            Id = 2,
             Nombre = "Lágrimas de la Flor Fantasma",
             Descripcion = "Extracto de una flor venenosa que causa desorientación y pérdida de fuerza.",
             Precio = 95,
@@ -129,7 +127,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Veneno {
-            Id = 3,
             Nombre = "Aguja de Serpiente Carmesí",
             Descripcion = "Veneno derivado de un reptil exótico. Provoca entumecimiento y fiebre.",
             Precio = 180,
@@ -144,7 +141,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Veneno {
-            Id = 4,
             Nombre = "Polvo de Jade Marchito",
             Descripcion = "Sustancia usada en intrigas palaciegas. Causa debilidad muscular y mareos.",
             Precio = 70,
@@ -159,7 +155,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Veneno {
-            Id = 5,
             Nombre = "Néctar de la Noche",
             Descripcion = "Un veneno líquido oscuro que provoca somnolencia profunda.",
             Precio = 150,
@@ -174,7 +169,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Veneno {
-            Id = 6,
             Nombre = "Humo de la Luna Roja",
             Descripcion = "Sustancia quemada para liberar vapores que causan confusión.",
             Precio = 110,
@@ -189,7 +183,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Afrodisiaco {
-            Id = 7,
             Nombre = "Perfume de la Flor Carmesí",
             Descripcion = "Aroma dulce que estimula el ánimo y la cercanía emocional.",
             Precio = 60,
@@ -202,7 +195,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Afrodisiaco {
-            Id = 8,
             Nombre = "Elixir de la Luna Plateada",
             Descripcion = "Bebida suave que aumenta la calidez corporal y la sensibilidad.",
             Precio = 85,
@@ -215,7 +207,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Afrodisiaco {
-            Id = 9,
             Nombre = "Polvo de Flor de Durazno",
             Descripcion = "Sustancia aromática usada en rituales románticos.",
             Precio = 40,
@@ -228,7 +219,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Afrodisiaco {
-            Id = 10,
             Nombre = "Té de Pétalos Rosados",
             Descripcion = "Infusión suave que relaja y mejora el estado de ánimo.",
             Precio = 30,
@@ -241,7 +231,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Afrodisiaco {
-            Id = 11,
             Nombre = "Esencia de Orquídea Dorada",
             Descripcion = "Extracto aromático muy apreciado en la nobleza.",
             Precio = 120,
@@ -254,7 +243,6 @@ public static class SustanciaFactory {
         });
 
         datosBase.Add(new Afrodisiaco {
-            Id = 12,
             Nombre = "Néctar de Melocotón Dulce",
             Descripcion = "Jarabe suave que genera sensación de bienestar.",
             Precio = 55,
