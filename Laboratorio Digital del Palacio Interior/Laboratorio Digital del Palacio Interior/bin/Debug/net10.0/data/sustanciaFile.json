@@ -1,0 +1,86 @@
+[
+  {
+    "$type": "Medicina",
+    "Id": 1,
+    "Nombre": "Antidoto Imperial contra Arsénico",
+    "Descripcion": "Neutraliza intoxicaciones por arsenico",
+    "Precio": 45.0,
+    "Disponibilidad": "Rara",
+    "NivelPeligro": "Bajo",
+    "Sintoma": "Intoxicacion por arsenico",
+    "DosisRecomendada": 1.5,
+    "EfectosSecundarios": "Nauseas leves",
+    "TiempoEfecto": 30
+  },
+  {
+    "$type": "Medicina",
+    "Id": 2,
+    "Nombre": "Decoccion Antipirético Imperial",
+    "Descripcion": "Reduce la fiebre alta",
+    "Precio": 60.0,
+    "Disponibilidad": "Comun",
+    "NivelPeligro": "Bajo",
+    "Sintoma": "Fiebre alta",
+    "DosisRecomendada": 1.5,
+    "EfectosSecundarios": "Somnolencia",
+    "TiempoEfecto": 45
+  },
+  {
+    "$type": "Veneno",
+    "Id": 8,
+    "Nombre": "Polvo de Nieve Fría",
+    "Descripcion": "Un veneno silencioso usado en la corte. Produce escalofríos y debilidad progresiva.",
+    "Precio": 120.0,
+    "Disponibilidad": "Rara",
+    "NivelPeligro": "Alto",
+    "ViaDeAdministracion": "Contacto",
+    "TiempoAparicion": 45,
+    "GradoToxicidad": 8,
+    "Antidoto": {
+      "Id": 1,
+      "Nombre": "Antidoto Imperial contra Arsénico"
+    }
+  },
+  {
+    "$type": "Veneno",
+    "Id": 9,
+    "Nombre": "Lágrimas de la Flor Fantasma",
+    "Descripcion": "Extracto de una flor venenosa que causa desorientación y pérdida de fuerza.",
+    "Precio": 95.0,
+    "Disponibilidad": "Comun",
+    "NivelPeligro": "Medio",
+    "ViaDeAdministracion": "Oral",
+    "TiempoAparicion": 20,
+    "GradoToxicidad": 6,
+    "Antidoto": {
+      "Id": 2,
+      "Nombre": "Decoccion Antipirético Imperial"
+    }
+  },
+  {
+    "$type": "Afrodisiaco",
+    "Id": 14,
+    "Nombre": "Perfume de la Flor Carmesí",
+    "Descripcion": "Aroma dulce que estimula el ánimo y la cercanía emocional.",
+    "Precio": 60.0,
+    "Disponibilidad": "Comun",
+    "NivelPeligro": "Bajo",
+    "IntensidadEfecto": 4,
+    "Duracion": 120,
+    "ContraIndicaciones": "Evitar en personas con alergias fuertes.",
+    "RiegosUso": "Ligero enrojecimiento facial."
+  },
+  {
+    "$type": "Afrodisiaco",
+    "Id": 18,
+    "Nombre": "Esencia de Orquídea Dorada",
+    "Descripcion": "Extracto aromático muy apreciado en la nobleza.",
+    "Precio": 120.0,
+    "Disponibilidad": "MuyRara",
+    "NivelPeligro": "Medio",
+    "IntensidadEfecto": 7,
+    "Duracion": 150,
+    "ContraIndicaciones": "Evitar en personas con problemas cardíacos.",
+    "RiegosUso": "Aumento temporal de la temperatura corporal."
+  }
+]

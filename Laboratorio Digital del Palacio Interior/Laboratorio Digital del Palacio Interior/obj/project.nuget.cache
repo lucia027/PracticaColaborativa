@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "EuQFWbsC0IA=",
+  "dgSpecHash": "dHs1CDaD8oM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\Laboratorio Digital del Palacio Interior\\Laboratorio Digital del Palacio Interior\\Laboratorio Digital del Palacio Interior.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog\\4.3.2-dev-02419\\serilog.4.3.2-dev-02419.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512"
+  ],
   "logs": []
 }

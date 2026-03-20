@@ -13,3 +13,7 @@ C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del 
 C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del Palacio Interior\Laboratorio Digital del Palacio Interior\obj\Debug\net10.0\Laboratorio Digital del Palacio Interior.pdb
 C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del Palacio Interior\Laboratorio Digital del Palacio Interior\obj\Debug\net10.0\Laboratorio Digital del Palacio Interior.genruntimeconfig.cache
 C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del Palacio Interior\Laboratorio Digital del Palacio Interior\obj\Debug\net10.0\ref\Laboratorio Digital del Palacio Interior.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del Palacio Interior\Laboratorio Digital del Palacio Interior\bin\Debug\net10.0\Serilog.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del Palacio Interior\Laboratorio Digital del Palacio Interior\bin\Debug\net10.0\Serilog.Sinks.Console.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del Palacio Interior\Laboratorio Digital del Palacio Interior\obj\Debug\net10.0\Laboratorio Digital del Palacio Interior.csproj.AssemblyReference.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Laboratorio Digital del Palacio Interior\Laboratorio Digital del Palacio Interior\obj\Debug\net10.0\Laborato.9D8FA558.Up2Date
