@@ -61,4 +61,10 @@ public class CasosMedicosRepository : ICasosMedicosRepository {
         casoMedicoDelete = casoMedicoDelete with { Estado = EstadoCasoMedico.Resuelto };
         return casoMedicoDelete;
     }
+    
+    /// <inheritdoc cref="ICasosMedicosRepository.DeleteAll"/>
+    public bool DeleteAll() {
+        _almacenamiento.Clear();
+        return true;
+    }
 }

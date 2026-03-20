@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.Marshalling;
 using Laboratorio_Digital_del_Palacio_Interior.Models;
 
 namespace Laboratorio_Digital_del_Palacio_Interior.Repository;
@@ -62,5 +63,11 @@ public class SustanciasRepository : ISustanciasRepository {
             return null;
         }
         return _almacenamiento[id];
+    }
+
+    /// <inheritdoc cref="ISustanciasRepository.DeleteAll" />
+    public bool DeleteAll() {
+        _almacenamiento.Clear();
+        return true;
     }
 }
