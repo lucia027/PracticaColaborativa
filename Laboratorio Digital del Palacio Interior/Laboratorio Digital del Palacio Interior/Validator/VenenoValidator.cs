@@ -48,8 +48,8 @@ public class VenenoValidator : IValidator<Sustancia> {
             errores.Add("ERROR - El tiempo de aparicion de los sintomas no puede ser negativo.");
         }
         
-        if (veneno.Antidoto is not Medicina) {
-            errores.Add("ERROR - El antidoto solo puede ser una medicina.");
+        if (veneno.Antidoto is not Medicina && veneno.Antidoto is not null) {
+            errores.Add("ERROR - El antidoto solo puede ser una medicina o nada.");
         }
 
         if (veneno.GradoToxicidad < 0) {
