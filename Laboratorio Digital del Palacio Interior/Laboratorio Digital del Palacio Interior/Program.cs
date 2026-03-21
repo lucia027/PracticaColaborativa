@@ -248,12 +248,13 @@ void ActualizarSustancia(ILaboratorioService service) {
     WriteLine();
 }
 
-void EliminarSustancia(ILaboratorioService s) {
+void EliminarSustancia(ILaboratorioService service) {
     var id = int.Parse(LeerCadenaValidada("🗑️ Id de la sustancia a eliminar: ", @"^\d+$", "ID no válido."));
+
     try {
-        var sus = s.GetByIdSustancia(id);
+        var sus = service.GetByIdSustancia(id);
         if (PedirConfirmacion($"¿Eliminar {sus.Nombre} permanentemente?")) {
-            s.DeleteSustancia(id);
+            service.DeleteSustancia(id);
             WriteLine("✅ Eliminado.");
         }
     } catch (Exception ex) { WriteLine($"❌ ERROR: {ex.Message}"); }

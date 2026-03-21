@@ -62,10 +62,10 @@ public class SustanciasRepository : ISustanciasRepository {
 
     /// <inheritdoc cref="ISustanciasRepository.Delete" />
     public Sustancia? Delete(int id) {
-        if (!_almacenamiento.Remove(id)) {
-            return null;
+        if (_almacenamiento.Remove(id, out var sustanciaEliminada)) {
+            return sustanciaEliminada;
         }
-        return _almacenamiento[id];
+        return null;
     }
 
     /// <inheritdoc cref="ISustanciasRepository.DeleteAll" />
