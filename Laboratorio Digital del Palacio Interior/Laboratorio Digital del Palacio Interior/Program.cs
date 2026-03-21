@@ -106,7 +106,8 @@ void MostrarMenu() {
 //--------------------------------------------------------------------
 
 void ListarSustancias(ILaboratorioService s) {
-    WriteLine("💊 INVENTARIO COMPLETO");
+    WriteLine();
+    WriteLine("💊 INVENTARIO COMPLETO DE SUSTANCIAS");
     var lista = s.GetAllSustancia();
     var line = new string('─', 110);
     WriteLine(line);
@@ -123,60 +124,68 @@ void ListarSustancias(ILaboratorioService s) {
             WriteLine($"{a.Id, -5} | {a.Nombre, -40} | {a.Precio, -10} | {a.NivelPeligro, -10} | {a.Disponibilidad, -15} | {"Afrodisiaco"}");
         }    
     }
+    WriteLine();
 }
 
-void BuscarSustancia(ILaboratorioService s) {
+Sustancia? BuscarSustancia(ILaboratorioService s) {
+    WriteLine();
     var id = int.Parse(LeerCadenaValidada("🌱 Id de la sustancia: ", @"^\d+$", "Debe ser un número."));
+    Sustancia? sus = null;
     WriteLine("-----------------------------------------------");
     try {
-        var sus = s.GetByIdSustancia(id);
+        sus = s.GetByIdSustancia(id);
         ImprimirFichaSustancia(sus);
-        WriteLine("-----------------------------------------------");
     } catch (Exception ex) {
         WriteLine($"❌ ERROR: {ex.Message}");
     }
+    WriteLine("-----------------------------------------------");
+    WriteLine();
+    return sus;
 }
 
 void AnadirNuevaSustancia(ILaboratorioService service) {
-    WriteLine("\n➕ --- ALTA DE NUEVA SUSTANCIA ---");
+    WriteLine();
+    WriteLine("➕ DAR DE ALTA UNA NUEVA SUSTANCIA");
     
-    // 1. Selección de tipo
+    //Seleccionamos el tipo de la sustancia nueva.
     WriteLine("Seleccione el tipo: 1.Veneno, 2.Medicina, 3.Afrodisiaco");
     var tipo = LeerCadenaValidada("🎯 Tipo: ", "^[1-3]$", "Seleccione 1, 2 o 3.");
 
-    // 2. Datos comunes a todas las sustancias
+    //Datos comunes a todas las sustancias
+    WriteLine("🍃 Nombre: ");
     var nombre = ReadLine() ?? "";
+    WriteLine("📝 Descripcion: ");
     var descripcion = ReadLine() ?? "";
     var precio = decimal.Parse(LeerCadenaValidada("💰 Precio (ej: 12,50): ", @"^\d+([.,]\d{1,2})?$", "Formato numérico incorrecto."));
-    var disponibilidad = (Disponibilidad)int.Parse(LeerCadenaValidada("🧪 Disponibilidad: 1.Comun, 2.Rara, 3.Muy rara ", "^[1-3]$", "Debe ser entre 1 y 3."));
-    var peligro = (Peligro)int.Parse(LeerCadenaValidada("⚠️ Peligro: 0.Nulo, 1.Bajo, 2.Medio, 3.Alto ", "^[0-3]$", "Debe ser entre 0 y 3."));
+    var disponibilidad = (Disponibilidad)int.Parse(LeerCadenaValidada("🗝️ Disponibilidad: 1.Comun, 2.Rara, 3.Muy rara  ", "^[1-3]$", "Debe ser entre 1 y 3."));
+    var peligro = (Peligro)int.Parse(LeerCadenaValidada("⚠️ Peligro: 1.Nulo, 2.Bajo, 3.Medio, 4.Alto ", "^[1-4]$", "Debe ser entre 1 y 4."));
 
-    // 3. Lógica específica según el tipo
+    //Datos especificos para cada tipo.
     Sustancia nueva = new Medicina();
     switch (tipo) {
         case "1": // VENENO
-            var viaDeAdministracion = (ViaDeAdministracion)int.Parse(LeerCadenaValidada("🧪 Vía de Administracion: 0.Oral, 1.Contacto, 2.Inhalación, 3.Inyección ", "^[0-3]$", "0-3."));
-            var tiempo = int.Parse(LeerCadenaValidada("⏱️ Tiempo aparición (min): ", @"^\d+$", "Número entero."));
-            var antidoto = new Medicina(); //AsignarAntidoto();
-            var gradoToxicidad = int.Parse(LeerCadenaValidada("☣️ Grado Toxicidad (1-10): ", "^([1-9]|10)$", "1-10."));
+            var viaDeAdministracion = (ViaDeAdministracion)int.Parse(LeerCadenaValidada("🧪 Vía de Administracion: 1.Oral, 2.Contacto, 3.Inhalación, 4.Inyección ", "^[1-4]$", "1-4."));
+            var tiempo = int.Parse(LeerCadenaValidada("🕐 Tiempo aparición (min): ", @"^\d+$", "Número entero."));
+            var antidoto = AsignarAntidoto(service);
+            var gradoToxicidad = int.Parse(LeerCadenaValidada("🧬 Grado Toxicidad (1-10): ", "^([1-9]|10)$", "1-10."));
             
             nueva = new Veneno { Nombre = nombre, Descripcion = descripcion, Precio = precio, Disponibilidad = disponibilidad, NivelPeligro = peligro, ViaDeAdministracion = viaDeAdministracion, Antidoto = antidoto, TiempoAparicion = tiempo,  GradoToxicidad = gradoToxicidad};
             break;
 
         case "2": // MEDICINA
-            var sintoma = LeerCadenaValidada("🤒 Síntoma que trata: ", @".+", "No puede estar vacío.");
-            var dosisRecomendada = double.Parse(LeerCadenaValidada("⚖️ Dosis recomendada (ml/mg): ", @"^\d+([.,]\d{1,2})?$", "Número válido."));
-            var efectos = LeerCadenaValidada("🤒 Síntoma que trata: ", @".+", "No puede estar vacío.");
-            var tiempoEfecto = int.Parse(LeerCadenaValidada("⏱️ Tiempo aparición (min): ", @"^\d+$", "Número entero."));
+            var sintoma = LeerCadenaValidada("🤧 Síntoma que trata: ", @".+", "No puede estar vacío.");
+            var dosisRecomendada = double.Parse(LeerCadenaValidada("💊 Dosis recomendada (ml/mg): ", @"^\d+([.,]\d{1,2})?$", "Número válido."));
+            var efectos = LeerCadenaValidada("🧫 Efectos: ", @".+", "No puede estar vacío.");
+            var tiempoEfecto = int.Parse(LeerCadenaValidada("🕐 Tiempo aparición (min): ", @"^\d+$", "Número entero."));
 
             nueva = new Medicina { Nombre = nombre, Descripcion = descripcion, Precio = precio, Disponibilidad = disponibilidad, NivelPeligro = peligro, Sintoma = sintoma, DosisRecomendada = dosisRecomendada, EfectosSecundarios = efectos, TiempoEfecto = tiempoEfecto};
             break;
 
         case "3": // AFRODISIACO
-            var intensidadEfecto = int.Parse(LeerCadenaValidada("🔥 Intensidad (1-10): ", "^([1-9]|10)$", "1-10."));
-            var duracion = int.Parse(LeerCadenaValidada("⏱️ Tiempo de efecto (min): ", @"^\d+$", "Número entero."));
+            var intensidadEfecto = int.Parse(LeerCadenaValidada("🩹 Intensidad (1-10): ", "^([1-9]|10)$", "1-10."));
+            var duracion = int.Parse(LeerCadenaValidada("🕐 Tiempo de efecto (min): ", @"^\d+$", "Número entero."));
             var contraIndicaciones = LeerCadenaValidada("🚫 Contraindicaciones: ", @"3", "No puede estar vacío.");
-            var riesgoUso = LeerCadenaValidada("🚫 Riesgo de uso: ", @"3", "No puede estar vacío.");
+            var riesgoUso = LeerCadenaValidada("💀 Riesgo de uso: ", @"3", "No puede estar vacío.");
 
 
             nueva = new Afrodisiaco { Nombre = nombre, Descripcion = descripcion, Precio = precio, Disponibilidad = disponibilidad, NivelPeligro = peligro, IntensidadEfecto = intensidadEfecto, Duracion = duracion, ContraIndicaciones = contraIndicaciones, RiegosUso = riesgoUso };
@@ -185,7 +194,6 @@ void AnadirNuevaSustancia(ILaboratorioService service) {
         default:
             WriteLine($"\n❌ ERROR, tipo invalido.");
             break;
-
     }
 
     // 4. Intento de creación en el servicio
@@ -195,6 +203,7 @@ void AnadirNuevaSustancia(ILaboratorioService service) {
     } catch (Exception ex) {
         WriteLine($"\n❌ ERROR DE VALIDACIÓN: {ex.Message}");
     }
+    WriteLine();
 }
 
 void ActualizarSustancia(ILaboratorioService s) {
@@ -242,13 +251,16 @@ void EliminarSustancia(ILaboratorioService s) {
 void ImprimirFichaSustancia(Sustancia p) {
     WriteLine($"🌿 Id: {p.Id}");
     WriteLine($"🍃 Nombre: {p.Nombre}");
-    WriteLine($"💰 Precio: {p.Precio:C2}");
-    WriteLine($"⚠️ Peligro: {p.NivelPeligro}");
-    WriteLine($"🗝️Disponibilidad: {p.Disponibilidad}");
     WriteLine($"📝 Descripcion: {p.Descripcion}");
+    WriteLine($"💰 Precio: {p.Precio:C2}");
+    WriteLine($"🗝️Disponibilidad: {p.Disponibilidad}");
+    WriteLine($"⚠️ Peligro: {p.NivelPeligro}");
+    
     if (p is Veneno v) {
+        var nombreAntidoto = (v.Antidoto?.Nombre != null) ? v.Antidoto.Nombre : "No hay antidoto." ;
         WriteLine($"🧪 Via de Administracion: {v.ViaDeAdministracion}");
         WriteLine($"🕐 Tiempo de aparicion: {v.TiempoAparicion}");
+        WriteLine($"🌿 Nombre del Antidoto: {nombreAntidoto}");
         WriteLine($"☠️ Toxicidad: {v.GradoToxicidad}");
         WriteLine($"🧬 Probabilidad de supervivencia: {v.ProbabilidadSupervivencia}%");
     }
@@ -264,6 +276,16 @@ void ImprimirFichaSustancia(Sustancia p) {
         WriteLine($"🚫 Contraindicaciones: {a.ContraIndicaciones}");
         WriteLine($"💀 Riesgo de uso: {a.RiegosUso}%");
     }
+}
+
+Medicina? AsignarAntidoto(ILaboratorioService service) {
+    WriteLine("☠️ Antidoto: ");
+    WriteLine("‼️ Debes buscar en el almacen la medicina: ");
+    var medicina = BuscarSustancia(service);
+    if (medicina is Medicina m) {
+        return m;
+    }
+    return null;
 }
 
 
