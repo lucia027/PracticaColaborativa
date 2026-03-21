@@ -105,10 +105,10 @@ void MostrarMenu() {
 //                      Funciones de sustancias.
 //--------------------------------------------------------------------
 
-void ListarSustancias(ILaboratorioService s) {
+void ListarSustancias(ILaboratorioService service) {
     WriteLine();
     WriteLine("💊 INVENTARIO COMPLETO DE SUSTANCIAS");
-    var lista = s.GetAllSustancia();
+    var lista = service.GetAllSustancia();
     var line = new string('─', 110);
     WriteLine(line);
     WriteLine($"{"ID", -5} | {"Nombre", -40} | {"Precio", -10} | {"Peligro", -10} | {"Disponibilidad", -15} | {"Tipo"}");
@@ -127,18 +127,16 @@ void ListarSustancias(ILaboratorioService s) {
     WriteLine();
 }
 
-Sustancia? BuscarSustancia(ILaboratorioService s) {
+Sustancia? BuscarSustancia(ILaboratorioService service) {
     WriteLine();
     var id = int.Parse(LeerCadenaValidada("🌱 Id de la sustancia: ", @"^\d+$", "Debe ser un número."));
     Sustancia? sus = null;
-    WriteLine("-----------------------------------------------");
     try {
-        sus = s.GetByIdSustancia(id);
+        sus = service.GetByIdSustancia(id);
         ImprimirFichaSustancia(sus);
     } catch (Exception ex) {
         WriteLine($"❌ ERROR: {ex.Message}");
     }
-    WriteLine("-----------------------------------------------");
     WriteLine();
     return sus;
 }
@@ -152,10 +150,8 @@ void AnadirNuevaSustancia(ILaboratorioService service) {
     var tipo = LeerCadenaValidada("🎯 Tipo: ", "^[1-3]$", "Seleccione 1, 2 o 3.");
 
     //Datos comunes a todas las sustancias
-    WriteLine("🍃 Nombre: ");
-    var nombre = ReadLine() ?? "";
-    WriteLine("📝 Descripcion: ");
-    var descripcion = ReadLine() ?? "";
+    var nombre = LeerCadenaValidada("🍃 Nombre: ", @".+", "No puede estar vacío.");
+    var descripcion = LeerCadenaValidada("📝 Descripcion: ", @".+", "No puede estar vacío.");
     var precio = decimal.Parse(LeerCadenaValidada("💰 Precio (ej: 12,50): ", @"^\d+([.,]\d{1,2})?$", "Formato numérico incorrecto."));
     var disponibilidad = (Disponibilidad)int.Parse(LeerCadenaValidada("🗝️ Disponibilidad: 1.Comun, 2.Rara, 3.Muy rara  ", "^[1-3]$", "Debe ser entre 1 y 3."));
     var peligro = (Peligro)int.Parse(LeerCadenaValidada("⚠️ Peligro: 1.Nulo, 2.Bajo, 3.Medio, 4.Alto ", "^[1-4]$", "Debe ser entre 1 y 4."));
@@ -206,39 +202,54 @@ void AnadirNuevaSustancia(ILaboratorioService service) {
     WriteLine();
 }
 
-void ActualizarSustancia(ILaboratorioService s) {
-    WriteLine("\n📝 --- MODIFICAR SUSTANCIA ---");
-    var id = int.Parse(LeerCadenaValidada("🆔 ID a editar: ", @"^\d+$", "ID no válido."));
+void ActualizarSustancia(ILaboratorioService service) {
+    WriteLine();
+    WriteLine("\n📝 MODIFICAR SUSTANCIA");
+    var id = int.Parse(LeerCadenaValidada("🌱 Id de la sustancia a editar: ", @"^\d+$", "ID no válido."));
     try {
-        var vieja = s.GetByIdSustancia(id);
-        ImprimirFichaSustancia(vieja);
-        
-        var nNom = LeerCadenaValidada($"Nombre [{vieja.Nombre}] (Enter mant.): ", @"^.*$", "");
-        var nPre = LeerCadenaValidada($"Precio [{vieja.Precio}] (Enter mant.): ", @"^(\d+([.,]\d{1,2})?)?$", "Error.");
+        var sustanciaAntigua = service.GetByIdSustancia(id);
+        Sustancia sustanciaNueva = new Medicina();
+        ImprimirFichaSustancia(sustanciaAntigua);
 
-        var actualizada = vieja switch {
-            Veneno v => v with { 
-                Nombre = string.IsNullOrWhiteSpace(nNom) ? v.Nombre : nNom,
-                Precio = string.IsNullOrWhiteSpace(nPre) ? v.Precio : decimal.Parse(nPre)
-            },
-            Medicina m => m with { 
-                Nombre = string.IsNullOrWhiteSpace(nNom) ? m.Nombre : nNom,
-                Precio = string.IsNullOrWhiteSpace(nPre) ? m.Precio : decimal.Parse(nPre)
-            },
-            Afrodisiaco a => a with { 
-                Nombre = string.IsNullOrWhiteSpace(nNom) ? a.Nombre : nNom,
-                Precio = string.IsNullOrWhiteSpace(nPre) ? a.Precio : decimal.Parse(nPre)
-            },
-            _ => vieja
-        };
+        var nombre = LeerCadenaValidada("🍃 Nombre: ", @".+", "No puede estar vacío.");
+        var descripcion = LeerCadenaValidada("📝 Descripcion: ", @".+", "No puede estar vacío.");
+        var precio = decimal.Parse(LeerCadenaValidada("💰 Precio (ej: 12,50): ", @"^\d+([.,]\d{1,2})?$", "Formato numérico incorrecto."));
+        var disponibilidad = (Disponibilidad)int.Parse(LeerCadenaValidada("🗝️ Disponibilidad: 1.Comun, 2.Rara, 3.Muy rara  ", "^[1-3]$", "Debe ser entre 1 y 3."));
+        var peligro = (Peligro)int.Parse(LeerCadenaValidada("⚠️ Peligro: 1.Nulo, 2.Bajo, 3.Medio, 4.Alto ", "^[1-4]$", "Debe ser entre 1 y 4."));
 
-        s.UpdateSustancia(id, actualizada);
+        if (sustanciaAntigua is Veneno) {
+            var viaDeAdministracion = (ViaDeAdministracion)int.Parse(LeerCadenaValidada("🧪 Vía de Administracion: 1.Oral, 2.Contacto, 3.Inhalación, 4.Inyección ", "^[1-4]$", "1-4."));
+            var tiempo = int.Parse(LeerCadenaValidada("🕐 Tiempo aparición (min): ", @"^\d+$", "Número entero."));
+            var antidoto = AsignarAntidoto(service);
+            var gradoToxicidad = int.Parse(LeerCadenaValidada("🧬 Grado Toxicidad (1-10): ", "^([1-9]|10)$", "1-10."));
+            
+            sustanciaNueva = new Veneno { Nombre = nombre, Descripcion = descripcion, Precio = precio, Disponibilidad = disponibilidad, NivelPeligro = peligro, ViaDeAdministracion = viaDeAdministracion, Antidoto = antidoto, TiempoAparicion = tiempo,  GradoToxicidad = gradoToxicidad};
+        }
+        if (sustanciaAntigua is Medicina) {
+            var sintoma = LeerCadenaValidada("🤧 Síntoma que trata: ", @".+", "No puede estar vacío.");
+            var dosisRecomendada = double.Parse(LeerCadenaValidada("💊 Dosis recomendada (ml/mg): ", @"^\d+([.,]\d{1,2})?$", "Número válido."));
+            var efectos = LeerCadenaValidada("🧫 Efectos: ", @".+", "No puede estar vacío.");
+            var tiempoEfecto = int.Parse(LeerCadenaValidada("🕐 Tiempo aparición (min): ", @"^\d+$", "Número entero."));
+
+            sustanciaNueva = new Medicina { Nombre = nombre, Descripcion = descripcion, Precio = precio, Disponibilidad = disponibilidad, NivelPeligro = peligro, Sintoma = sintoma, DosisRecomendada = dosisRecomendada, EfectosSecundarios = efectos, TiempoEfecto = tiempoEfecto};
+        }
+        if (sustanciaAntigua is Afrodisiaco) {
+            var intensidadEfecto = int.Parse(LeerCadenaValidada("🩹 Intensidad (1-10): ", "^([1-9]|10)$", "1-10."));
+            var duracion = int.Parse(LeerCadenaValidada("🕐 Tiempo de efecto (min): ", @"^\d+$", "Número entero."));
+            var contraIndicaciones = LeerCadenaValidada("🚫 Contraindicaciones: ", @"3", "No puede estar vacío.");
+            var riesgoUso = LeerCadenaValidada("💀 Riesgo de uso: ", @"3", "No puede estar vacío.");
+            
+            sustanciaNueva = new Afrodisiaco { Nombre = nombre, Descripcion = descripcion, Precio = precio, Disponibilidad = disponibilidad, NivelPeligro = peligro, IntensidadEfecto = intensidadEfecto, Duracion = duracion, ContraIndicaciones = contraIndicaciones, RiegosUso = riesgoUso };
+        }
+
+        service.UpdateSustancia(id, sustanciaNueva);
         WriteLine("✅ Registro actualizado.");
     } catch (Exception ex) { WriteLine($"❌ ERROR: {ex.Message}"); }
+    WriteLine();
 }
 
 void EliminarSustancia(ILaboratorioService s) {
-    var id = int.Parse(LeerCadenaValidada("\n🗑️ ID a eliminar: ", @"^\d+$", "ID no válido."));
+    var id = int.Parse(LeerCadenaValidada("🗑️ Id de la sustancia a eliminar: ", @"^\d+$", "ID no válido."));
     try {
         var sus = s.GetByIdSustancia(id);
         if (PedirConfirmacion($"¿Eliminar {sus.Nombre} permanentemente?")) {
@@ -249,6 +260,8 @@ void EliminarSustancia(ILaboratorioService s) {
 }
 
 void ImprimirFichaSustancia(Sustancia p) {
+    WriteLine();
+    WriteLine("-----------------------------------------------");
     WriteLine($"🌿 Id: {p.Id}");
     WriteLine($"🍃 Nombre: {p.Nombre}");
     WriteLine($"📝 Descripcion: {p.Descripcion}");
@@ -276,6 +289,8 @@ void ImprimirFichaSustancia(Sustancia p) {
         WriteLine($"🚫 Contraindicaciones: {a.ContraIndicaciones}");
         WriteLine($"💀 Riesgo de uso: {a.RiegosUso}%");
     }
+    WriteLine("-----------------------------------------------");
+    WriteLine();
 }
 
 Medicina? AsignarAntidoto(ILaboratorioService service) {
