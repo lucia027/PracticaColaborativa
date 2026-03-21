@@ -26,7 +26,7 @@ ReadKey();
 return;
 
 // --------------------------------------------------------------------
-// FLUJO PRINCIPAL
+//                          Flujo principal
 // --------------------------------------------------------------------
 
 void Main() {
@@ -106,23 +106,35 @@ void MostrarMenu() {
 //--------------------------------------------------------------------
 
 void ListarSustancias(ILaboratorioService s) {
-    WriteLine("\n💊 --- INVENTARIO COMPLETO ---");
+    WriteLine("💊 INVENTARIO COMPLETO");
     var lista = s.GetAllSustancia();
-    var line = new string('─', 100);
+    var line = new string('─', 110);
     WriteLine(line);
-    WriteLine($"{"ID"} | {"Nombre"} | {"Precio"} | {"Peligro"} | {"Disponibilidad"} | {"Tipo",-12}");
+    WriteLine($"{"ID", -5} | {"Nombre", -40} | {"Precio", -10} | {"Peligro", -10} | {"Disponibilidad", -15} | {"Tipo"}");
     WriteLine(line);
     foreach (var sus in lista) {
-        string tipo = sus switch { Veneno => "Veneno", Medicina => "Medicina", Afrodisiaco => "Afrodisiaco", _ => "Sustancia" };
+        if (sus is Veneno v) {
+            WriteLine($"{v.Id, -5} | {v.Nombre, -40} | {v.Precio, -10} | {v.NivelPeligro, -10} | {v.Disponibilidad, -15} | {"Veneno"}");
+        }
+        if (sus is Medicina m) {
+            WriteLine($"{m.Id, -5} | {m.Nombre, -40} | {m.Precio, -10} | {m.NivelPeligro, -10} | {m.Disponibilidad, -15} | {"Medicina"}");
+        }
+        if (sus is Afrodisiaco a) {
+            WriteLine($"{a.Id, -5} | {a.Nombre, -40} | {a.Precio, -10} | {a.NivelPeligro, -10} | {a.Disponibilidad, -15} | {"Afrodisiaco"}");
+        }    
     }
 }
 
 void BuscarSustancia(ILaboratorioService s) {
-    var id = int.Parse(LeerCadenaValidada("\n🆔 ID de la sustancia: ", @"^\d+$", "Debe ser un número."));
+    var id = int.Parse(LeerCadenaValidada("🌱 Id de la sustancia: ", @"^\d+$", "Debe ser un número."));
+    WriteLine("-----------------------------------------------");
     try {
         var sus = s.GetByIdSustancia(id);
         ImprimirFichaSustancia(sus);
-    } catch (Exception ex) { WriteLine($"❌ ERROR: {ex.Message}"); }
+        WriteLine("-----------------------------------------------");
+    } catch (Exception ex) {
+        WriteLine($"❌ ERROR: {ex.Message}");
+    }
 }
 
 void AnadirNuevaSustancia(ILaboratorioService service) {
@@ -228,17 +240,30 @@ void EliminarSustancia(ILaboratorioService s) {
 }
 
 void ImprimirFichaSustancia(Sustancia p) {
-    var line = new string('━', 60);
-    WriteLine();
     WriteLine($"🌿 Id: {p.Id}");
     WriteLine($"🍃 Nombre: {p.Nombre}");
     WriteLine($"💰 Precio: {p.Precio:C2}");
     WriteLine($"⚠️ Peligro: {p.NivelPeligro}");
-    WriteLine($"⚠️ Disponibilidad: {p.Disponibilidad}");
-    WriteLine($"  📝 DESC: {p.Descripcion}");
-    if (p is Veneno v) WriteLine($"  🧪 TOXICIDAD: {v.GradoToxicidad}/10 | SUPERVIVENCIA: {v.ProbabilidadSupervivencia}%");
-    if (p is Medicina m) WriteLine($"  💊 DOSIS: {m.DosisRecomendada}mg | EFECTO: {m.TiempoEfecto}min");
-    WriteLine($"{line}\n");
+    WriteLine($"🗝️Disponibilidad: {p.Disponibilidad}");
+    WriteLine($"📝 Descripcion: {p.Descripcion}");
+    if (p is Veneno v) {
+        WriteLine($"🧪 Via de Administracion: {v.ViaDeAdministracion}");
+        WriteLine($"🕐 Tiempo de aparicion: {v.TiempoAparicion}");
+        WriteLine($"☠️ Toxicidad: {v.GradoToxicidad}");
+        WriteLine($"🧬 Probabilidad de supervivencia: {v.ProbabilidadSupervivencia}%");
+    }
+    if (p is Medicina m) {
+        WriteLine($"🤧 Sintomas: {m.Sintoma}");
+        WriteLine($"💊 Dosis recomendada: {m.DosisRecomendada}");
+        WriteLine($"🧫 Efectos secundarios: {m.EfectosSecundarios}");
+        WriteLine($"🕐 Tiempo de efecto: {m.TiempoEfecto}%");
+    }
+    if (p is Afrodisiaco a) {
+        WriteLine($"🩹 Intensidad del efecto: {a.IntensidadEfecto}");
+        WriteLine($"🕐 Duracion: {a.Duracion}");
+        WriteLine($"🚫 Contraindicaciones: {a.ContraIndicaciones}");
+        WriteLine($"💀 Riesgo de uso: {a.RiegosUso}%");
+    }
 }
 
 
