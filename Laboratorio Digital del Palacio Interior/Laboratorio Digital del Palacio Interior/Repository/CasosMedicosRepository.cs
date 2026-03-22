@@ -31,7 +31,7 @@ public class CasosMedicosRepository : ICasosMedicosRepository {
         // Se le asigna el ID al caso médico que nos pasan antes de añadirlo al diccionario
         // para poder verificar seguidamente si existe algún caso médico con esa misma clave,
         // después de verificarlo ya si es correcto se añade al almacen.
-        var casoMedico = entity with { Id = _contador++ , Estado = EstadoCasoMedico.Abierto};
+        var casoMedico = entity with { Id = _contador++ , FechaInicio = DateTime.Now};
         /*
         if (_almacenamiento.ContainsKey(entity.Id)) {
             return null;

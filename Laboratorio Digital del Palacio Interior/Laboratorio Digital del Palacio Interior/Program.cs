@@ -21,7 +21,7 @@ Clear();
 Main();
 
 Log.CloseAndFlush();
-WriteLine("\n Pulse cualquier tecla para salir del programa.👋🏻");
+WriteLine("Pulse cualquier tecla para salir del programa.👋🏻");
 ReadKey();
 return;
 
@@ -63,7 +63,7 @@ void Main() {
             case "9": MostrarInformeEstadistico(service); break;
             case "10": ImportarDatosLaboratorio(service); break;
             case "11": ExportarDatosLaboratorio(service); break;
-            case "0": WriteLine("\n👋 Cerrando laboratorio. ¡Buen trabajo, boticaria!"); break;
+            case "0": WriteLine("Cerrando laboratorio. ¡Buen trabajo, boticaria! 👋🏻"); break;
         }
 
         if (opcion != "0") {
@@ -75,6 +75,7 @@ void Main() {
 }
 
 void MostrarMenu() {
+    WriteLine();
     WriteLine("-----------------------------------------------");
     WriteLine("🌸 Laboratorio Digital Del Palacio Interior 🌸");
     WriteLine("-----------------------------------------------");
@@ -98,6 +99,7 @@ void MostrarMenu() {
     WriteLine();
     WriteLine("0. 🔚 SALIR");
     WriteLine("-----------------------------------------------");
+    WriteLine();
 }
 
 
@@ -108,12 +110,12 @@ void MostrarMenu() {
 void ListarSustancias(ILaboratorioService service) {
     WriteLine();
     WriteLine("💊 INVENTARIO COMPLETO DE SUSTANCIAS");
-    var lista = service.GetAllSustancia();
-    var line = new string('─', 110);
-    WriteLine(line);
+    var sustancias = service.GetAllSustancia();
+    var linea = new string('─', 110);
+    WriteLine(linea);
     WriteLine($"{"ID", -5} | {"Nombre", -40} | {"Precio", -10} | {"Peligro", -10} | {"Disponibilidad", -15} | {"Tipo"}");
-    WriteLine(line);
-    foreach (var sus in lista) {
+    WriteLine(linea);
+    foreach (var sus in sustancias) {
         if (sus is Veneno v) {
             WriteLine($"{v.Id, -5} | {v.Nombre, -40} | {v.Precio, -10} | {v.NivelPeligro, -10} | {v.Disponibilidad, -15} | {"Veneno"}");
         }
@@ -188,23 +190,23 @@ void AnadirNuevaSustancia(ILaboratorioService service) {
             break;
         
         default:
-            WriteLine($"\n❌ ERROR, tipo invalido.");
+            WriteLine($"❌ ERROR, tipo invalido.");
             break;
     }
 
     // 4. Intento de creación en el servicio
     try {
         service.CreateSustancia(nueva);
-        WriteLine($"\n✅ '{nueva.Nombre}' se ha registrado correctamente en el inventario.");
+        WriteLine($"✅ '{nueva.Nombre}' se ha registrado correctamente en el inventario.");
     } catch (Exception ex) {
-        WriteLine($"\n❌ ERROR DE VALIDACIÓN: {ex.Message}");
+        WriteLine($"❌ ERROR DE VALIDACIÓN: {ex.Message}");
     }
     WriteLine();
 }
 
 void ActualizarSustancia(ILaboratorioService service) {
     WriteLine();
-    WriteLine("\n📝 MODIFICAR SUSTANCIA");
+    WriteLine("📝 MODIFICAR SUSTANCIA");
     var id = int.Parse(LeerCadenaValidada("🌱 Id de la sustancia a editar: ", @"^\d+$", "ID no válido."));
     try {
         var sustanciaAntigua = service.GetByIdSustancia(id);
@@ -249,6 +251,7 @@ void ActualizarSustancia(ILaboratorioService service) {
 }
 
 void EliminarSustancia(ILaboratorioService service) {
+    WriteLine();
     var id = int.Parse(LeerCadenaValidada("🗑️ Id de la sustancia a eliminar: ", @"^\d+$", "ID no válido."));
 
     try {
@@ -258,6 +261,7 @@ void EliminarSustancia(ILaboratorioService service) {
             WriteLine("✅ Eliminado.");
         }
     } catch (Exception ex) { WriteLine($"❌ ERROR: {ex.Message}"); }
+    WriteLine();
 }
 
 void ImprimirFichaSustancia(Sustancia s) {
@@ -295,12 +299,14 @@ void ImprimirFichaSustancia(Sustancia s) {
 }
 
 Medicina? AsignarAntidoto(ILaboratorioService service) {
+    WriteLine();
     WriteLine("☠️ Antidoto: ");
     WriteLine("‼️ Debes buscar en el almacen la medicina: ");
     var medicina = BuscarSustancia(service);
     if (medicina is Medicina m) {
         return m;
     }
+    WriteLine();
     return null;
 }
 
@@ -310,56 +316,89 @@ Medicina? AsignarAntidoto(ILaboratorioService service) {
 //--------------------------------------------------------------------
 
 void ListarCasosMedicos(ILaboratorioService service) {
-    WriteLine("\n📜 HISTORIAL DE CASOS MÉDICO DEL PALACIO");
-    var casos = service.GetAllCasoMedico();
-    var line = new string('─', 80);
-    WriteLine(line);
+    WriteLine();
+    WriteLine("📜 HISTORIAL DE CASOS MÉDICO DEL PALACIO");
+    var casosMedico = service.GetAllCasoMedico();
+    var linea = new string('─', 80);
+    WriteLine(linea);
     WriteLine($"{"ID",-5} | {"Fecha",-20} | {"Estado",-15} | {"Gravedad",-12} | {"Sospecha"}");
-    WriteLine(line);
-    foreach (var c in casos) {
-        WriteLine($"{c.Id,-5} | {c.FechaInicio, -20} | {c.Estado,-15} | {c.Gravedad,-12} | {c.CausaSospecha}");
+    WriteLine(linea);
+    foreach (var caso in casosMedico) {
+        WriteLine($"{caso.Id,-5} | {caso.FechaInicio, -20} | {caso.Estado,-15} | {caso.Gravedad,-12} | {caso.CausaSospecha}");
     }
     WriteLine();
 }
 
-void BuscarCasoMedico(ILaboratorioService s) {
-    var id = int.Parse(LeerCadenaValidada("\n🆔 ID del Caso: ", @"^\d+$", "Número requerido."));
+void BuscarCasoMedico(ILaboratorioService service) {
+    WriteLine();
+    var id = int.Parse(LeerCadenaValidada("🧾 Id del caso médico: ", @"^\d+$", "Debe ser un número."));
     try {
-        var caso = s.GetByIdCasoMedico(id);
+        var caso = service.GetByIdCasoMedico(id);
         ImprimirFichaCaso(caso);
-    } catch (Exception ex) { WriteLine($"❌ ERROR: {ex.Message}"); }
+    } catch (Exception ex) {
+        WriteLine($"❌ ERROR: {ex.Message}");
+    }
+    WriteLine();
 }
 
-void AbrirCasoMedico(ILaboratorioService s) {
-    WriteLine("\n🚨 --- APERTURA DE EXPEDIENTE ---");
-    var sin = LeerCadenaValidada("📝 Síntomas: ", @".{5,}", "Mínimo 5 car.");
-    
-    WriteLine("⚖️ Gravedad: 0.Nulo, 1.Leve, 2.Moderada, 3.Grave");
-    var grav = (Gravedad)int.Parse(LeerCadenaValidada("🎯 Selección: ", "^[0-3]$", "0-3."));
+void AbrirCasoMedico(ILaboratorioService service) {
+    WriteLine();
+    WriteLine("➕ AÑADIR CASO MEDICO");
 
-    var nuevo = new CasoMedico {
-        Sintomas = sin,
-        FechaInicio = DateTime.Now,
-        Gravedad = grav,
-        Estado = EstadoCasoMedico.Abierto,
-        CausaSospecha = CausaSospecha.Desconocida
-    };
+    var sintomas = LeerCadenaValidada("🤒 Sintomas: ", @".+", "No puede estar vacío.");
+    var gravedad = (Gravedad)int.Parse(LeerCadenaValidada("🧨 Gravedad: 1.Nulo, 2.Leve, 3.Moderada, 4.Grave ", "^[1-4]$", "Debe ser entre 1 y 4."));
+    var causaSospecha = (CausaSospecha)int.Parse(LeerCadenaValidada("❓ Causa sospecha: 1.Enfermedad, 2.Veneno, 3.Desconocida", "^[1-3]$", "Debe ser entre 1 y 3."));
+    var sustanciasSospechas = AsignarSustanciasSospechosas();
+    var tratamientos = AsignarTratamientos();
+    var estado = (EstadoCasoMedico)int.Parse(LeerCadenaValidada("📋 Estado: 1.Abierto, 2.Resuelto, 3.En Investigacion", "^[1-3]$", "Debe ser entre 1 y 3."));
 
+    var nuevo = new CasoMedico { Sintomas = sintomas, Gravedad = gravedad, CausaSospecha = causaSospecha, SustanciasSospechosas = sustanciasSospechas, Tratamientos = tratamientos, Estado = estado};
     try {
-        var creado = s.CreateCasoMedico(nuevo);
+        service.CreateCasoMedico(nuevo);
         WriteLine("✅ Caso abierto. Iniciando investigación...");
-        ImprimirFichaCaso(creado);
-    } catch (Exception ex) { WriteLine($"❌ ERROR: {ex.Message}"); }
+        ImprimirFichaCaso(nuevo);
+    } catch (Exception ex) {
+        WriteLine($"❌ ERROR: {ex.Message}");
+    }
+    WriteLine();
+}
+
+void ActualizarCasoMedico(ILaboratorioService service) {
+    WriteLine();
+    WriteLine("📝 MODIFICAR CASO MEDICO");
+}
+
+void ImprimirFichaCaso(CasoMedico c) {
+    WriteLine();
+    WriteLine("-----------------------------------------------");
+    WriteLine($"📃 Id: {c.Id}");
+    WriteLine($"🤒 Sintomas: {c.Sintomas}");
+    WriteLine($"📅 Fecha de inicio: {c.FechaInicio}");
+    WriteLine($"🧨 Gravedad: {c.Gravedad}");
+    WriteLine($"❓ Causa de sospecha: {c.CausaSospecha}");
+    WriteLine($"🌿 Sustancias sospechosas: {c.SustanciasSospechosas}");
+    WriteLine($"🛡️ Tratamientos: {c.Tratamientos}");
+    WriteLine($"📋 Estado: {c.Estado}");
+    WriteLine("-----------------------------------------------");
+    WriteLine();
 }
 
 void MostrarInformeEstadistico(ILaboratorioService s) {
     var inf = s.GetInforme();
-    WriteLine("\n📊 --- RESUMEN DE ACTIVIDAD ---");
+    WriteLine("📊 RESUMEN DE ACTIVIDAD");
     WriteLine(new string('═', 40));
     WriteLine($"🔹 Casos Resueltos:      {inf.CasosMedicosResueltos}");
     WriteLine($"🔹 Sustancia recurrente: {inf.SutanciaMasUtilizada?.Nombre ?? "N/A"}");
     WriteLine($"🔹 Medicina clave:       {inf.SustanciaMasEfectivaTratamiento?.Nombre ?? "N/A"}");
     WriteLine(new string('═', 40));
+}
+
+HashSet<Veneno>? AsignarSustanciasSospechosas() {
+    return null;
+}
+
+HashSet<Medicina>? AsignarTratamientos() {
+    return null;
 }
 
 //--------------------------------------------------------------------
@@ -385,16 +424,7 @@ void ExportarDatosLaboratorio(ILaboratorioService s) {
 //--------------------------------------------------------------------
 //                        Funciones de extras.
 //--------------------------------------------------------------------
-void ImprimirFichaCaso(CasoMedico c) {
-    var line = new string('═', 60);
-    WriteLine($"\n{line}");
-    WriteLine($"  EXPEDIENTE: {c.Id} | ESTADO: {c.Estado}");
-    WriteLine(new string('─', 60));
-    WriteLine($"  📅 INICIO: {c.FechaInicio:G}");
-    WriteLine($"  ⚖️ GRAVEDAD: {c.Gravedad} | CAUSA: {c.CausaSospecha}");
-    WriteLine($"  📝 SÍNTOMAS: {c.Sintomas}");
-    WriteLine($"{line}\n");
-}
+
 
 string LeerCadenaValidada(string prompt, string regex, string error) {
     while (true) {
@@ -406,7 +436,7 @@ string LeerCadenaValidada(string prompt, string regex, string error) {
 }
 
 bool PedirConfirmacion(string mensaje) {
-    Write($"\n⚠️ {mensaje} (S/N): ");
+    Write($"⚠️ {mensaje} (S/N): ");
     var res = char.ToUpper(ReadKey(false).KeyChar) == 'S';
     WriteLine();
     return res;
