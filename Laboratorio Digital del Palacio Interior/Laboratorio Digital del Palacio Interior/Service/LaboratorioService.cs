@@ -144,7 +144,7 @@ public class LaboratorioService(
             var casosMedicos = casosMedicosRepository.GetAll();
             var numCasosMedicos = casosMedicos.Count();
             
-            casoMedicoStorage.Salvar(casosMedicos, Configuracion.SustanciaFile);
+            casoMedicoStorage.Salvar(casosMedicos, Configuracion.CasosMedicosFile);
             return numCasosMedicos;
         } catch (Exception e) {
             Console.WriteLine(e);

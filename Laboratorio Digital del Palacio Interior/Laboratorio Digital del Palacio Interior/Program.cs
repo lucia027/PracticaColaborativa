@@ -260,17 +260,17 @@ void EliminarSustancia(ILaboratorioService service) {
     } catch (Exception ex) { WriteLine($"❌ ERROR: {ex.Message}"); }
 }
 
-void ImprimirFichaSustancia(Sustancia p) {
+void ImprimirFichaSustancia(Sustancia s) {
     WriteLine();
     WriteLine("-----------------------------------------------");
-    WriteLine($"🌿 Id: {p.Id}");
-    WriteLine($"🍃 Nombre: {p.Nombre}");
-    WriteLine($"📝 Descripcion: {p.Descripcion}");
-    WriteLine($"💰 Precio: {p.Precio:C2}");
-    WriteLine($"🗝️Disponibilidad: {p.Disponibilidad}");
-    WriteLine($"⚠️ Peligro: {p.NivelPeligro}");
+    WriteLine($"🌿 Id: {s.Id}");
+    WriteLine($"🍃 Nombre: {s.Nombre}");
+    WriteLine($"📝 Descripcion: {s.Descripcion}");
+    WriteLine($"💰 Precio: {s.Precio:C2}");
+    WriteLine($"🗝️Disponibilidad: {s.Disponibilidad}");
+    WriteLine($"⚠️ Peligro: {s.NivelPeligro}");
     
-    if (p is Veneno v) {
+    if (s is Veneno v) {
         var nombreAntidoto = (v.Antidoto?.Nombre != null) ? v.Antidoto.Nombre : "No hay antidoto." ;
         WriteLine($"🧪 Via de Administracion: {v.ViaDeAdministracion}");
         WriteLine($"🕐 Tiempo de aparicion: {v.TiempoAparicion}");
@@ -278,13 +278,13 @@ void ImprimirFichaSustancia(Sustancia p) {
         WriteLine($"☠️ Toxicidad: {v.GradoToxicidad}");
         WriteLine($"🧬 Probabilidad de supervivencia: {v.ProbabilidadSupervivencia}%");
     }
-    if (p is Medicina m) {
+    if (s is Medicina m) {
         WriteLine($"🤧 Sintomas: {m.Sintoma}");
         WriteLine($"💊 Dosis recomendada: {m.DosisRecomendada}");
         WriteLine($"🧫 Efectos secundarios: {m.EfectosSecundarios}");
         WriteLine($"🕐 Tiempo de efecto: {m.TiempoEfecto}%");
     }
-    if (p is Afrodisiaco a) {
+    if (s is Afrodisiaco a) {
         WriteLine($"🩹 Intensidad del efecto: {a.IntensidadEfecto}");
         WriteLine($"🕐 Duracion: {a.Duracion}");
         WriteLine($"🚫 Contraindicaciones: {a.ContraIndicaciones}");
@@ -309,17 +309,17 @@ Medicina? AsignarAntidoto(ILaboratorioService service) {
 //                    Funciones de casos médicos.
 //--------------------------------------------------------------------
 
-void ListarCasosMedicos(ILaboratorioService s) {
-    WriteLine("\n📜 --- HISTORIAL MÉDICO DEL PALACIO ---");
-    var casos = s.GetAllCasoMedico();
+void ListarCasosMedicos(ILaboratorioService service) {
+    WriteLine("\n📜 HISTORIAL DE CASOS MÉDICO DEL PALACIO");
+    var casos = service.GetAllCasoMedico();
     var line = new string('─', 80);
     WriteLine(line);
-    WriteLine($"{"ID",-5} | {"Fecha",-12} | {"Estado",-15} | {"Gravedad",-12} | {"Sospecha",-15}");
+    WriteLine($"{"ID",-5} | {"Fecha",-20} | {"Estado",-15} | {"Gravedad",-12} | {"Sospecha"}");
     WriteLine(line);
     foreach (var c in casos) {
-        WriteLine($"{c.Id,-5} | {c.FechaInicio:dd/MM/yyyy} | {c.Estado,-15} | {c.Gravedad,-12} | {c.CausaSospecha}");
+        WriteLine($"{c.Id,-5} | {c.FechaInicio, -20} | {c.Estado,-15} | {c.Gravedad,-12} | {c.CausaSospecha}");
     }
-    WriteLine(line);
+    WriteLine();
 }
 
 void BuscarCasoMedico(ILaboratorioService s) {
