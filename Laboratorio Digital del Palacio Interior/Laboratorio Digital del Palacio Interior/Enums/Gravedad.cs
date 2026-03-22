@@ -4,5 +4,5 @@
 /// Define los tipos de gravedad de un caso médico.
 /// </summary>
 public enum Gravedad {
-    Nulo, Leve, Moderada, Grave
+    Nulo = 1, Leve = 2, Moderada = 3, Grave = 4
 }

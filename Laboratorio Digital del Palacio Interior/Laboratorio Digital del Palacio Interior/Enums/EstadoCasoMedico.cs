@@ -4,5 +4,5 @@
 /// Define los estados en el que se encuentra un caso médico.
 /// </summary>
 public enum EstadoCasoMedico {
-    Abierto, Resuelto, EnInvestigacion
+    Abierto = 1, Resuelto = 2, EnInvestigacion = 3
 }

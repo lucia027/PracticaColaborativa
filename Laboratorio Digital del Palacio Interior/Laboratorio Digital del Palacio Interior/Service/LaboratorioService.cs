@@ -69,12 +69,12 @@ public class LaboratorioService(
     /// <inheritdoc cref="ILaboratorioService.UpdateCasoMedico"/>
     public CasoMedico UpdateCasoMedico(int id, CasoMedico casoMedico) {
         ValidateCasosMedico(casoMedico);
-        return casosMedicosRepository.Update(id, casoMedico) ?? throw new InvalidOperationException("La sustancia a actualizar no existe.");
+        return casosMedicosRepository.Update(id, casoMedico) ?? throw new InvalidOperationException("El caso médico  a actualizar no existe.");
     }
 
     /// <inheritdoc cref="ILaboratorioService.DeleteCasoMedico"/>
     public CasoMedico DeleteCasoMedico(int id) {
-        return casosMedicosRepository.Delete(id) ?? throw new InvalidOperationException("La sustancia a eliminar no existe.");
+        return casosMedicosRepository.Delete(id) ?? throw new InvalidOperationException("El caso médico a eliminar no existe o ya esta resuelto.");
     }
 
     /// <inheritdoc cref="ILaboratorioService.GetInforme"/>

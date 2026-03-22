@@ -3,5 +3,5 @@
 /// Define los niveles de disponibilidad de las sustancias.
 /// </summary>
 public enum Disponibilidad {
-    Comun, Rara, MuyRara
+    Comun = 1, Rara = 2, MuyRara = 3
 }

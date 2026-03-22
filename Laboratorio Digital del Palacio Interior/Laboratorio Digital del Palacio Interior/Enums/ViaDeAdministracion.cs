@@ -4,5 +4,5 @@
 /// Define los tipos de vias de administracion de venenos.
 /// </summary>
 public enum ViaDeAdministracion {
-    Oral, Contacto, Inhalacion
+    Oral = 1, Contacto = 2, Inhalacion = 3
 }

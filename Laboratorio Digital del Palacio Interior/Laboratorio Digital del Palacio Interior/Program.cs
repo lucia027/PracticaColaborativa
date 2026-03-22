@@ -83,25 +83,25 @@ void MostrarMenu() {
     WriteLine("-----------------------------------------------");
     WriteLine();
     WriteLine("🌿 GESTIÓN DE SUSTANCIAS ");
-    WriteLine("1. 🌱 Listar Sustancias");
-    WriteLine("2. 🔍 Buscar Sustancia");
-    WriteLine("3. ➕ Registrar Nueva Sustancia");
-    WriteLine("4. 📝 Modificar Sustancia Existente");
-    WriteLine("5. 🗑️  Eliminar Sustancia del Registro");
+    WriteLine("1.  🌱 Listar Sustancias");
+    WriteLine("2.  🔍 Buscar Sustancia");
+    WriteLine("3.  ➕  Registrar Nueva Sustancia");
+    WriteLine("4.  📝 Modificar Sustancia Existente");
+    WriteLine("5.  🗑️ Eliminar Sustancia del Registro");
     WriteLine();
     WriteLine("🩺 GESTIÓN DE CASOS MÉDICOS ");
-    WriteLine("6. 📜 Listar Casos Médicos");
-    WriteLine("7. 🔍 Buscar Caso Médico Específico");
-    WriteLine("8. ➕ Registrar Nuevo Caso Médico");
-    WriteLine("9. 📝 Modificar Caso Médico  Existente");
-    WriteLine("10. ❌ Terminar investigacion Caso Médico  Existente");
+    WriteLine("6.  📜 Listar Casos Médicos");
+    WriteLine("7.  🔍 Buscar Caso Médico Específico");
+    WriteLine("8.  ➕  Registrar Nuevo Caso Médico");
+    WriteLine("9.  📝 Modificar Caso Médico  Existente");
+    WriteLine("10. ❌  Terminar investigacion Caso Médico  Existente");
     WriteLine("11. 📊 Informe");
     WriteLine();
     WriteLine("💾 ALMACENAMIENTO");
     WriteLine("12. 📥 Importar desde JSON");
     WriteLine("13. 📤 Exportar a JSON");
     WriteLine();
-    WriteLine("0. 🔚 SALIR");
+    WriteLine("0.  🔚 SALIR");
     WriteLine("-----------------------------------------------");
     WriteLine();
 }
@@ -186,8 +186,8 @@ void AnadirNuevaSustancia(ILaboratorioService service) {
         case "3": // AFRODISIACO
             var intensidadEfecto = int.Parse(LeerCadenaValidada("🩹 Intensidad (1-10): ", "^([1-9]|10)$", "1-10."));
             var duracion = int.Parse(LeerCadenaValidada("🕐 Tiempo de efecto (min): ", @"^\d+$", "Número entero."));
-            var contraIndicaciones = LeerCadenaValidada("🚫 Contraindicaciones: ", @"3", "No puede estar vacío.");
-            var riesgoUso = LeerCadenaValidada("💀 Riesgo de uso: ", @"3", "No puede estar vacío.");
+            var contraIndicaciones = LeerCadenaValidada("🚫 Contraindicaciones: ", @".+", "No puede estar vacío.");
+            var riesgoUso = LeerCadenaValidada("💀 Riesgo de uso: ", @".+", "No puede estar vacío.");
 
 
             nueva = new Afrodisiaco { Nombre = nombre, Descripcion = descripcion, Precio = precio, Disponibilidad = disponibilidad, NivelPeligro = peligro, IntensidadEfecto = intensidadEfecto, Duracion = duracion, ContraIndicaciones = contraIndicaciones, RiegosUso = riesgoUso };
@@ -358,9 +358,9 @@ void AbrirCasoMedico(ILaboratorioService service) {
 
     var nuevo = new CasoMedico { Sintomas = sintomas, Gravedad = gravedad, CausaSospecha = causaSospecha, SustanciasSospechosas = sustanciasSospechas, Tratamientos = tratamientos, Estado = estado};
     try {
-        service.CreateCasoMedico(nuevo);
+        var nuevoId = service.CreateCasoMedico(nuevo);
         WriteLine("✅ Caso abierto. Iniciando investigación...");
-        ImprimirFichaCaso(nuevo);
+        ImprimirFichaCaso(nuevoId);
     } catch (Exception ex) {
         WriteLine($"❌ ERROR: {ex.Message}");
     }
@@ -413,10 +413,10 @@ void FinalizarCasoMedico(ILaboratorioService service) {
 
 void ImprimirFichaCaso(CasoMedico caso) {
     var sustanciasSospechosas = (caso.SustanciasSospechosas != null)
-        ? caso.SustanciasSospechosas.Select(v => v.Nombre).ToString()
+        ? caso.SustanciasSospechosas.Select(v => v.Nombre).ToList().ToString()
         : "No hay sustancias sospechosas.";
     var tratamientos = (caso.Tratamientos != null)
-        ? caso.Tratamientos.Select(m => m.Nombre).ToString()
+        ? caso.Tratamientos.Select(m => m.Nombre).ToList().ToString()
         : "No hay tratamientos.";
     
     WriteLine();
@@ -425,9 +425,9 @@ void ImprimirFichaCaso(CasoMedico caso) {
     WriteLine($"🤒 Sintomas: {caso.Sintomas}");
     WriteLine($"📅 Fecha de inicio: {caso.FechaInicio}");
     WriteLine($"🧨 Gravedad: {caso.Gravedad}");
-    WriteLine($"❓ Causa de sospecha: {caso.CausaSospecha}");
+    WriteLine($"❓  Causa de sospecha: {caso.CausaSospecha}");
     WriteLine($"🌿 Sustancias sospechosas: {sustanciasSospechosas}");
-    WriteLine($"🛡️ Tratamientos: {tratamientos}");
+    WriteLine($"🛡️Tratamientos: {tratamientos}");
     WriteLine($"📋 Estado: {caso.Estado}");
     WriteLine("-----------------------------------------------");
     WriteLine();
@@ -437,9 +437,9 @@ void MostrarInformeEstadistico(ILaboratorioService service) {
     var informe = service.GetInforme();
     WriteLine("📊 RESUMEN DE ACTIVIDAD");
     WriteLine("-----------------------------------------------");
-    WriteLine($"🔹Casos Resueltos:      {informe.CasosMedicosResueltos}");
+    WriteLine($"🔹Casos Resueltos: {informe.CasosMedicosResueltos}");
     WriteLine($"🔹Sustancia recurrente: {informe.SutanciaMasUtilizada?.Nombre ?? "No hay."}");
-    WriteLine($"🔹Medicina clave:       {informe.SustanciaMasEfectivaTratamiento?.Nombre ?? "No hay."}");
+    WriteLine($"🔹Medicina clave: {informe.SustanciaMasEfectivaTratamiento?.Nombre ?? "No hay."}");
     WriteLine("-----------------------------------------------");
 }
 

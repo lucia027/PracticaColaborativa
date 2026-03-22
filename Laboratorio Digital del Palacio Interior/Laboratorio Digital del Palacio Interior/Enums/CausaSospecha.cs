@@ -4,5 +4,5 @@
 /// Define las posibles causas de sospecha del caso médico.
 /// </summary>
 public enum CausaSospecha {
-    Enfermedad, Veneno, Desconocida
+    Enfermedad = 1, Veneno = 2, Desconocida = 3
 }

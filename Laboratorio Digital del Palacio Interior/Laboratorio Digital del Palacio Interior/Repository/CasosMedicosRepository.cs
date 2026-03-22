@@ -49,18 +49,19 @@ public class CasosMedicosRepository : ICasosMedicosRepository {
             return null;
         }
 
-        var casoMedicoUpdate = entity with { Id = id };
+        var casoMedicoUpdate = entity with { Id = id , FechaInicio = DateTime.Now};
         _almacenamiento[id] = casoMedicoUpdate;
         return casoMedicoUpdate;
     }
 
     /// <inheritdoc cref="ICasosMedicosRepository.Delete"/>
     public CasoMedico? Delete(int id) {
-        if (!_almacenamiento.TryGetValue(id, out var casoMedicoDelete)) {
+        if (!_almacenamiento.TryGetValue(id, out var casoMedicoDelete) || casoMedicoDelete.Estado == EstadoCasoMedico.Resuelto) {
             return null;
         }
 
         casoMedicoDelete = casoMedicoDelete with { Estado = EstadoCasoMedico.Resuelto };
+        _almacenamiento[id] = casoMedicoDelete;
         return casoMedicoDelete;
     }
     

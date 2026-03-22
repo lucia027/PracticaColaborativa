@@ -4,5 +4,5 @@
 /// Define los niveles de peligro que hay para una sustancia.
 /// </summary>
 public enum Peligro {
-    Nulo, Bajo, Medio, Alto
+    Nulo = 1, Bajo = 2, Medio = 3, Alto = 4
 }
