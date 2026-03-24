@@ -1,11 +1,14 @@
-﻿namespace Laboratorio_Digital_del_Palacio_Interior.Models;
+﻿using Laboratorio_Digital_del_Palacio_Interior.Enums;
+
+namespace Laboratorio_Digital_del_Palacio_Interior.Models;
 
 public record Informe (
-    Sustancia? SutanciaMasUtilizada,
+    string VenenoPeligroso ,
     int CasosMedicosResueltos,
-    Sustancia? SustanciaMasEfectivaTratamiento
+    Dictionary<int, CausaSospecha> CasosMedicosVenenos,
+    string AfrodisiacoIntensidad
 ) {
     public override string ToString() {
-        return $"Sustancia mas utilizada = {SutanciaMasUtilizada}, casos medicos resueltos = {CasosMedicosResueltos}, sustancias mas efectivas en tratamientos = {SustanciaMasEfectivaTratamiento}.";
+        return $"Veneno mas peligroso = {VenenoPeligroso}, casos medicos resueltos = {CasosMedicosResueltos}, casos medicos causados por venenos = {CasosMedicosVenenos}, afrodisiaco con la intensidad mas alta = {AfrodisiacoIntensidad}.";
     }
 };

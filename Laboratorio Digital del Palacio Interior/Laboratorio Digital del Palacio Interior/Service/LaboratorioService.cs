@@ -79,14 +79,18 @@ public class LaboratorioService(
 
     /// <inheritdoc cref="ILaboratorioService.GetInforme"/>
     public Informe GetInforme() {
-        var almacen = casosMedicosRepository.GetAll();
+        var almacenCasosMedicos = casosMedicosRepository.GetAll();
+        var almacenSustancias = sustanciasRepository.GetAll();
 
-        var sustanciaMasUtilizada = new Medicina();
-        var casosMedicosResueltos = almacen.Count(c => c.Estado == EstadoCasoMedico.Resuelto);
-        var sustanciaMasEfectivaTratamiento = new Medicina();
+        var venenoPeligroso = almacenSustancias.MaxBy(v => v.Precio).Nombre;
+        var casosMedicosResueltos = almacenCasosMedicos.Count(c => c.Estado == EstadoCasoMedico.Resuelto);
+        var casosMedicosVenenos = almacenCasosMedicos
+            .Where(c => c.CausaSospecha == CausaSospecha.Veneno)
+            .Select(c => new { c.Id, c.CausaSospecha })
+            .ToDictionary();
+        var afrodisiacoIntensidad = almacenSustancias.OfType<Afrodisiaco>().MaxBy(a => a.IntensidadEfecto).Nombre;
 
-
-        Informe informe = new Informe(sustanciaMasUtilizada, casosMedicosResueltos, sustanciaMasEfectivaTratamiento);
+        Informe informe = new Informe(venenoPeligroso, casosMedicosResueltos, casosMedicosVenenos, afrodisiacoIntensidad);
         return informe;
     }
 
