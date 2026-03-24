@@ -412,12 +412,7 @@ void FinalizarCasoMedico(ILaboratorioService service) {
 }
 
 void ImprimirFichaCaso(CasoMedico caso) {
-    var sustanciasSospechosas = (caso.SustanciasSospechosas != null)
-        ? caso.SustanciasSospechosas.Select(v => v.Nombre).ToList().ToString()
-        : "No hay sustancias sospechosas.";
-    var tratamientos = (caso.Tratamientos != null)
-        ? caso.Tratamientos.Select(m => m.Nombre).ToList().ToString()
-        : "No hay tratamientos.";
+
     
     WriteLine();
     WriteLine("-----------------------------------------------");
@@ -426,8 +421,23 @@ void ImprimirFichaCaso(CasoMedico caso) {
     WriteLine($"📅 Fecha de inicio: {caso.FechaInicio}");
     WriteLine($"🧨 Gravedad: {caso.Gravedad}");
     WriteLine($"❓  Causa de sospecha: {caso.CausaSospecha}");
-    WriteLine($"🌿 Sustancias sospechosas: {sustanciasSospechosas}");
-    WriteLine($"🛡️Tratamientos: {tratamientos}");
+    if (caso.SustanciasSospechosas == null) {
+        WriteLine("🌿 Sustancias sospechosas: No hay sustancias sospechosas.");
+    } else {
+        WriteLine("🌿 Sustancias sospechosas: ");
+        foreach (var sustancia in caso.SustanciasSospechosas) {
+            WriteLine($"     🔹Nombre de la sustancia = {sustancia.Nombre}");
+        }
+    }
+    
+    if (caso.Tratamientos == null) {
+        WriteLine("🛡️Tratamientos: No hay tratamientos.");
+    } else {
+        WriteLine("🛡️Tratamientos: ");
+        foreach (var tratamiento in caso.Tratamientos) {
+            WriteLine($"     🔹Nombre del tratamiento = {tratamiento.Nombre}");
+        }
+    }
     WriteLine($"📋 Estado: {caso.Estado}");
     WriteLine("-----------------------------------------------");
     WriteLine();
@@ -435,11 +445,17 @@ void ImprimirFichaCaso(CasoMedico caso) {
 
 void MostrarInformeEstadistico(ILaboratorioService service) {
     var informe = service.GetInforme();
+    var casosVenenos = informe.CasosMedicosVenenos;
+    
     WriteLine("📊 RESUMEN DE ACTIVIDAD");
     WriteLine("-----------------------------------------------");
-    WriteLine($"🔹Casos Resueltos: {informe.CasosMedicosResueltos}");
-    WriteLine($"🔹Sustancia recurrente: {informe.SutanciaMasUtilizada?.Nombre ?? "No hay."}");
-    WriteLine($"🔹Medicina clave: {informe.SustanciaMasEfectivaTratamiento?.Nombre ?? "No hay."}");
+    WriteLine($"🔹Veneno más peligroso: {informe.VenenoPeligroso}");
+    WriteLine($"🔹Casos resueltos: ");
+    foreach (var caso in casosVenenos) {
+        WriteLine($"     🔹Id= {caso.Key}, Causa de sospecha= {caso.Value}");
+    }
+    WriteLine($"🔹Casos médicos donde la causa sea veneno: {informe.CasosMedicosVenenos}");
+    WriteLine($"🔹Afrodisiaco con mas intensidad: {informe.AfrodisiacoIntensidad}");
     WriteLine("-----------------------------------------------");
 }
 

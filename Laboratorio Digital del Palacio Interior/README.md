@@ -104,8 +104,9 @@ El sistema debe permitir importar y exportar los datos tanto de las sustancias c
 ---
 
 ### 📊 Informes
-- Sustancias más utilizadas  
-- Casos resueltos  
-- Sustancias más efectivas como tratamiento  
+- Veneno más peligroso
+- Casos médicos resueltos  
+- Casos médicos donde la causa sea veneno
+- Afrodisiaco con mas intensidad
 
 ---
