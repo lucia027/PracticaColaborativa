@@ -110,3 +110,6 @@ El sistema debe permitir importar y exportar los datos tanto de las sustancias c
 - Afrodisiaco con mas intensidad
 
 ---
+
+
+## Diagrama de clases
