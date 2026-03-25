@@ -111,5 +111,10 @@ El sistema debe permitir importar y exportar los datos tanto de las sustancias c
 
 ---
 
-
 ## Diagrama de clases
+<img src="https://github.com/lucia027/PracticaColaborativa/blob/main/Laboratorio%20Digital%20del%20Palacio%20Interior/Imagenes/Diagrama%20de%20clases%20-%20Laboratorio%20Digital%20del%20Palacio%20Interior.png" alt="Diagrama de clases" width="2000">
+
+---
+
+## Diagrama de casos de uso
+<img src="https://github.com/lucia027/PracticaColaborativa/blob/main/Laboratorio%20Digital%20del%20Palacio%20Interior/Imagenes/Diagrama%20de%20casos%20de%20uso%20-%20Laboratorio%20Digital%20del%20Palacio%20Interior.png" alt="Diagrama de casos de uso" width="2000">
