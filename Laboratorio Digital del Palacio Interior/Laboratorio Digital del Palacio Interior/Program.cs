@@ -445,16 +445,15 @@ void ImprimirFichaCaso(CasoMedico caso) {
 
 void MostrarInformeEstadistico(ILaboratorioService service) {
     var informe = service.GetInforme();
-    var casosVenenos = informe.CasosMedicosVenenos;
     
     WriteLine("📊 RESUMEN DE ACTIVIDAD");
     WriteLine("-----------------------------------------------");
     WriteLine($"🔹Veneno más peligroso: {informe.VenenoPeligroso}");
-    WriteLine($"🔹Casos resueltos: ");
-    foreach (var caso in casosVenenos) {
+    WriteLine($"🔹Casos resueltos: {informe.CasosMedicosResueltos}");
+    WriteLine($"🔹Casos médicos donde la causa sea veneno: ");
+    foreach (var caso in informe.CasosMedicosVenenos) {
         WriteLine($"     🔹Id= {caso.Key}, Causa de sospecha= {caso.Value}");
     }
-    WriteLine($"🔹Casos médicos donde la causa sea veneno: {informe.CasosMedicosVenenos}");
     WriteLine($"🔹Afrodisiaco con mas intensidad: {informe.AfrodisiacoIntensidad}");
     WriteLine("-----------------------------------------------");
 }

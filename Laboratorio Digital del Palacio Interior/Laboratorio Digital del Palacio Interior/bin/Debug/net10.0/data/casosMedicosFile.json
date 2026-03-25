@@ -2,7 +2,7 @@
   {
     "id": 0,
     "sintomas": "Palidez extrema, debilidad general, dolores de cabeza y náuseas recurrentes en la concubina del Pabellón de Jade.",
-    "fechaInicio": "2026-03-22T15:05:38",
+    "fechaInicio": "2026-03-24T15:33:14",
     "gravedad": "Grave",
     "causaSospecha": "Veneno",
     "estado": "Resuelto"
@@ -10,7 +10,7 @@
   {
     "id": 1,
     "sintomas": "Dolor abdominal agudo y mareos repentinos tras consumir la sopa fría servida por los eunucos.",
-    "fechaInicio": "2026-03-22T15:05:38",
+    "fechaInicio": "2026-03-24T15:33:14",
     "gravedad": "Moderada",
     "causaSospecha": "Enfermedad",
     "estado": "Abierto"
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "sintomas": "Convulsiones repentinas, alucinaciones y pérdida de conocimiento.",
-    "fechaInicio": "2026-03-22T15:05:38",
+    "fechaInicio": "2026-03-24T15:33:14",
     "gravedad": "Grave",
     "causaSospecha": "Veneno",
     "estado": "EnInvestigacion"
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "sintomas": "Tos seca persistente que empeora al encender los braseros aromáticos en la habitación.",
-    "fechaInicio": "2026-03-22T15:05:38",
+    "fechaInicio": "2026-03-24T15:33:14",
     "gravedad": "Leve",
     "causaSospecha": "Desconocida",
     "estado": "Resuelto"
