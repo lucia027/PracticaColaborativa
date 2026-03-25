@@ -13,13 +13,11 @@ public class SustanciasRepository : ISustanciasRepository {
     // Para hacerlo como un Singleton.
     private static readonly Lazy<SustanciasRepository> Lazy = new( () => new SustanciasRepository() );
     
+    //Propiedad de acceso al Singleton que usa Lazy Loading para crear la instancia solo cuando se necesita.
+    public static SustanciasRepository Instance => Lazy.Value;
+    
     private static int _contador;
     private readonly Dictionary<int, Sustancia> _almacenamiento = new();
-    
-    // Constructor de la clase.
-    public SustanciasRepository() { }
-
-    public static SustanciasRepository Instance => Lazy.Value;
     
     /// <inheritdoc cref="ISustanciasRepository.GetAll" />
     public IEnumerable<Sustancia> GetAll() {

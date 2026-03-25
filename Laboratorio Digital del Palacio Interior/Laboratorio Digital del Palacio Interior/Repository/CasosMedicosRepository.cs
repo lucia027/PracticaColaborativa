@@ -8,13 +8,11 @@ public class CasosMedicosRepository : ICasosMedicosRepository {
     // Para hacerlo como un Singleton.
     private static readonly Lazy<CasosMedicosRepository> Lazy = new( () => new CasosMedicosRepository() );
     
+    //Propiedad de acceso al Singleton que usa Lazy Loading para crear la instancia solo cuando se necesita.
+    public static CasosMedicosRepository Instance => Lazy.Value;
+    
     private static int _contador;
     private readonly Dictionary<int, CasoMedico> _almacenamiento = new();
-
-    // Constructor de la clase.
-    public CasosMedicosRepository() { }
-
-    public static CasosMedicosRepository Instance => Lazy.Value;
     
     /// <inheritdoc cref="ICasosMedicosRepository.GetAll"/>
     public IEnumerable<CasoMedico> GetAll() {
