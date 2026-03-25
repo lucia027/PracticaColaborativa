@@ -3,7 +3,7 @@
 namespace Laboratorio_Digital_del_Palacio_Interior.Models;
 
 public record Informe (
-    string VenenoPeligroso ,
+    string VenenoPeligroso,
     int CasosMedicosResueltos,
     Dictionary<int, CausaSospecha> CasosMedicosVenenos,
     string AfrodisiacoIntensidad
