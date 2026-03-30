@@ -1,26 +1,407 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "Flurl/2.8.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Flurl.Http/2.4.2": {
+        "type": "package",
+        "dependencies": {
+          "Flurl": "2.8.2",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Flurl.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Flurl.Http.Xml/1.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Flurl.Http": "2.4.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.4/Flurl.Http.Xml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.4/Flurl.Http.Xml.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NETStandard.Library/1.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Serilog/4.3.2-dev-02419": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Serilog.targets": {}
+        }
+      },
+      "Serilog.Sinks.Console/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "4.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Serilog.Sinks.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Serilog.Sinks.Console.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Serilog.Sinks.File/8.0.0-nblumhardt-02322": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "4.2.0"
+        },
+        "compile": {
+          "lib/net9.0/Serilog.Sinks.File.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Serilog.Sinks.File.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SonarQube.Net/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Flurl.Http": "2.4.2",
+          "Flurl.Http.Xml": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/SonarQube.Net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SonarQube.Net.dll": {}
+        }
+      },
+      "SonarQube.Scanner.DotNetCore.Tool/4.3.1": {
+        "type": "package"
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Flurl/2.8.2": {
+      "sha512": "3VEYAqkGTGHgla4xuyEB4d8XGLeMX2k05C4WfI7YmKQHsL7RhoGu3L6h1xsKKTPFWjEL13p09XOIGwD1pQ86dg==",
+      "type": "package",
+      "path": "flurl/2.8.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.2.8.2.nupkg.sha512",
+        "flurl.nuspec",
+        "lib/net40/Flurl.dll",
+        "lib/net40/Flurl.xml",
+        "lib/netstandard1.0/Flurl.dll",
+        "lib/netstandard1.0/Flurl.xml",
+        "lib/netstandard1.3/Flurl.dll",
+        "lib/netstandard1.3/Flurl.xml",
+        "lib/netstandard2.0/Flurl.dll",
+        "lib/netstandard2.0/Flurl.xml"
+      ]
+    },
+    "Flurl.Http/2.4.2": {
+      "sha512": "VfSJ0DKzh6kf2IOZGG1/JpHajhtqzGp1t+M1QSyFGse7c4Gg1DpH80LTveYea2hV1BEtvPPEp6A4iZ78D8bxGQ==",
+      "type": "package",
+      "path": "flurl.http/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.http.2.4.2.nupkg.sha512",
+        "flurl.http.nuspec",
+        "lib/net45/Flurl.Http.dll",
+        "lib/net45/Flurl.Http.xml",
+        "lib/net46/Flurl.Http.dll",
+        "lib/net46/Flurl.Http.xml",
+        "lib/netstandard1.1/Flurl.Http.dll",
+        "lib/netstandard1.1/Flurl.Http.xml",
+        "lib/netstandard1.3/Flurl.Http.dll",
+        "lib/netstandard1.3/Flurl.Http.xml",
+        "lib/netstandard2.0/Flurl.Http.dll",
+        "lib/netstandard2.0/Flurl.Http.xml"
+      ]
+    },
+    "Flurl.Http.Xml/1.6.1": {
+      "sha512": "+WmkfBBLyvYimm4EFUuHVg3AUYehH2zOQ751w4BUU/HXmY+OLbh4pdAkCU2gHPVTsYSDnS5oLv6xV6puLqqgew==",
+      "type": "package",
+      "path": "flurl.http.xml/1.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.http.xml.1.6.1.nupkg.sha512",
+        "flurl.http.xml.nuspec",
+        "lib/net45/Flurl.Http.Xml.dll",
+        "lib/net45/Flurl.Http.Xml.xml",
+        "lib/netstandard1.4/Flurl.Http.Xml.dll",
+        "lib/netstandard1.4/Flurl.Http.Xml.xml"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json"
+      ]
+    },
+    "NETStandard.Library/1.6.1": {
+      "sha512": "WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
+      "type": "package",
+      "path": "netstandard.library/1.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "netstandard.library.1.6.1.nupkg.sha512",
+        "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "Serilog/4.3.2-dev-02419": {
+      "sha512": "W8VlLVjPbjbkr4r88cr8FfkVzvaiguxFK8w2vczUMnSB74pK45g+SRjD5urq/x6gKvGICnv+NVvLP0Q89OdFQw==",
+      "type": "package",
+      "path": "serilog/4.3.2-dev-02419",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Serilog.targets",
+        "buildTransitive/Serilog.targets",
+        "icon.png",
+        "lib/net10.0/Serilog.dll",
+        "lib/net10.0/Serilog.xml",
+        "lib/net462/Serilog.dll",
+        "lib/net462/Serilog.xml",
+        "lib/net471/Serilog.dll",
+        "lib/net471/Serilog.xml",
+        "lib/net6.0/Serilog.dll",
+        "lib/net6.0/Serilog.xml",
+        "lib/net8.0/Serilog.dll",
+        "lib/net8.0/Serilog.xml",
+        "lib/net9.0/Serilog.dll",
+        "lib/net9.0/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.xml",
+        "serilog.4.3.2-dev-02419.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Console/6.1.1": {
+      "sha512": "8jbqgjUyZlfCuSTaJk6lOca465OndqOz3KZP6Cryt/IqZYybyBu7GP0fE/AXBzrrQB3EBmQntBFAvMVz1COvAA==",
+      "type": "package",
+      "path": "serilog.sinks.console/6.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net462/Serilog.Sinks.Console.dll",
+        "lib/net462/Serilog.Sinks.Console.xml",
+        "lib/net471/Serilog.Sinks.Console.dll",
+        "lib/net471/Serilog.Sinks.Console.xml",
+        "lib/net6.0/Serilog.Sinks.Console.dll",
+        "lib/net6.0/Serilog.Sinks.Console.xml",
+        "lib/net8.0/Serilog.Sinks.Console.dll",
+        "lib/net8.0/Serilog.Sinks.Console.xml",
+        "lib/netstandard2.0/Serilog.Sinks.Console.dll",
+        "lib/netstandard2.0/Serilog.Sinks.Console.xml",
+        "serilog.sinks.console.6.1.1.nupkg.sha512",
+        "serilog.sinks.console.nuspec"
+      ]
+    },
+    "Serilog.Sinks.File/8.0.0-nblumhardt-02322": {
+      "sha512": "EA6O7RwYBl52t/SDul6itYPla3wSSm6F+XLGtSiHiqjYlmWH6YGhXL92/FHWhzQglRmXhbgFDK0m9RFKW110/w==",
+      "type": "package",
+      "path": "serilog.sinks.file/8.0.0-nblumhardt-02322",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net462/Serilog.Sinks.File.dll",
+        "lib/net462/Serilog.Sinks.File.xml",
+        "lib/net471/Serilog.Sinks.File.dll",
+        "lib/net471/Serilog.Sinks.File.xml",
+        "lib/net6.0/Serilog.Sinks.File.dll",
+        "lib/net6.0/Serilog.Sinks.File.xml",
+        "lib/net8.0/Serilog.Sinks.File.dll",
+        "lib/net8.0/Serilog.Sinks.File.xml",
+        "lib/net9.0/Serilog.Sinks.File.dll",
+        "lib/net9.0/Serilog.Sinks.File.xml",
+        "lib/netstandard2.0/Serilog.Sinks.File.dll",
+        "lib/netstandard2.0/Serilog.Sinks.File.xml",
+        "serilog-sink-nuget.png",
+        "serilog.sinks.file.8.0.0-nblumhardt-02322.nupkg.sha512",
+        "serilog.sinks.file.nuspec"
+      ]
+    },
+    "SonarQube.Net/1.0.5": {
+      "sha512": "bO60HY62BErooyNk3I0LoXD4SKoYJADWuX4Bhq6PoAIm5Aq5w2OxN/bT0C++M1oNRp6w+9YLCnDlenZZydMrlg==",
+      "type": "package",
+      "path": "sonarqube.net/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/SonarQube.Net.dll",
+        "lib/netstandard1.6/SonarQube.Net.dll",
+        "lib/netstandard2.0/SonarQube.Net.dll",
+        "sonarqube.net.1.0.5.nupkg.sha512",
+        "sonarqube.net.nuspec"
+      ]
+    },
+    "SonarQube.Scanner.DotNetCore.Tool/4.3.1": {
+      "sha512": "i6DdavxI8ehADW9pargo6a5lfKBm/ELXqjC9lTb0wYvwxGz0BNUFeE7U4EPr6nWyBqje6aJM+GwzXeDOtJKv7g==",
+      "type": "package",
+      "path": "sonarqube.scanner.dotnetcore.tool/4.3.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "sonarqube.scanner.dotnetcore.tool.4.3.1.nupkg.sha512",
+        "sonarqube.scanner.dotnetcore.tool.nuspec",
+        "tools/Newtonsoft.Json.dll",
+        "tools/SonarQube.Analysis.xml",
+        "tools/SonarScanner.MSBuild.Common.dll",
+        "tools/SonarScanner.MSBuild.PostProcessor.dll",
+        "tools/SonarScanner.MSBuild.PreProcessor.dll",
+        "tools/SonarScanner.MSBuild.Shim.dll",
+        "tools/SonarScanner.MSBuild.TFS.dll",
+        "tools/SonarScanner.MSBuild.Tasks.dll",
+        "tools/SonarScanner.MSBuild.dll",
+        "tools/SonarScanner.MSBuild.runtimeconfig.json",
+        "tools/Targets/SonarQube.Integration.ImportBefore.targets",
+        "tools/Targets/SonarQube.Integration.targets",
+        "tools/sonar-scanner-3.2.0.1227/bin/sonar-scanner",
+        "tools/sonar-scanner-3.2.0.1227/bin/sonar-scanner-debug",
+        "tools/sonar-scanner-3.2.0.1227/bin/sonar-scanner-debug.bat",
+        "tools/sonar-scanner-3.2.0.1227/bin/sonar-scanner.bat",
+        "tools/sonar-scanner-3.2.0.1227/conf/sonar-scanner.properties",
+        "tools/sonar-scanner-3.2.0.1227/lib/sonar-scanner-cli-3.2.0.1227.jar"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "Serilog >= 4.3.2-dev-02419",
+      "Serilog.Sinks.Console >= 6.1.1",
+      "Serilog.Sinks.File >= 8.0.0-nblumhardt-02322",
+      "SonarQube.Net >= 1.0.5",
+      "SonarQube.Scanner.DotNetCore.Tool >= 4.3.1"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\lucia.fuertes3\\.nuget\\packages\\": {}
+    "C:\\Users\\Lu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
+      "projectUniqueName": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
       "projectName": "ITV",
-      "projectPath": "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
-      "packagesPath": "C:\\Users\\lucia.fuertes3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\obj\\",
+      "projectPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
+      "packagesPath": "C:\\Users\\Lu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lucia.fuertes3\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Lu\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -49,6 +430,28 @@
     "frameworks": {
       "net10.0": {
         "targetAlias": "net10.0",
+        "dependencies": {
+          "Serilog": {
+            "target": "Package",
+            "version": "[4.3.2-dev-02419, )"
+          },
+          "Serilog.Sinks.Console": {
+            "target": "Package",
+            "version": "[6.1.1, )"
+          },
+          "Serilog.Sinks.File": {
+            "target": "Package",
+            "version": "[8.0.0-nblumhardt-02322, )"
+          },
+          "SonarQube.Net": {
+            "target": "Package",
+            "version": "[1.0.5, )"
+          },
+          "SonarQube.Scanner.DotNetCore.Tool": {
+            "target": "Package",
+            "version": "[4.3.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -65,7 +468,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\lucia.fuertes3\\.dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -342,5 +745,17 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json' 12.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

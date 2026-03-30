@@ -8,17 +8,21 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Cache\" />
       <Folder Include="Config\" />
       <Folder Include="Dto\" />
-      <Folder Include="Enums\" />
-      <Folder Include="Exceptions\" />
-      <Folder Include="Mappers\" />
-      <Folder Include="Models\" />
+      <Folder Include="Errores\" />
+      <Folder Include="Mapper\" />
       <Folder Include="Repository\" />
       <Folder Include="Service\" />
       <Folder Include="Storage\" />
-      <Folder Include="Validator\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Serilog" Version="4.3.2-dev-02419" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+      <PackageReference Include="Serilog.Sinks.File" Version="8.0.0-nblumhardt-02322" />
+      <PackageReference Include="SonarQube.Net" Version="1.0.5" />
+      <PackageReference Include="SonarQube.Scanner.DotNetCore.Tool" Version="4.3.1" />
     </ItemGroup>
 
 </Project>

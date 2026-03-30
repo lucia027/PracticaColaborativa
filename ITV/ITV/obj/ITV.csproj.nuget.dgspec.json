@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj": {}
+    "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj": {
+    "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
+        "projectUniqueName": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
         "projectName": "ITV",
-        "projectPath": "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
-        "packagesPath": "C:\\Users\\lucia.fuertes3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\obj\\",
+        "projectPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
+        "packagesPath": "C:\\Users\\Lu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lucia.fuertes3\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Lu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -43,6 +43,28 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.3.2-dev-02419, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[8.0.0-nblumhardt-02322, )"
+            },
+            "SonarQube.Net": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
+            "SonarQube.Scanner.DotNetCore.Tool": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\lucia.fuertes3\\.dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

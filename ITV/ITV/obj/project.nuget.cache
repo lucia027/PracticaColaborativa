@@ -1,8 +1,33 @@
 {
   "version": 2,
-  "dgSpecHash": "XqFF5/uXSCg=",
+  "dgSpecHash": "I4rPK5ePZsE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lu\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\flurl.http.xml\\1.6.1\\flurl.http.xml.1.6.1.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog\\4.3.2-dev-02419\\serilog.4.3.2-dev-02419.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.file\\8.0.0-nblumhardt-02322\\serilog.sinks.file.8.0.0-nblumhardt-02322.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\sonarqube.net\\1.0.5\\sonarqube.net.1.0.5.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\sonarqube.scanner.dotnetcore.tool\\4.3.1\\sonarqube.scanner.dotnetcore.tool.4.3.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Newtonsoft.Json' 12.0.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "projectPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }
