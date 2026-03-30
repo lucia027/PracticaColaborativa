@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Laboratorio Digital del Palacio Interior")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d225c22dcf613fac4ea3e3af82200619b965f1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7fe1600446060477de034d1313204b3133e90bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Laboratorio Digital del Palacio Interior")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Laboratorio Digital del Palacio Interior")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

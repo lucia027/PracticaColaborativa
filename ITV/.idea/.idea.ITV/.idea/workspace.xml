@@ -8,17 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4aa936-b86b-49d2-8b6d-c336bc279a17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ITV/Repository/Common/ICrudRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Repository/IVehiculoRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Repository/Memory/VehiculoMemoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/ITV.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/ITV.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/Models/Vehiculo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Models/Vehiculo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +99,7 @@
       <updated>1759358127727</updated>
       <workItem from="1759358131190" duration="198000" />
       <workItem from="1774801052221" duration="6203000" />
-      <workItem from="1774885342050" duration="9809000" />
+      <workItem from="1774885342050" duration="9840000" />
     </task>
     <task id="LOCAL-00001" summary="Terminados modelos, enums, validadtor y Cache.cs">
       <option name="closed" value="true" />
@@ -118,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774889707945</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Repositorio en memoria terminado">
+      <option name="closed" value="true" />
+      <created>1774896489850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774896489850</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +129,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Final del proyecto" />
     <MESSAGE value="Terminados modelos, enums, validadtor y Cache.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Terminados modelos, enums, validadtor y Cache.cs" />
+    <MESSAGE value="Repositorio en memoria terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Repositorio en memoria terminado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
