@@ -12,7 +12,6 @@
       <Folder Include="Dto\" />
       <Folder Include="Errores\" />
       <Folder Include="Mapper\" />
-      <Folder Include="Repository\" />
       <Folder Include="Service\" />
       <Folder Include="Storage\" />
     </ItemGroup>

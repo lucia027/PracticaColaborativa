@@ -5,7 +5,7 @@ namespace ITV.Models;
 /// <summary>
 /// Representa a un vehiculo en el sistema.
 /// </summary>
-public class Vehiculo {
+public record Vehiculo {
     public int Id { get; init; }
     public string Matricula { get; set; } = string.Empty;
     public string Marca { get; set; } = string.Empty;
@@ -13,4 +13,5 @@ public class Vehiculo {
     public int Cilindrada { get; set; }
     public Motor Motor { get; set; }
     public string DniDueño { get; set; } = string.Empty;
+    public bool IsDelete { get; set; }
 }

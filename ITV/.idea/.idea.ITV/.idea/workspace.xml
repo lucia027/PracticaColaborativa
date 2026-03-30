@@ -8,28 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4aa936-b86b-49d2-8b6d-c336bc279a17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ITV/Cache/Cache.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Cache/ICache.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Enums/Motor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Models/Vehiculo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Repository/Common/ICrudRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Repository/IVehiculoRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Repository/Memory/VehiculoMemoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ITV/ITV.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/ITV.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ITV/Models/Vehiculo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Models/Vehiculo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/Debug/net10.0/Laboratorio Digital del Palacio Interior.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Laboratorio Digital del Palacio Interior/Laboratorio Digital del Palacio Interior/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +45,12 @@
     <setting file="file://$PROJECT_DIR$/ITV/Cache/ICache.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Enums/Motor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Models/Vehiculo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Repository/Common/ICrudRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Repository/IVehiculoRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Repository/Memory/VehiculoMemoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
   &quot;fromUser&quot;: false
@@ -115,16 +108,29 @@
       <updated>1759358127727</updated>
       <workItem from="1759358131190" duration="198000" />
       <workItem from="1774801052221" duration="6203000" />
-      <workItem from="1774885342050" duration="3866000" />
+      <workItem from="1774885342050" duration="9809000" />
     </task>
+    <task id="LOCAL-00001" summary="Terminados modelos, enums, validadtor y Cache.cs">
+      <option name="closed" value="true" />
+      <created>1774889707945</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774889707945</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Final del proyecto" />
+    <MESSAGE value="Terminados modelos, enums, validadtor y Cache.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminados modelos, enums, validadtor y Cache.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -30,7 +30,7 @@ public class VehiculoValidator : IValidator<Vehiculo> {
         if (!Enum.IsDefined(typeof(Motor), entity.Motor)) {
             errores.Add("Error - El tipo de motor no es valido.");
         }
-        if (Regex.IsMatch(entity.DniDueño, regexDni) && ComprobarDniValido(entity.DniDueño)) {
+        if (Regex.IsMatch(entity.DniDueño, regexDni) || ComprobarDniValido(entity.DniDueño)) {
             errores.Add("Error - El dni del dueño no cumple el formato.");
         }
 
