@@ -7,14 +7,13 @@ public class VehiculoMemoryRepository : IVehiculoRepository {
     private readonly ILogger _logger = Log.ForContext<VehiculoMemoryRepository>();
 
     private static readonly Lazy<VehiculoMemoryRepository> Lazy = new(() => new VehiculoMemoryRepository());
+    public static VehiculoMemoryRepository Instance => Lazy.Value;
     
     private Dictionary<int, Vehiculo> _almacenId = new();
     private Dictionary<string, int> _almacenMatricula = new();
     private int _idCount;
     
     private VehiculoMemoryRepository() { }
-
-    public static VehiculoMemoryRepository Instance => Lazy.Value;
     
     /// <inheritdoc cref="IVehiculoRepository.GetAll" />
     public IEnumerable<Vehiculo> GetAll() {
@@ -28,7 +27,7 @@ public class VehiculoMemoryRepository : IVehiculoRepository {
 
     /// <inheritdoc cref="IVehiculoRepository.Create" />
     public Vehiculo? Create(Vehiculo entity) {
-        if (_almacenMatricula.ContainsKey(entity.Matricula) || _almacenId.Values.Select(v => v.DniDueño).Count() >= 3) {
+        if (_almacenMatricula.ContainsKey(entity.Matricula) || _almacenId.Values.Count(v => v.DniDueño == entity.DniDueño) >= 3) {
             _logger.Debug("No se ha podido crear el vehiculo.");
             return null;
         }
@@ -75,6 +74,8 @@ public class VehiculoMemoryRepository : IVehiculoRepository {
         }
 
         eliminado = eliminado with { IsDelete = true };
+        _almacenId[id] = eliminado;
+        
         return eliminado;
     }
     
