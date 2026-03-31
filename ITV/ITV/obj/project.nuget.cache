@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "I4rPK5ePZsE=",
+  "dgSpecHash": "N4bXeAty1Ew=",
   "success": true,
   "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\ITV\\ITV\\ITV.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lu\\.nuget\\packages\\flurl\\2.8.2\\flurl.2.8.2.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\flurl.http\\2.4.2\\flurl.http.2.4.2.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\flurl.http.xml\\1.6.1\\flurl.http.xml.1.6.1.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration\\11.0.0-preview.2.26159.112\\microsoft.extensions.configuration.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\11.0.0-preview.2.26159.112\\microsoft.extensions.configuration.abstractions.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\11.0.0-preview.2.26159.112\\microsoft.extensions.configuration.binder.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\11.0.0-preview.2.26159.112\\microsoft.extensions.configuration.fileextensions.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.json\\11.0.0-preview.2.26159.112\\microsoft.extensions.configuration.json.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\11.0.0-preview.2.26159.112\\microsoft.extensions.fileproviders.abstractions.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\11.0.0-preview.2.26159.112\\microsoft.extensions.fileproviders.physical.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\11.0.0-preview.2.26159.112\\microsoft.extensions.filesystemglobbing.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.primitives\\11.0.0-preview.2.26159.112\\microsoft.extensions.primitives.11.0.0-preview.2.26159.112.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
@@ -14,7 +23,10 @@
     "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.file\\8.0.0-nblumhardt-02322\\serilog.sinks.file.8.0.0-nblumhardt-02322.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\sonarqube.net\\1.0.5\\sonarqube.net.1.0.5.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\sonarqube.scanner.dotnetcore.tool\\4.3.1\\sonarqube.scanner.dotnetcore.tool.4.3.1.nupkg.sha512"
+    "C:\\Users\\Lu\\.nuget\\packages\\sonarqube.scanner.dotnetcore.tool\\4.3.1\\sonarqube.scanner.dotnetcore.tool.4.3.1.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\system.io.pipelines\\11.0.0-preview.2.26159.112\\system.io.pipelines.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\system.text.encodings.web\\11.0.0-preview.2.26159.112\\system.text.encodings.web.11.0.0-preview.2.26159.112.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\system.text.json\\11.0.0-preview.2.26159.112\\system.text.json.11.0.0-preview.2.26159.112.nupkg.sha512"
   ],
   "logs": [
     {
