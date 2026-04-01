@@ -1,0 +1,15 @@
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\bin\Debug\net10.0\Consultas.exe
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\bin\Debug\net10.0\Consultas.deps.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\bin\Debug\net10.0\Consultas.runtimeconfig.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\bin\Debug\net10.0\Consultas.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\bin\Debug\net10.0\Consultas.pdb
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.AssemblyInfoInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.AssemblyInfo.cs
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.csproj.CoreCompileInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.sourcelink.json
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\refint\Consultas.dll
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.pdb
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\Consultas.genruntimeconfig.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\Consultas\Consultas\obj\Debug\net10.0\ref\Consultas.dll

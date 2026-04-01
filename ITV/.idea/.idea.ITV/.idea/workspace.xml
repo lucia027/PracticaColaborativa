@@ -14,24 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4aa936-b86b-49d2-8b6d-c336bc279a17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ITV/Config/Configuracion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Dto/VehiculoDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Mapper/VehiculoMapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Repository/Json/VehiculoJsonRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/ITV.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/ITV.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/Repository/Memory/VehiculoMemoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Repository/Memory/VehiculoMemoryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/ITV.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ITV/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +117,8 @@
       <workItem from="1774885342050" duration="9840000" />
       <workItem from="1774948945729" duration="223000" />
       <workItem from="1774949370583" duration="729000" />
-      <workItem from="1774972296091" duration="5289000" />
+      <workItem from="1774972296091" duration="5403000" />
+      <workItem from="1774979083426" duration="468000" />
     </task>
     <task id="LOCAL-00001" summary="Terminados modelos, enums, validadtor y Cache.cs">
       <option name="closed" value="true" />
@@ -149,7 +136,31 @@
       <option name="project" value="LOCAL" />
       <updated>1774896489850</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Termiandos, dtos, config, mappers, repo en Json">
+      <option name="closed" value="true" />
+      <created>1774978928948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774978928948</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Termiandos, dtos, config, mappers, repo en Json y appsttings">
+      <option name="closed" value="true" />
+      <created>1774978994763</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774978994763</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Termiandos, dtos, config, mappers, repo en Json y appsttings">
+      <option name="closed" value="true" />
+      <created>1774979003507</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774979003507</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +173,9 @@
     <MESSAGE value="Final del proyecto" />
     <MESSAGE value="Terminados modelos, enums, validadtor y Cache.cs" />
     <MESSAGE value="Repositorio en memoria terminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Repositorio en memoria terminado" />
+    <MESSAGE value="Termiandos, dtos, config, mappers, repo en Json" />
+    <MESSAGE value="Termiandos, dtos, config, mappers, repo en Json y appsttings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Termiandos, dtos, config, mappers, repo en Json y appsttings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
