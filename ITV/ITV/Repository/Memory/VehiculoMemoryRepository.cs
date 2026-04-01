@@ -48,7 +48,7 @@ public class VehiculoMemoryRepository : IVehiculoRepository {
         }
         // Si la matrícula que nos dan es diferente de la que teniamos hay que mirar si la matrícula nueva ya la tiene otro coche que ya existe
         // y el coche que ya existe con esa matrícula tiene el mismo id que el vehículo proporcionado.
-        if (entity.Matricula != viejo.Matricula && _almacenMatricula.TryGetValue(entity.Matricula, out var idExistente) && idExistente == id) {
+        if (entity.Matricula != viejo.Matricula && _almacenMatricula.TryGetValue(entity.Matricula, out var idExistente) && idExistente != id) {
             _logger.Debug("No se ha podido actualizar el vehiculo, fallo con las matriculas.");
             return null;
         }

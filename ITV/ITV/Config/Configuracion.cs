@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 
 namespace ITV.Config;
 
@@ -7,8 +6,6 @@ public static class Configuracion {
     private static readonly IConfiguration Config;
 
     static Configuracion() {
-        // NOTA PARA EL ALUMNO: Cargamos la configuración desde el archivo JSON externo.
-        // Esto permite cambiar el tipo de almacenamiento o la ruta sin recompilar el código.
         Config = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)

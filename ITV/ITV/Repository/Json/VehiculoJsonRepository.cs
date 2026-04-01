@@ -73,14 +73,18 @@ public class VehiculoJsonRepository : IVehiculoRepository{
         }
     }
 
+    /// <inheritdoc cref="IVehiculoRepository.GetAll" />
+    /// <returns></returns>
     public IEnumerable<Vehiculo> GetAll() {
         return _almacenId.Values;
     }
 
+    /// <inheritdoc cref="IVehiculoRepository.GetById" />
     public Vehiculo? GetById(int id) {
         return _almacenId.GetValueOrDefault(id);
     }
 
+    /// <inheritdoc cref="IVehiculoRepository.Create" />
     public Vehiculo? Create(Vehiculo entity) {
         if (_almacenMatricula.ContainsKey(entity.Matricula) || _almacenId.Values.Count(v => v.DniDueño == entity.DniDueño) >= 3) {
             _logger.Debug("No se ha podido crear el vehiculo.");
@@ -97,11 +101,12 @@ public class VehiculoJsonRepository : IVehiculoRepository{
         return vehiculo;
     }
 
+    /// <inheritdoc cref="IVehiculoRepository.Update" />
     public Vehiculo? Update(int id, Vehiculo entity) {
         if (!_almacenId.TryGetValue(id, out var viejo)) {
             return null;
         }
-        if (viejo.Matricula != entity.Matricula && _almacenMatricula.TryGetValue(entity.Matricula, out var existente) && existente == id) {
+        if (viejo.Matricula != entity.Matricula && _almacenMatricula.TryGetValue(entity.Matricula, out var existente) && existente != id) {
             return null;
         }
 
@@ -117,6 +122,7 @@ public class VehiculoJsonRepository : IVehiculoRepository{
         return vehiculo;
     }
 
+    /// <inheritdoc cref="IVehiculoRepository.Delete" />
     public Vehiculo? Delete(int id) {
         if (!_almacenId.TryGetValue(id, out var vehiculo)) {
             return null;
@@ -129,6 +135,7 @@ public class VehiculoJsonRepository : IVehiculoRepository{
         return vehiculo;
     }
 
+    /// <inheritdoc cref="IVehiculoRepository.DeleteHard" />
     public Vehiculo? DeleteHard(int id) {
         if (!_almacenId.TryGetValue(id, out var vehiculo)) {
             return null;
