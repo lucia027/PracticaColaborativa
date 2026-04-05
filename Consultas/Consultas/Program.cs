@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Data;
 using Consultas.Models;
 
-var fechaActual = new DateTime(2024, 1, 15);
+var fechaActual =  DateTime.Now;
 
 var posts = new List<Post> {
     new("P1", "AnaCreator", "Video de viaje a París", 15000, 800, 150, fechaActual.AddDays(-2), "Video"),
@@ -43,7 +44,11 @@ foreach (var p in postLikes) {
 
 Console.WriteLine();
 Console.WriteLine("Obtén los posts publicados en los últimos 7 días.");
-
+var post7Dias = posts
+    .Where(p => p.FechaPublicacion >= DateTime.Now.AddDays(-7));
+foreach (var p in post7Dias) {
+    Console.WriteLine($"Id: {p.Id}, Fecha de publicaciones: {p.FechaPublicacion}");
+}
 
 Console.WriteLine();
 Console.WriteLine("Busca el post más compartido de la categoría \"Video\".");
@@ -88,18 +93,21 @@ Console.WriteLine("Muestra cuántos posts ha subido cada autor, ordenados de may
 var postAutor = posts
     .GroupBy(p => p.Autor)
     .ToDictionary(p => p.Key, p => new { Actividad = p.Count()})
-    .OrderBy(p => p.Value.Actividad);
+    .OrderByDescending(p => p.Value.Actividad);
 foreach (var p in postAutor) {
     Console.WriteLine($"Autor: {p.Key}, Actividad total: {p.Value}");
 }  
 
 Console.WriteLine();
 Console.WriteLine("Obtén los nombres de los 3 autores con más Likes totales en sus publicaciones.");
-
-
-Console.WriteLine();
-Console.WriteLine("Obtén los nombres de los 3 autores con más Likes totales en sus publicaciones.");
-
+var topAutores = posts
+    .GroupBy(p => p.Autor)
+    .Select(g => new { NombreAutor = g.Key, TotalLikes = g.Sum(p => p.Likes) })
+    .OrderByDescending(a => a.TotalLikes)
+    .Take(3);
+foreach (var p in topAutores) {
+    Console.WriteLine($"Autor: {p.NombreAutor}, Total de Likes: {p.TotalLikes}");
+}  
 
 Console.WriteLine();
 Console.WriteLine("Para cada post, genera una cadena con el formato: \"[CATEGORIA] Autor: Contenido (Recortado a 20 caracteres)...\".");
