@@ -14,13 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4aa936-b86b-49d2-8b6d-c336bc279a17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ITV/Storage/Common/IStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Storage/Csv/IVehiculoCsvStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Storage/Csv/VehiculoCsvStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Storage/Json/IVehiculoJsonStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Storage/Json/VehiculoJsonStorage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ITV/ITV.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/ITV.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +54,8 @@
     <setting file="file://$PROJECT_DIR$/ITV/Storage/Common/IStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Storage/Csv/IVehiculoCsvStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Storage/Csv/VehiculoCsvStorage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Storage/Json/IVehiculoJsonStorage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Storage/Json/VehiculoJsonStorAGE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -131,7 +130,7 @@
       <workItem from="1775059873303" duration="224000" />
       <workItem from="1775060930936" duration="2066000" />
       <workItem from="1775381051449" duration="2146000" />
-      <workItem from="1775403217935" duration="4958000" />
+      <workItem from="1775403217935" duration="9408000" />
     </task>
     <task id="LOCAL-00001" summary="Terminados modelos, enums, validadtor y Cache.cs">
       <option name="closed" value="true" />
@@ -189,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775404307838</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Hecho el almacenamietno en csv">
+      <option name="closed" value="true" />
+      <created>1775408417073</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775408417073</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +214,8 @@
     <MESSAGE value="Primeras Consultas" />
     <MESSAGE value="Repo de bin hecho" />
     <MESSAGE value="Avance Consultas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avance Consultas" />
+    <MESSAGE value="Hecho el almacenamietno en csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hecho el almacenamietno en csv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
