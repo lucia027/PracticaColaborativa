@@ -27,7 +27,7 @@ public class VehiculoJsonStorage : IVehiculoJsonStorage {
     /// <inheritdoc cref="IVehiculoJsonStorage.Cargar" />
     public IEnumerable<Vehiculo> Cargar(string path) {
         if (!Path.Exists(path)) {
-            _logger.Debug("Intentando salvar los datos en formato csv.");
+            _logger.Debug("Intentando salvar los datos en formato json.");
             throw new FileNotFoundException($"El archivo con la ruta: {path} no existe");
         }
 

@@ -10,8 +10,6 @@
     <ItemGroup>
       <Folder Include="Errores\" />
       <Folder Include="Service\" />
-      <Folder Include="Storage\BinSec\" />
-      <Folder Include="Storage\Xml\" />
     </ItemGroup>
 
     <ItemGroup>
