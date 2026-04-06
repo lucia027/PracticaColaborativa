@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Data;
 using Consultas.Models;
 
 var fechaActual =  DateTime.Now;
@@ -111,14 +110,40 @@ foreach (var p in topAutores) {
 
 Console.WriteLine();
 Console.WriteLine("Para cada post, genera una cadena con el formato: \"[CATEGORIA] Autor: Contenido (Recortado a 20 caracteres)...\".");
-
+var postRecortado = posts
+    .Select(p => new { Cadena = $"[{p.Categoria}] Autor: {p.Autor}  Contenido: {string.Concat(p.Contenido.Take(20))}" });
+foreach (var p in postRecortado) { 
+    Console.WriteLine(p.Cadena);
+}  
 
 Console.WriteLine();
 Console.WriteLine("Agrupa los posts por el Mes de publicación y calcula la media de visualizaciones por mes.");
+var postMes = posts
+    .GroupBy(p => p.FechaPublicacion.Month)
+    .Select(g => new { Mes = g.Key, VisMedia = g.Average(p => p.Visualizaciones) });
+foreach (var p in postMes) {
+    Console.WriteLine($"Mes: {p.Mes}, Media de visualizaciones: {p.VisMedia}");
+}
 
-
+Console.WriteLine();
 Console.WriteLine("Si tuvieras una lista de Autores y cada uno tuviera una List<Post>, usa SelectMany para obtener todos los posts con más de 500 likes.");
+var listaAutores = posts
+    .GroupBy(p => p.Autor)
+    .ToDictionary(g => g.Key, _ => new List<Post>());
+foreach (var a in listaAutores) {
+    foreach (var p in posts) {
+        if (a.Key == p.Autor) {
+            a.Value.Add(p);
+        }
+    }
+}
 
+var selectaMAny = listaAutores
+    .SelectMany(p => p.Value)
+    .Where(p => p.Likes > 500);
+foreach (var p in selectaMAny) {
+    Console.WriteLine($"Likes: {p.Likes}");
+}
 
 Console.WriteLine();
 Console.WriteLine("Ordena los posts primero por Likes (descendente) y luego por FechaPublicacion (más reciente primero).");
