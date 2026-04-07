@@ -59,7 +59,7 @@ Console.WriteLine(postCompartido);
 Console.WriteLine();
 Console.WriteLine("Crea una lista de objetos anónimos new { Id, Autor, Ratio } donde el Ratio sea (Likes + Compartidos) / Visualizaciones.");
 var listaAnonimos = posts
-    .Select(p => new { p.Id, p.Autor, Ratio =((p.Likes + p.Compartidos) / p.Visualizaciones)})
+    .Select(p => new { p.Id, p.Autor, Ratio =(double)(p.Likes + p.Compartidos) / p.Visualizaciones})
     .ToList();
 foreach (var p in listaAnonimos) {
     Console.WriteLine($"Id: {p.Id}, Autor: {p.Autor}, Ratio: {p.Ratio}");
@@ -147,13 +147,30 @@ foreach (var p in selectaMAny) {
 
 Console.WriteLine();
 Console.WriteLine("Ordena los posts primero por Likes (descendente) y luego por FechaPublicacion (más reciente primero).");
-
+var postOrden = posts
+    .OrderByDescending(p => p.Likes)
+    .ThenBy(p => p.FechaPublicacion);
+foreach (var p in postOrden) {
+    Console.WriteLine($"Id: {p.Id}, Likes: {p.Likes}, Fecha de publicacion: {p.FechaPublicacion}.");
+}
 
 Console.WriteLine();
 Console.WriteLine("Encuentra los 5 posts con menos visualizaciones que no sean de la categoría \"Texto\".");
-
+var postX = posts
+    . Where(p => p.Categoria != "Texto")
+    .OrderBy(p => p.Visualizaciones)
+    .Take(5);
+foreach (var p in postX) {
+    Console.WriteLine($"Categoria: {p.Categoria}, Visualizaciones: {p.Visualizaciones}.");
+}
 
 Console.WriteLine();
-Console.WriteLine("Obtén una lista única de todas las categorías que han superado las 1,000 interacciones totales.");
-
-
+Console.WriteLine("Obtén una lista única de todas las categorías que han superado las 1,000 interacciones(likes + compartidos ) totales.");
+var postY = posts
+    .GroupBy(p => p.Categoria)
+    .Select(g => new { Categoria = g.Key, Compartidos = g.Sum(p => p.Likes) + g.Sum(p => p.Compartidos) })
+    .Where(p => p.Compartidos > 1000)
+    .ToList();
+foreach (var p in postY) {
+    Console.WriteLine($"Categoria: {p.Categoria}, Compartidos: {p.Compartidos}.");
+}
