@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography;
-using System.Text;
+﻿using System.Text;
 using ITV.Dto;
 using ITV.Mapper;
 using ITV.Models;

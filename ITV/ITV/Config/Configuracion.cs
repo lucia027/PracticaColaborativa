@@ -41,4 +41,21 @@ public static class Configuracion {
             return Path.Combine(DataFolder, $"itv.{extension}");
         }
     }
+    
+    public static string BackupDirectory => Path.Combine(AppContext.BaseDirectory, Config.GetValue<string>("Backup:Directory") ?? "back");
+    
+    public static string BackupFormat {
+        get {
+            var format = Config.GetValue<string>("Backup:Format") ?? "json";
+            return format.ToLower() switch
+            {
+                "json" => "json",
+                "xml" => "xml",
+                "csv" or "csv-alt" => "csv",
+                "txt" or "text" => "txt",
+                "bin" => "bin",
+                _ => "json"
+            };
+        }
+    }
 }

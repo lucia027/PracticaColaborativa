@@ -14,14 +14,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd4aa936-b86b-49d2-8b6d-c336bc279a17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ITV/Storage/BinSec/IVehiculoBinStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Storage/BinSec/VehiculoBinStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Storage/Xml/IVehiculoXmlStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITV/Storage/Xml/VehiculoXmlStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Errores/Backup/BackupException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Errores/Common/DomainException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Errores/Vehiculos/VehiculoException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Service/BakckupZip/IVehiculoBackupService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Service/BakckupZip/VehiculoBackupService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Service/Vehiculos/IVehiculoService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITV/Service/Vehiculos/VehiculoService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ITV/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/Dto/VehiculoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Dto/VehiculoDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ITV/Config/Configuracion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Config/Configuracion.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ITV/ITV.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/ITV.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ITV/Storage/Json/VehiculoJsonStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Storage/Json/VehiculoJsonStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ITV/Storage/BinSec/VehiculoBinStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/Storage/BinSec/VehiculoBinStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ITV/obj/Debug/net10.0/ITV.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +54,19 @@
     <setting file="file://$PROJECT_DIR$/ITV/Config/Configuracion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Dto/VehiculoDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Enums/Motor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Errores/Backup/BackupException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Errores/Common/DomainException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Errores/Vehiculos/VehiculoException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Mapper/VehiculoMapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Models/Vehiculo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Repository/BinSec/VehiculoBinSecRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Repository/Common/ICrudRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Repository/IVehiculoRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Repository/Memory/VehiculoMemoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Service/BakckupZip/IVehiculoBackupService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Service/BakckupZip/VehiculoBackupService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Service/Vehiculos/IVehiculoService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ITV/Service/Vehiculos/VehiculoService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Storage/BinSec/IVehiculobinStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Storage/BinSec/VehiculobinStorage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ITV/Storage/Common/IStorage.cs" root0="FORCE_HIGHLIGHTING" />
@@ -67,6 +79,9 @@
     <setting file="file://$PROJECT_DIR$/ITV/Validator/VehiculoValidator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
   &quot;fromUser&quot;: false
@@ -140,7 +155,10 @@
       <workItem from="1775381051449" duration="2146000" />
       <workItem from="1775403217935" duration="9408000" />
       <workItem from="1775467136320" duration="56000" />
-      <workItem from="1775475885517" duration="5695000" />
+      <workItem from="1775475885517" duration="7863000" />
+      <workItem from="1775552623953" duration="76000" />
+      <workItem from="1775555861192" duration="8523000" />
+      <workItem from="1775727720276" duration="3020000" />
     </task>
     <task id="LOCAL-00001" summary="Terminados modelos, enums, validadtor y Cache.cs">
       <option name="closed" value="true" />
@@ -230,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775476357748</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Almacenmaiento xml y binario acabado">
+      <option name="closed" value="true" />
+      <created>1775497215939</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1775497215939</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +278,8 @@
     <MESSAGE value="Almacenamiento en json terminado." />
     <MESSAGE value="avance" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Almacenmaiento xml y binario acabado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almacenmaiento xml y binario acabado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
