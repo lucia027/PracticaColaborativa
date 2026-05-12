@@ -1,0 +1,6 @@
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\ITV\ITV\obj\Debug\net10.0\ITV.csproj.AssemblyReference.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\ITV\ITV\obj\Debug\net10.0\ITV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\ITV\ITV\obj\Debug\net10.0\ITV.AssemblyInfoInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\ITV\ITV\obj\Debug\net10.0\ITV.AssemblyInfo.cs
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\ITV\ITV\obj\Debug\net10.0\ITV.csproj.CoreCompileInputs.cache
+C:\Users\Lu\Desktop\Git-Repository\PracticaColaborativa\ITV\ITV\obj\Debug\net10.0\ITV.sourcelink.json

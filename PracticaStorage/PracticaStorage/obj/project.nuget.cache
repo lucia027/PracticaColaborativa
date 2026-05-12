@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Or0yyZj7iQo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaStorage\\PracticaStorage\\PracticaStorage.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration\\11.0.0-preview.3.26207.106\\microsoft.extensions.configuration.11.0.0-preview.3.26207.106.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\11.0.0-preview.3.26207.106\\microsoft.extensions.configuration.abstractions.11.0.0-preview.3.26207.106.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\11.0.0-preview.3.26207.106\\microsoft.extensions.configuration.binder.11.0.0-preview.3.26207.106.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.primitives\\11.0.0-preview.3.26207.106\\microsoft.extensions.primitives.11.0.0-preview.3.26207.106.nupkg.sha512"
+  ],
+  "logs": []
+}
