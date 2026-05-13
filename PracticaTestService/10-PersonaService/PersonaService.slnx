@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PersonaService.Test/PersonaService.Test.csproj" />
+  <Project Path="PersonaService/PersonaService.csproj" />
+</Solution>
