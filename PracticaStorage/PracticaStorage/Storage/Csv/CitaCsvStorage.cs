@@ -3,10 +3,13 @@ using Itv.Models;
 using PracticaStorage.Config;
 using PracticaStorage.Dto;
 using PracticaStorage.Mappers;
+using Serilog;
 
 namespace PracticaStorage.Storage.Csv;
 
-public class CitaCsvStorage : ICitaStorage{
+public class CitaCsvStorage : ICitaStorage {
+
+    private ILogger _logger = Log.ForContext<CitaCsvStorage>();
 
     public CitaCsvStorage() {
         InitStorage();
@@ -15,9 +18,11 @@ public class CitaCsvStorage : ICitaStorage{
     public void Salvar(IEnumerable<Cita> items, string path) {
         try {
             using var writer = new StreamWriter(path, false, Encoding.UTF8);
+            var dtos = items.Select(d => d.ToDto());
             writer.Write("Id;Matricula;Marca;Modelo;Cilindrada;Motor;DniDueño;FechaMatriculacion;FechaInspeccion;CreateAt;UpdateAt;IsDelete");
-            foreach (var c in items) {
-                writer.Write($"{c.Id};{c.Matricula};{c.Marca};{c.Modelo};{c.Cilindrada};{c.Motor};{c.FechaMatriculacion};{c.FechaInspeccion};{c.CreateAt};{c.UpdateAt};{c.IsDelete}");
+
+            foreach (var d in dtos) {
+                writer.Write($"{d.Id};{d.Matricula};{d.Marca};{d.Modelo};{d.Cilindrada};{d.Motor};{d.DniDueño};{d.FechaMatriculacion};{d.FechaInspeccion};{d.CreateAt};{d.UpdateAt};{d.IsDelete}");
             }
         } catch (Exception e) {
             Console.WriteLine(e);
@@ -27,9 +32,8 @@ public class CitaCsvStorage : ICitaStorage{
 
     public IEnumerable<Cita> Cargar(string path) {
         if (!File.Exists(path)) throw new FileNotFoundException();
-
         try {
-            var items = File.ReadAllLines(path, Encoding.UTF8)
+            var items = File.ReadLines(path, Encoding.UTF8)
                 .Skip(1)
                 .Select(l => l.Split(";"))
                 .Select(campos => new CitaDto(
@@ -46,7 +50,9 @@ public class CitaCsvStorage : ICitaStorage{
                     campos[10],
                     bool.Parse(campos[11])
                 ).ToModel());
+
             return items;
+
         } catch (Exception e) {
             Console.WriteLine(e);
             throw;
@@ -54,7 +60,7 @@ public class CitaCsvStorage : ICitaStorage{
     }
 
     private void InitStorage() {
-        if (Directory.Exists(Configuracion.DataFolder)) return;
+        if(Directory.Exists(Configuracion.DataFolder)) return;
         Directory.CreateDirectory("data");
     }
 }

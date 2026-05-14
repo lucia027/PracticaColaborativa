@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PersonaService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d2493f2385c919f71e264a5a5449b484cef546a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aefb093ce1d633addc3cafdadf01e6eab78bb4fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("PersonaService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PersonaService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
