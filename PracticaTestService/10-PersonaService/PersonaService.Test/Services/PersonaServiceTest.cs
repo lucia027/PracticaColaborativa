@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System.Runtime.InteropServices.JavaScript;
+using System.Security.Cryptography;
+using FluentAssertions;
 using Moq;
 using PersonaService.Cache;
 using PersonaService.Exceptions;
@@ -155,20 +157,21 @@ public class PersonaServiceTest {
             _mockRepository = new Mock<IPersonaRepository>();
             _mockValidador = new Mock<IValidador<Persona>>();
             _mockCache = new Mock<ICache<int, Persona>>();
-            _service = new PersonaService.Services.PersonaService(_mockRepository.Object, _mockValidador.Object, _mockCache.Object);
+            _service = new PersonaService.Services.PersonaService(_mockRepository.Object, _mockValidador.Object,
+                _mockCache.Object);
         }
 
         [Test]
         public void GetAll_SinDatos_RetornaVacio() {
             //Arrange
-            
+
             //Act
             var res = _service.GetAll();
-            
+
             //Assert
             res.Should().NotBeNull();
             res.Should().BeEmpty();
-            
+
             //Verify
             _mockRepository.Verify(r => r.GetAll(), Times.Once);
         }
@@ -176,14 +179,14 @@ public class PersonaServiceTest {
         [Test]
         public void GetById_SinDatos_RetornaExcepcion() {
             //Arrange
-            
+
             //Act
             Action res = () => _service.GetById(5);
-            
+
             //Assert
             var message = res.Should().Throw<PersonaException.NotFound>().Which;
             message.Message.Should().Contain("No se ha encontrado ninguna persona con el identificador");
-            
+
             //Verify
             _mockRepository.Verify(r => r.GetById(5), Times.Once);
         }
@@ -192,19 +195,95 @@ public class PersonaServiceTest {
         public void Create_DatosInvalidos_RetornaExcepcion() {
             //Arrange
             Persona persona = new Persona();
-            _mockValidador.Setup(r => r.Validar(persona)).Throws( new PersonaException.Validation([]));
-            
+            _mockValidador.Setup(r => r.Validar(persona)).Throws(new PersonaException.Validation([]));
+
             //Act
             Action res = () => _service.Create(persona);
+
+            //Assert
+            var e = res.Should().Throw<PersonaException.Validation>().Which;
+            e.Message.Should().Contain("Se han detectado errores de validación en la entidad");
+
+            //Verify
+            _mockValidador.Verify(r => r.Validar(persona), Times.Once);
+            _mockRepository.Verify(r => r.Create(persona), Times.Never);
+        }
+
+        [Test]
+        public void Create_EmailInvalido_RetornaExcepcion() {
+            //Arrange
+            Persona persona = new Persona();
+            _mockRepository.Setup(r => r.FindByEmail(persona.Email))
+                .Throws(new PersonaException.AlreadyExists(persona.Email));
+
+            //Act
+            Action res = () => _service.Create(persona);
+
+            //Assert
+            var e = res.Should().Throw<PersonaException.AlreadyExists>().Which;
+            e.Message.Should().Be($"Conflicto: El email {persona.Email} ya está registrado.");
+
+            //Verify
+            _mockRepository.Verify(r => r.FindByEmail(persona.Email), Times.Once);
+            _mockRepository.Verify(r => r.Create(persona), Times.Never);
+        }
+
+        [Test]
+        public void Update_DatosInexistentes_RetornaExcepcion() {
+            //Arrange
+            Persona persona = new Persona();
+            _mockRepository.Setup(r => r.GetById(persona.Id)).Throws(new PersonaException.NotFound(persona.Id));
+
+            //Act
+            Action res = () => _service.Update(persona.Id, persona);
+
+            //Assert
+            var e = res.Should().Throw<PersonaException.NotFound>().Which;
+            e.Message.Contains("No se ha encontrado ninguna persona con el identificador");
+
+            //Verify
+            _mockRepository.Verify(r => r.GetById(persona.Id), Times.Once);
+            _mockRepository.Verify(r => r.Create(persona), Times.Never);
+        }
+
+        [Test]
+        public void Update_DatosInvalidos_RetornaExcepcion() {
+            //Arrange
+            Persona persona = new Persona();
+            _mockRepository.Setup(r => r.GetById(persona.Id)).Returns(persona);
+            _mockValidador.Setup(r => r.Validar(persona)).Throws(new PersonaException.Validation([]));
+            
+            //Act
+            Action res = () => _service.Update(persona.Id, persona);
             
             //Assert
             var e = res.Should().Throw<PersonaException.Validation>().Which;
             e.Message.Should().Contain("Se han detectado errores de validación en la entidad");
             
             //Verify
-            _mockValidador.Verify(r => r.Validar(persona), Times.Once);
-            _mockRepository.Verify(r => r.Create(persona), Times.Once);
+            _mockValidador.Verify(r=> r.Validar(persona), Times.Once);
+            _mockRepository.Verify(r => r.Update(persona.Id, persona), Times.Never);
+            _mockRepository.Verify(r => r.GetById(persona.Id), Times.Once);
         }
 
+        [Test]
+        public void Update_FindByEmailErroneo_RetornaExcepcion() {
+            //Arrange
+            Persona persona = new Persona();
+            _mockRepository.Setup(r => r.GetById(persona.Id)).Returns(persona);
+            _mockRepository.Setup(r => r.FindByEmail(persona.Email)).Throws( new PersonaException.AlreadyExists(persona.Email));
+            
+            //Act
+            Action res = () => _service.Update(persona.Id, persona);
+            
+            //Assert
+            var e = res.Should().Throw<PersonaException.AlreadyExists>().Which;
+            e.Message.Should().Be($"Conflicto: El email {persona.Email} ya está registrado.");
+            
+            //Verify
+            _mockRepository.Verify(r => r.GetById(persona.Id), Times.Once);
+            _mockRepository.Verify(r => r.FindByEmail(persona.Email), Times.Once);
+            _mockRepository.Verify(r => r.Update(persona.Id, persona), Times.Never);
+        }
     }
 }
