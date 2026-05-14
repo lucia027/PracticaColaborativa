@@ -1,9 +1,10 @@
-﻿using NUnit.Framework;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Moq;
 using PersonaService.Cache;
+using PersonaService.Exceptions;
 using PersonaService.Models;
 using PersonaService.Repositories;
+using PersonaService.Services;
 using PersonaService.Validators;
 
 
@@ -144,18 +145,66 @@ public class PersonaServiceTest {
 
     [TestFixture]
     public sealed class CasosInvalidos {
-
         private Mock<IPersonaRepository> _mockRepository = null!;
-        private Mock<IValidador<Persona>> _mockValidator = null!;
+        private Mock<IValidador<Persona>> _mockValidador = null!;
         private Mock<ICache<int, Persona>> _mockCache = null!;
-        private PersonaService.Services.PersonaService _service = null!;
-        
+        private IPersonaService _service = null!;
+
         [SetUp]
         public void SetUp() {
             _mockRepository = new Mock<IPersonaRepository>();
-            _mockValidator = new Mock<IValidador<Persona>>();
+            _mockValidador = new Mock<IValidador<Persona>>();
             _mockCache = new Mock<ICache<int, Persona>>();
-            _service = new PersonaService.Services.PersonaService(_mockRepository.Object, _mockValidator.Object, _mockCache.Object);
+            _service = new PersonaService.Services.PersonaService(_mockRepository.Object, _mockValidador.Object, _mockCache.Object);
         }
+
+        [Test]
+        public void GetAll_SinDatos_RetornaVacio() {
+            //Arrange
+            
+            //Act
+            var res = _service.GetAll();
+            
+            //Assert
+            res.Should().NotBeNull();
+            res.Should().BeEmpty();
+            
+            //Verify
+            _mockRepository.Verify(r => r.GetAll(), Times.Once);
+        }
+
+        [Test]
+        public void GetById_SinDatos_RetornaExcepcion() {
+            //Arrange
+            
+            //Act
+            Action res = () => _service.GetById(5);
+            
+            //Assert
+            var message = res.Should().Throw<PersonaException.NotFound>().Which;
+            message.Message.Should().Contain("No se ha encontrado ninguna persona con el identificador");
+            
+            //Verify
+            _mockRepository.Verify(r => r.GetById(5), Times.Once);
+        }
+
+        [Test]
+        public void Create_DatosInvalidos_RetornaExcepcion() {
+            //Arrange
+            Persona persona = new Persona();
+            _mockValidador.Setup(r => r.Validar(persona)).Throws( new PersonaException.Validation([]));
+            
+            //Act
+            Action res = () => _service.Create(persona);
+            
+            //Assert
+            var e = res.Should().Throw<PersonaException.Validation>().Which;
+            e.Message.Should().Contain("Se han detectado errores de validación en la entidad");
+            
+            //Verify
+            _mockValidador.Verify(r => r.Validar(persona), Times.Once);
+            _mockRepository.Verify(r => r.Create(persona), Times.Once);
+        }
+
     }
 }
