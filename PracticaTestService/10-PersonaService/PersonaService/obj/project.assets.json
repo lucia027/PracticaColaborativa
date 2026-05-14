@@ -648,19 +648,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lu\\.nuget\\packages\\": {}
+    "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
+      "projectUniqueName": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
       "projectName": "PersonaService",
-      "projectPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
-      "packagesPath": "C:\\Users\\Lu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\obj\\",
+      "projectPath": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
+      "packagesPath": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\.nuget\\packages\\",
+      "outputPath": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -685,7 +685,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net10.0": {
@@ -720,7 +720,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
