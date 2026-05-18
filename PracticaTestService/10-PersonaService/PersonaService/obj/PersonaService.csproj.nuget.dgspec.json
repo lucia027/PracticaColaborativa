@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj": {}
+    "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj": {}
   },
   "projects": {
-    "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj": {
+    "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
+        "projectUniqueName": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
         "projectName": "PersonaService",
-        "projectPath": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
-        "packagesPath": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\.nuget\\packages\\",
-        "outputPath": "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\Desktop\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\obj\\",
+        "projectPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\PersonaService.csproj",
+        "packagesPath": "C:\\Users\\Lu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaTestService\\10-PersonaService\\PersonaService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\USERS_NO_BORRAR\\lucia.fuertes3\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Lu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -29,7 +29,6 @@
           }
         },
         "warningProperties": {
-          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
@@ -39,15 +38,37 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[8.10.0, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[18.5.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "NUnit.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.13.0, )"
             },
             "Serilog": {
               "target": "Package",
@@ -74,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

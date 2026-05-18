@@ -6,20 +6,17 @@ using Itv.Models;
 using PracticaStorage.Config;
 using PracticaStorage.Dto;
 using PracticaStorage.Mappers;
-using Serilog;
 
 namespace PracticaStorage.Storage.Json;
 
 public class CitaJsonStorage : ICitaStorage {
 
-    private ILogger _logger = Log.ForContext<CitaJsonStorage>();
-    
     private readonly JsonSerializerOptions _options = new() {
         WriteIndented = true,
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         Converters = { new JsonStringEnumConverter() },
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping 
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
 
     public CitaJsonStorage() {
@@ -28,10 +25,10 @@ public class CitaJsonStorage : ICitaStorage {
 
     public void Salvar(IEnumerable<Cita> items, string path) {
         try {
-            var dtos = items.Select(d => d.ToDto()).ToList();
-            var json = JsonSerializer.Serialize(dtos, _options);
-            File.WriteAllText(path, json, new UTF8Encoding(false));
-        } catch (Exception e)  {
+            var dtos = items.Select(d => d.ToDto());
+            var json = JsonSerializer.Serialize(path, _options);
+            File.WriteAllText(path, json, new UTF8Encoding());
+        } catch (Exception e) {
             Console.WriteLine(e);
             throw;
         }
@@ -41,11 +38,10 @@ public class CitaJsonStorage : ICitaStorage {
         if (!File.Exists(path)) throw new FileNotFoundException();
 
         try {
-            var json = File.ReadAllText(path);
-            var dtos = JsonSerializer.Deserialize<List<CitaDto>>(json, _options);
+            var json = File.ReadAllText(path, new UTF8Encoding(false));
+            var dtos = JsonSerializer.Deserialize<List<CitaDto>>(json);
             if (dtos == null) throw new JsonException();
             var items = dtos.Select(d => d.ToModel());
-            
             return items;
         } catch (Exception e) {
             Console.WriteLine(e);
@@ -54,7 +50,7 @@ public class CitaJsonStorage : ICitaStorage {
     }
 
     private void InitStorage() {
-        if(Directory.Exists(Configuracion.DataFolder)) return;
+        if (Directory.Exists(Configuracion.DataFolder)) return;
         Directory.CreateDirectory("data");
     }
 }

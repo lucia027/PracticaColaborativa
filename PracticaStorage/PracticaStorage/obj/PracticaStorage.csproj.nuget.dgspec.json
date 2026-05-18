@@ -46,7 +46,11 @@
           "dependencies": {
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
-              "version": "[11.0.0-preview.3.26207.106, )"
+              "version": "[11.0.0-preview.4.26230.115, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[11.0.0-preview.4.26230.115, )"
             },
             "Serilog": {
               "target": "Package",

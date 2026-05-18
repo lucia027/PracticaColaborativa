@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Consultas.Models;
+﻿using Consultas.Models;
 
 var fechaActual =  DateTime.Now;
 
@@ -173,4 +171,88 @@ var postY = posts
     .ToList();
 foreach (var p in postY) {
     Console.WriteLine($"Categoria: {p.Categoria}, Compartidos: {p.Compartidos}.");
+}
+Console.WriteLine();
+Console.WriteLine("1. Encuentra los posts que sean de categoría \"Video\" y tengan más de 20.000 visualizaciones.");
+var post1 = posts
+    .Where(c => c is { Categoria: "Video", Visualizaciones: > 20000 })
+    .Select(c => new { Id = c.Id, Categoria = c.Categoria, Visualizaciones = c.Visualizaciones});
+
+foreach (var p in post1) {
+    Console.WriteLine($"Id: {p.Id}, Categoria: {p.Categoria}, Visualizaciones: {p.Visualizaciones}.");
+}
+
+Console.WriteLine();
+Console.WriteLine("2. Obtén los posts cuyo contenido contenga la palabra \"nutrición\".");
+var post2 = posts
+    .Where(c => c.Contenido.Contains("nutrición"));
+
+foreach (var p in post2) {
+    Console.WriteLine($"Id: {p.Id}, Contenido: {p.Contenido}.");
+}
+
+Console.WriteLine();
+Console.WriteLine("3. Calcula el total de interacciones de cada post usando Likes + Compartidos.");
+var post3 = posts
+    .Select(p => new { Id = p.Id, Interacciones = (p.Likes + p.Compartidos) });
+foreach (var p in post3) {
+    Console.WriteLine($"Id: {p.Id}, Interacciones: {p.Interacciones}.");
+}
+
+Console.WriteLine();
+Console.WriteLine("4. Muestra los posts ordenados por visualizaciones de mayor a menor.");
+var post4 = posts
+    .OrderByDescending(p => p.Visualizaciones);
+foreach (var p in post4) {
+    Console.WriteLine($"Id: {p.Id}, Visualizaciones: {p.Visualizaciones}.");
+}
+
+Console.WriteLine();
+Console.WriteLine("5. Obtén el post con más Likes de toda la lista.");
+var post5 = posts.MaxBy(p => p.Likes);
+Console.Write(post5.Likes);
+
+Console.WriteLine();
+Console.WriteLine("6. Agrupa los posts por autor y calcula el total de visualizaciones de cada uno.");
+var post6 = posts
+    .GroupBy(p => p.Autor)
+    .Select(p => new { Autor = p.Key, TotalVisualizaciones = p.Sum(g => g.Visualizaciones) });
+foreach (var p in post6) {
+    Console.WriteLine($"Autor: {p.Autor}, TotalVisualizaciones: {p.TotalVisualizaciones}.");
+}
+
+Console.WriteLine();
+Console.WriteLine("7. Muestra los autores que tengan más de 2 publicaciones.");
+var post7 = posts
+    .GroupBy(p => p.Autor)
+    .Where(p => p.Count() > 2)
+    .Select(p => new { Autor = p.Key, Visualizaciones = p.Count() });
+foreach (var p in post7) {
+    Console.WriteLine($"Autor: {p.Autor}, Visualizaciones: {p.Visualizaciones}.");
+}
+
+Console.WriteLine();
+Console.WriteLine("8. Obtén las categorías distintas que existen en la lista de posts.");
+var post8 = posts
+    .GroupBy(p => p.Categoria)
+    .Select(p => p.Key);
+foreach (var p in post8) {
+    Console.WriteLine($"{p}");
+}
+
+Console.WriteLine();
+Console.WriteLine("9. Muestra los posts que tengan menos de 100 compartidos y sean de categoría \"Imagen\".");
+var post9 = posts.Where(p => p.Categoria == "Imagen" && p.Compartidos < 100);
+foreach (var p in post9) {
+    Console.WriteLine($"Id: {p.Id}, Categoria: {p.Categoria}, Compartidos: {p.Compartidos}.");
+}
+
+Console.WriteLine();
+Console.WriteLine("10. Calcula la media de visualizaciones por autor y ordénala de mayor a menor.");
+var post10 = posts
+    .GroupBy(p => p.Autor)
+    .Select(p => new {Autor = p.Key, VisualizacionesMedia = p.Average(c => c.Visualizaciones)})
+    .OrderByDescending(p=> p.VisualizacionesMedia);
+foreach (var p in post10) {
+    Console.WriteLine($"Autor: {p.Autor}, VisualizacionesMedia: {p.VisualizacionesMedia}.");
 }

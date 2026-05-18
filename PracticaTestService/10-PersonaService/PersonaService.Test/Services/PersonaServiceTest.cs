@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices.JavaScript;
-using System.Security.Cryptography;
+﻿using Castle.Components.DictionaryAdapter.Xml;
 using FluentAssertions;
 using Moq;
 using PersonaService.Cache;
@@ -14,7 +13,6 @@ namespace PersonaService.Test.Services;
 
 [TestFixture]
 public class PersonaServiceTest {
-
     [TestFixture]
     public sealed class CasosValidos {
         private Mock<IPersonaRepository> _mockRepository = null!;
@@ -284,6 +282,22 @@ public class PersonaServiceTest {
             _mockRepository.Verify(r => r.GetById(persona.Id), Times.Once);
             _mockRepository.Verify(r => r.FindByEmail(persona.Email), Times.Once);
             _mockRepository.Verify(r => r.Update(persona.Id, persona), Times.Never);
+        }
+
+        [Test]
+        public void Delete_DatoInexistente_RetornaExcepcion() {
+            //Arrange
+            _mockRepository.Setup(r => r.Delete(999)).Throws(new PersonaException.NotFound(999));
+            
+            //Act
+            Action res = () => _service.Delete(999);
+            
+            //Assert
+            var e = res.Should().Throw<PersonaException.NotFound>().Which;
+            e.Message.Should().Be("No se ha encontrado ninguna persona con el identificador: 999");
+            
+            //Verify
+            _mockRepository.Verify(r => r.Delete(999), Times.Never);
         }
     }
 }

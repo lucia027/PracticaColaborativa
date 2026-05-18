@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PracticaStorage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3001caa92eb2ac89eab6a87db860df34840f7220")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+033dd0d7b1cd534a6d8656e9ad8fc8eafc8dac0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PracticaStorage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PracticaStorage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
