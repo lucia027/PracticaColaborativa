@@ -1,23 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "aLOquF0TFV8=",
+  "dgSpecHash": "nT/9TOVWQT8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Lu\\Desktop\\Git-Repository\\PracticaColaborativa\\PracticaStorage\\PracticaStorage\\PracticaStorage.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Lu\\.nuget\\packages\\csharpfunctionalextensions\\3.7.0\\csharpfunctionalextensions.3.7.0.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration\\11.0.0-preview.4.26230.115\\microsoft.extensions.configuration.11.0.0-preview.4.26230.115.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\11.0.0-preview.4.26230.115\\microsoft.extensions.configuration.abstractions.11.0.0-preview.4.26230.115.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\11.0.0-preview.4.26230.115\\microsoft.extensions.configuration.binder.11.0.0-preview.4.26230.115.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\11.0.0-preview.4.26230.115\\microsoft.extensions.configuration.fileextensions.11.0.0-preview.4.26230.115.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.json\\11.0.0-preview.4.26230.115\\microsoft.extensions.configuration.json.11.0.0-preview.4.26230.115.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\11.0.0-preview.4.26230.115\\microsoft.extensions.fileproviders.abstractions.11.0.0-preview.4.26230.115.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\11.0.0-preview.4.26230.115\\microsoft.extensions.fileproviders.physical.11.0.0-preview.4.26230.115.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\11.0.0-preview.4.26230.115\\microsoft.extensions.filesystemglobbing.11.0.0-preview.4.26230.115.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\10.0.8\\microsoft.extensions.configuration.fileextensions.10.0.8.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.configuration.json\\10.0.8\\microsoft.extensions.configuration.json.10.0.8.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\10.0.8\\microsoft.extensions.fileproviders.abstractions.10.0.8.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\10.0.8\\microsoft.extensions.fileproviders.physical.10.0.8.nupkg.sha512",
+    "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\10.0.8\\microsoft.extensions.filesystemglobbing.10.0.8.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\microsoft.extensions.primitives\\11.0.0-preview.4.26230.115\\microsoft.extensions.primitives.11.0.0-preview.4.26230.115.nupkg.sha512",
     "C:\\Users\\Lu\\.nuget\\packages\\serilog\\4.3.2-dev-02433\\serilog.4.3.2-dev-02433.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\system.io.pipelines\\11.0.0-preview.4.26230.115\\system.io.pipelines.11.0.0-preview.4.26230.115.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\system.text.encodings.web\\11.0.0-preview.4.26230.115\\system.text.encodings.web.11.0.0-preview.4.26230.115.nupkg.sha512",
-    "C:\\Users\\Lu\\.nuget\\packages\\system.text.json\\11.0.0-preview.4.26230.115\\system.text.json.11.0.0-preview.4.26230.115.nupkg.sha512"
+    "C:\\Users\\Lu\\.nuget\\packages\\serilog.sinks.console\\6.1.1\\serilog.sinks.console.6.1.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -24,7 +24,6 @@ public class CitaCsvStorage : ICitaStorage {
             Console.WriteLine(e);
             throw;
         }
-        
     }
 
     public IEnumerable<Cita> Cargar(string path) {

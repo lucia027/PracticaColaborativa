@@ -1,0 +1,9 @@
+﻿{
+  "Storage":{
+    "Type":"json"
+  },
+  "Repository":{
+    "Type":"memory",
+    "Directory":"data"
+  }
+}
